@@ -1,0 +1,71 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            REPOPATH=/home/indegnnk/zoswarepo
+            DEPLOYPATH=/home/indegnnk/zoswa.com
+
+            # Fix git safe directory issue
+            git config --global --add safe.directory $REPOPATH
+
+            # Ensure repo exists, clone if not
+            if [ ! -d "$REPOPATH/.git" ]; then
+              echo "Cloning repository..."
+              rm -rf $REPOPATH
+              git clone https://github.com/EmmanuelMsafiri1992/Zoswa2026.git $REPOPATH
+            fi
+
+            cd $REPOPATH
+            git fetch origin
+            git reset --hard origin/main
+
+            # Sync files to deploy path
+            /bin/rsync -av \
+              --exclude='.git' \
+              --exclude='.env' \
+              --exclude='server/.env' \
+              --exclude='node_modules' \
+              --exclude='server/node_modules' \
+              --exclude='client/node_modules' \
+              --exclude='client/dist' \
+              $REPOPATH/ $DEPLOYPATH/
+
+            # Set permissions
+            chmod 755 $DEPLOYPATH
+            chown -R indegnnk:indegnnk $DEPLOYPATH
+
+            # Install backend dependencies
+            cd $DEPLOYPATH/server
+            npm install --production
+
+            # Install frontend dependencies and build
+            cd $DEPLOYPATH/client
+            npm install
+            npm run build
+
+            # Copy built frontend to public folder
+            rm -rf $DEPLOYPATH/public_html/*
+            cp -r $DEPLOYPATH/client/dist/* $DEPLOYPATH/public_html/ 2>/dev/null || mkdir -p $DEPLOYPATH/public_html && cp -r $DEPLOYPATH/client/dist/* $DEPLOYPATH/public_html/
+
+            # Restart backend with PM2
+            cd $DEPLOYPATH/server
+            pm2 delete zoswa-api 2>/dev/null || true
+            pm2 start server.js --name zoswa-api
+            pm2 save
+
+            echo "Deployment completed: $(date)"
