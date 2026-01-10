@@ -9,6 +9,7 @@ export const useAuthStore = create(
       token: null,
       isAuthenticated: false,
       isLoading: false,
+      isCheckingAuth: true,
       trialDaysLeft: 7,
 
       setUser: (user) => set({ user, isAuthenticated: !!user }),
@@ -63,13 +64,13 @@ export const useAuthStore = create(
       checkAuth: async () => {
         const token = localStorage.getItem('token')
         if (!token) {
-          set({ isAuthenticated: false, user: null })
+          set({ isAuthenticated: false, user: null, isCheckingAuth: false })
           return
         }
 
         try {
           const response = await api.get('/auth/me')
-          set({ user: response.data.user, isAuthenticated: true, token })
+          set({ user: response.data.user, isAuthenticated: true, token, isCheckingAuth: false })
 
           // Calculate trial days left
           if (response.data.user.trialStartDate) {
@@ -80,7 +81,7 @@ export const useAuthStore = create(
           }
         } catch (error) {
           localStorage.removeItem('token')
-          set({ isAuthenticated: false, user: null, token: null })
+          set({ isAuthenticated: false, user: null, token: null, isCheckingAuth: false })
         }
       },
 
