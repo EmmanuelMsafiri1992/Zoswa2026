@@ -16,26 +16,36 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.SERVER_PORT }}
+          command_timeout: 30m
           script: |
+            set -e
+
             REPOPATH=/home/indegnnk/zoswarepo
             DEPLOYPATH=/home/indegnnk/zoswa.com
+
+            echo "=========================================="
+            echo "Starting deployment: $(date)"
+            echo "=========================================="
 
             # Fix git safe directory issue
             git config --global --add safe.directory $REPOPATH
 
             # Ensure repo exists, clone if not
             if [ ! -d "$REPOPATH/.git" ]; then
-              echo "Cloning repository..."
+              echo ">>> Cloning repository..."
               rm -rf $REPOPATH
               git clone https://github.com/EmmanuelMsafiri1992/Zoswa2026.git $REPOPATH
             fi
 
+            # Pull latest changes
+            echo ">>> Pulling latest changes..."
             cd $REPOPATH
             git fetch origin
             git reset --hard origin/main
 
-            # Sync files to deploy path
-            /bin/rsync -av \
+            # Sync files to deploy path (exclude sensitive files)
+            echo ">>> Syncing files..."
+            /bin/rsync -av --delete \
               --exclude='.git' \
               --exclude='.env' \
               --exclude='server/.env' \
@@ -43,29 +53,53 @@ jobs:
               --exclude='server/node_modules' \
               --exclude='client/node_modules' \
               --exclude='client/dist' \
+              --exclude='.htaccess' \
               $REPOPATH/ $DEPLOYPATH/
 
             # Set permissions
+            echo ">>> Setting permissions..."
             chmod 755 $DEPLOYPATH
             chown -R indegnnk:indegnnk $DEPLOYPATH
 
             # Install backend dependencies
+            echo ">>> Installing backend dependencies..."
             cd $DEPLOYPATH/server
-            npm install --production
+            npm install --production --silent
 
             # Install frontend dependencies and build
+            echo ">>> Building frontend..."
             cd $DEPLOYPATH/client
-            npm install
+            npm install --silent
             npm run build
 
             # Copy built frontend to document root
+            echo ">>> Deploying frontend..."
             cp -r $DEPLOYPATH/client/dist/* $DEPLOYPATH/
             chown -R indegnnk:indegnnk $DEPLOYPATH
 
             # Restart backend with PM2
+            echo ">>> Restarting backend..."
             cd $DEPLOYPATH/server
-            pm2 delete zoswa-api 2>/dev/null || true
-            pm2 start server.js --name zoswa-api
+
+            # Check if PM2 process exists
+            if pm2 describe zoswa-api > /dev/null 2>&1; then
+              pm2 restart zoswa-api --update-env
+            else
+              pm2 start server.js --name zoswa-api
+            fi
+
             pm2 save
 
-            echo "Deployment completed: $(date)"
+            # Health check
+            echo ">>> Running health check..."
+            sleep 3
+            if curl -s http://localhost:5000/api/health | grep -q "ok"; then
+              echo "✅ API is healthy!"
+            else
+              echo "⚠️ API health check failed, checking logs..."
+              pm2 logs zoswa-api --lines 10 --nostream
+            fi
+
+            echo "=========================================="
+            echo "✅ Deployment completed: $(date)"
+            echo "=========================================="
