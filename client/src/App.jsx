@@ -5,6 +5,7 @@ import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 // Layouts
 import MainLayout from './components/layout/MainLayout'
 import DashboardLayout from './components/layout/DashboardLayout'
+import AdminLayout from './components/layout/AdminLayout'
 
 // Pages
 import Home from './pages/Home'
@@ -19,8 +20,12 @@ import Profile from './pages/Profile'
 import Leaderboard from './pages/Leaderboard'
 import Certificates from './pages/Certificates'
 
+// Admin Pages
+import { AdminDashboard, AdminUsers, AdminPayments, AdminCourses, AdminSettings } from './pages/admin'
+
 // Components
 import ProtectedRoute from './components/auth/ProtectedRoute'
+import AdminRoute from './components/auth/AdminRoute'
 
 // Store
 import { useAuthStore } from './store/authStore'
@@ -85,6 +90,15 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/certificates" element={<Certificates />} />
+        </Route>
+
+        {/* Admin Routes */}
+        <Route element={<AdminRoute><AdminLayout /></AdminRoute>}>
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/users" element={<AdminUsers />} />
+          <Route path="/admin/payments" element={<AdminPayments />} />
+          <Route path="/admin/courses" element={<AdminCourses />} />
+          <Route path="/admin/settings" element={<AdminSettings />} />
         </Route>
       </Routes>
     </PayPalScriptProvider>

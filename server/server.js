@@ -22,6 +22,7 @@ import authRoutes from './routes/auth.js'
 import userRoutes from './routes/users.js'
 import progressRoutes from './routes/progress.js'
 import subscriptionRoutes from './routes/subscription.js'
+import adminRoutes from './routes/admin.js'
 
 // Load env vars FIRST
 dotenv.config()
@@ -120,6 +121,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/progress', progressRoutes)
 app.use('/api/subscription', subscriptionRoutes)
+app.use('/api/admin', adminRoutes)
 
 // ==========================================
 // DEMO MODE (Development Only)

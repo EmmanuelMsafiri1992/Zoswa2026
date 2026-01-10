@@ -9,6 +9,7 @@ import {
   Settings,
   Zap,
   Flame,
+  Shield,
 } from 'lucide-react'
 import { useProgressStore } from '../../store/progressStore'
 import { useAuthStore } from '../../store/authStore'
@@ -138,7 +139,18 @@ export default function Sidebar() {
       </nav>
 
       {/* Bottom Section */}
-      <div className="p-4 border-t border-dark-600">
+      <div className="p-4 border-t border-dark-600 space-y-2">
+        {/* Admin Link - Only visible to admins */}
+        {user?.role === 'admin' && (
+          <Link
+            to="/admin"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/20 hover:border-red-500/40 transition-all"
+          >
+            <Shield className="w-5 h-5 text-red-400" />
+            <span className="text-red-400 font-medium">Admin Panel</span>
+          </Link>
+        )}
+
         <Link
           to="/profile"
           className="flex items-center gap-3 p-3 rounded-xl hover:bg-dark-700 transition-all"
