@@ -9,6 +9,11 @@ export default function ProtectedRoute({ children }) {
     return <Navigate to="/login" state={{ from: location }} replace />
   }
 
+  // Admins should only access /admin routes, not user dashboard
+  if (user?.role === 'admin') {
+    return <Navigate to="/admin" replace />
+  }
+
   // Check if trial expired and no subscription
   const hasAccess = user?.isSubscribed || trialDaysLeft > 0
 
