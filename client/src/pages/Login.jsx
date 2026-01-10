@@ -28,7 +28,13 @@ export default function Login() {
 
     if (result.success) {
       toast.success('Welcome back!')
-      navigate(from, { replace: true })
+      // Redirect admins to admin panel, regular users to dashboard
+      const user = useAuthStore.getState().user
+      if (user?.role === 'admin') {
+        navigate('/admin', { replace: true })
+      } else {
+        navigate(from, { replace: true })
+      }
     } else {
       toast.error(result.error)
     }
