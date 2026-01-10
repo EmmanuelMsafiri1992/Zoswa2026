@@ -15,10 +15,12 @@ export default function AdminPayments() {
   const fetchPayments = async () => {
     try {
       const response = await api.get('/admin/payments')
-      setPayments(response.data.payments)
-      setSummary(response.data.summary)
+      setPayments(response.data.payments || [])
+      setSummary(response.data.summary || {})
     } catch (error) {
       console.error('Error fetching payments:', error)
+      setPayments([])
+      setSummary({})
     } finally {
       setLoading(false)
     }

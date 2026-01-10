@@ -23,10 +23,11 @@ export default function AdminUsers() {
       const response = await api.get('/admin/users', {
         params: { page: pagination.page, limit: 20, filter, search }
       })
-      setUsers(response.data.users)
-      setPagination(response.data.pagination)
+      setUsers(response.data.users || [])
+      setPagination(response.data.pagination || { page: 1, pages: 1, total: 0 })
     } catch (error) {
       console.error('Error fetching users:', error)
+      setUsers([])
     } finally {
       setLoading(false)
     }

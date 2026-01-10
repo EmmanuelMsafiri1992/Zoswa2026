@@ -15,10 +15,12 @@ export default function AdminDashboard() {
   const fetchStats = async () => {
     try {
       const response = await api.get('/admin/stats')
-      setStats(response.data.stats)
-      setRecentUsers(response.data.recentUsers)
+      setStats(response.data.stats || {})
+      setRecentUsers(response.data.recentUsers || [])
     } catch (error) {
       console.error('Error fetching stats:', error)
+      setStats({})
+      setRecentUsers([])
     } finally {
       setLoading(false)
     }
