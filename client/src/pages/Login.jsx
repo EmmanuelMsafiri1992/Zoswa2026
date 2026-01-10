@@ -118,17 +118,6 @@ export default function Login() {
           </div>
         </div>
 
-        {/* Demo Credentials */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-6 p-4 bg-dark-700/50 border border-dark-600 rounded-xl"
-        >
-          <p className="text-sm text-gray-400 text-center">
-            <span className="text-neon-cyan font-medium">Demo:</span> demo@zoswa.com / demo123
-          </p>
-        </motion.div>
       </motion.div>
     </div>
   )
