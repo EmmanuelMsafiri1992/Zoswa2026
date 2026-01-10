@@ -16,30 +16,42 @@ export const useAuthStore = create(
       login: async (email, password) => {
         set({ isLoading: true })
         try {
-          // Use demo login for instant access (no MongoDB needed)
-          const response = await api.post('/auth/demo-login', { email, password })
+          const response = await api.post('/auth/login', { email, password })
           const { user, token } = response.data
-          set({ user: { ...user, email }, token, isAuthenticated: true, isLoading: false, trialDaysLeft: 7 })
+          set({
+            user,
+            token,
+            isAuthenticated: true,
+            isLoading: false,
+            trialDaysLeft: user.trialDaysLeft || 7
+          })
           localStorage.setItem('token', token)
           return { success: true }
         } catch (error) {
           set({ isLoading: false })
-          return { success: false, error: 'Login failed. Please try again.' }
+          const message = error.response?.data?.message || 'Login failed. Please try again.'
+          return { success: false, error: message }
         }
       },
 
       register: async (name, email, password) => {
         set({ isLoading: true })
         try {
-          // Use demo register for instant access (no MongoDB needed)
-          const response = await api.post('/auth/demo-register', { name, email })
+          const response = await api.post('/auth/register', { name, email, password })
           const { user, token } = response.data
-          set({ user, token, isAuthenticated: true, isLoading: false, trialDaysLeft: 7 })
+          set({
+            user,
+            token,
+            isAuthenticated: true,
+            isLoading: false,
+            trialDaysLeft: user.trialDaysLeft || 7
+          })
           localStorage.setItem('token', token)
           return { success: true }
         } catch (error) {
           set({ isLoading: false })
-          return { success: false, error: 'Registration failed. Please try again.' }
+          const message = error.response?.data?.message || 'Registration failed. Please try again.'
+          return { success: false, error: message }
         }
       },
 
