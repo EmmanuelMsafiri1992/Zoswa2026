@@ -1,14 +1,30 @@
 import axios from 'axios'
 
-// Use environment variable for production, fallback to /api for development
-const API_URL = import.meta.env.VITE_API_URL || ''
+// Determine API URL based on environment
+const getApiUrl = () => {
+  // Check for explicit environment variable first
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL
+  }
+
+  // In production, try the proxy first, fallback to direct port
+  if (import.meta.env.PROD) {
+    return '' // Use relative /api path (relies on Apache proxy)
+  }
+
+  // Development
+  return ''
+}
+
+const API_URL = getApiUrl()
 
 const api = axios.create({
   baseURL: `${API_URL}/api`,
   headers: {
     'Content-Type': 'application/json',
   },
-  withCredentials: true, // Send cookies for cross-origin requests
+  withCredentials: true,
+  timeout: 10000, // 10 second timeout
 })
 
 // Request interceptor to add auth token

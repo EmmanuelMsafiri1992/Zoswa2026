@@ -58,9 +58,9 @@ jobs:
             npm install
             npm run build
 
-            # Copy built frontend to public folder
-            rm -rf $DEPLOYPATH/public_html/*
-            cp -r $DEPLOYPATH/client/dist/* $DEPLOYPATH/public_html/ 2>/dev/null || mkdir -p $DEPLOYPATH/public_html && cp -r $DEPLOYPATH/client/dist/* $DEPLOYPATH/public_html/
+            # Copy built frontend to document root
+            cp -r $DEPLOYPATH/client/dist/* $DEPLOYPATH/
+            chown -R indegnnk:indegnnk $DEPLOYPATH
 
             # Restart backend with PM2
             cd $DEPLOYPATH/server

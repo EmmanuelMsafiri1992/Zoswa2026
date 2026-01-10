@@ -114,10 +114,16 @@ export const corsConfig = {
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
   },
   production: {
-    origin: process.env.FRONTEND_URL || 'https://zoswa.com',
+    origin: [
+      process.env.FRONTEND_URL || 'https://zoswa.com',
+      'https://zoswa.com',
+      'https://www.zoswa.com',
+      'http://zoswa.com',
+      'http://www.zoswa.com'
+    ],
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
   }
 }
 
