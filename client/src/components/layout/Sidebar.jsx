@@ -7,7 +7,6 @@ import {
   Award,
   User,
   Settings,
-  Code2,
   Zap,
   Flame,
 } from 'lucide-react'
@@ -36,15 +35,30 @@ export default function Sidebar() {
     <aside className="fixed left-0 top-0 h-full w-64 bg-dark-800 border-r border-dark-600 flex flex-col z-40">
       {/* Logo */}
       <div className="p-6 border-b border-dark-600">
-        <Link to="/dashboard" className="flex items-center gap-2">
+        <Link to="/dashboard" className="flex items-center gap-3 group">
           <div className="relative">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-neon-cyan to-neon-purple flex items-center justify-center">
-              <Code2 className="w-6 h-6 text-dark-900" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-dark-700 to-dark-800 border border-white/10 flex items-center justify-center overflow-hidden group-hover:border-white/20 transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="relative z-10">
+                <path
+                  d="M7 7h10l-10 10h10"
+                  stroke="url(#sidebarLogoGradient)"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <defs>
+                  <linearGradient id="sidebarLogoGradient" x1="7" y1="7" x2="17" y2="17">
+                    <stop stopColor="#00fff5" />
+                    <stop offset="1" stopColor="#a855f7" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-neon-green rounded-full animate-pulse" />
+            <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-neon-green rounded-full animate-pulse" />
           </div>
-          <span className="text-xl font-bold bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent">
-            Zoswa
+          <span className="text-xl font-black tracking-tight">
+            <span className="text-white">zos</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-purple-400">wa</span>
           </span>
         </Link>
       </div>
