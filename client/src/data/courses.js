@@ -846,6 +846,348 @@ export const courses = {
         ]
       }
     ]
+  },
+
+  python: {
+    id: 'python',
+    title: 'Python Programming',
+    subtitle: 'From Zero to Hero',
+    description: 'Master Python programming from basics to advanced concepts. Learn data structures, OOP, file handling, and build real projects.',
+    icon: 'Code2',
+    color: '#3776ab',
+    totalLessons: 30,
+    totalDuration: '15 hours',
+    level: 'Beginner',
+    chapters: [
+      {
+        id: 1,
+        title: 'Python Basics',
+        description: 'Get started with Python programming',
+        lessons: [
+          { id: 'py-1', number: 1, title: 'Introduction to Python', description: 'What is Python and why learn it', duration: '10 min', xp: 25, type: 'lesson', content: { instructions: ['Python is a high-level programming language', 'It is known for its simple and readable syntax', 'Python is used in web development, data science, AI, and more'], starterCode: '', task: 'Type: print("Hello, World!")', validation: 'print(', expectedOutput: 'Hello, World!' } },
+          { id: 'py-2', number: 2, title: 'Variables & Data Types', description: 'Store and manage data', duration: '15 min', xp: 40, type: 'lesson', content: { instructions: ['Variables store data values', 'Python has types: str, int, float, bool', 'Use = to assign values'], starterCode: '', task: 'Create a variable called name with your name', validation: 'name =', expectedOutput: 'name = "John"' } },
+          { id: 'py-3', number: 3, title: 'Numbers & Math', description: 'Perform calculations', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Python supports +, -, *, /', 'Use ** for power, % for modulo', 'Integer division uses //'], starterCode: '', task: 'Calculate 10 + 5 * 2', validation: '10 + 5', expectedOutput: '20' } },
+          { id: 'py-4', number: 4, title: 'Strings', description: 'Work with text data', duration: '18 min', xp: 50, type: 'lesson', content: { instructions: ['Strings are text in quotes', 'Use + to concatenate strings', 'f-strings allow variable insertion'], starterCode: '', task: 'Create an f-string with your name', validation: 'f"', expectedOutput: 'f"My name is {name}"' } },
+          { id: 'py-5', number: 5, title: 'Chapter Practice', description: 'Practice basic Python', duration: '25 min', xp: 80, type: 'practice' }
+        ]
+      },
+      {
+        id: 2,
+        title: 'Control Flow',
+        description: 'Make decisions in your code',
+        lessons: [
+          { id: 'py-6', number: 6, title: 'If Statements', description: 'Conditional execution', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['if checks a condition', 'elif adds more conditions', 'else handles all other cases'], starterCode: 'age = 18\n', task: 'Write an if statement to check if age >= 18', validation: 'if age', expectedOutput: 'if age >= 18:\n    print("Adult")' } },
+          { id: 'py-7', number: 7, title: 'For Loops', description: 'Repeat actions', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['for iterates over sequences', 'range() generates numbers', 'Use break to exit early'], starterCode: '', task: 'Print numbers 1 to 5 using a for loop', validation: 'for', expectedOutput: 'for i in range(1, 6):\n    print(i)' } },
+          { id: 'py-8', number: 8, title: 'While Loops', description: 'Loop while condition is true', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['while loops until condition is false', 'Be careful of infinite loops', 'Use continue to skip iterations'], starterCode: '', task: 'Count down from 5 using while', validation: 'while', expectedOutput: 'while count > 0:\n    print(count)\n    count -= 1' } },
+          { id: 'py-9', number: 9, title: 'List Comprehensions', description: 'Elegant list creation', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['[expr for item in list]', 'Add conditions with if', 'More readable than loops'], starterCode: '', task: 'Create squares of 1-5 using comprehension', validation: '[', expectedOutput: 'squares = [x**2 for x in range(1, 6)]' } },
+          { id: 'py-10', number: 10, title: 'Chapter Practice', description: 'Control flow exercises', duration: '30 min', xp: 100, type: 'practice' }
+        ]
+      },
+      {
+        id: 3,
+        title: 'Data Structures',
+        description: 'Organize your data efficiently',
+        lessons: [
+          { id: 'py-11', number: 11, title: 'Lists', description: 'Ordered collections', duration: '20 min', xp: 60, type: 'lesson', content: { instructions: ['Lists use square brackets []', 'Access items by index', 'Methods: append, remove, pop'], starterCode: '', task: 'Create a list of 3 fruits', validation: '[', expectedOutput: 'fruits = ["apple", "banana", "orange"]' } },
+          { id: 'py-12', number: 12, title: 'Tuples', description: 'Immutable sequences', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Tuples use parentheses ()', 'Cannot be modified after creation', 'Good for fixed data'], starterCode: '', task: 'Create a tuple with coordinates', validation: '(', expectedOutput: 'point = (10, 20)' } },
+          { id: 'py-13', number: 13, title: 'Dictionaries', description: 'Key-value storage', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Dicts use curly braces {}', 'Access by key: dict["key"]', 'Methods: keys(), values(), items()'], starterCode: '', task: 'Create a dict with name and age', validation: '{', expectedOutput: 'person = {"name": "John", "age": 25}' } },
+          { id: 'py-14', number: 14, title: 'Sets', description: 'Unique collections', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Sets have no duplicates', 'Use set() or {}', 'Support union, intersection'], starterCode: '', task: 'Create a set of numbers', validation: 'set', expectedOutput: 'numbers = {1, 2, 3, 4, 5}' } },
+          { id: 'py-15', number: 15, title: 'Chapter Practice', description: 'Data structure exercises', duration: '35 min', xp: 120, type: 'practice' }
+        ]
+      },
+      {
+        id: 4,
+        title: 'Functions & Modules',
+        description: 'Write reusable code',
+        lessons: [
+          { id: 'py-16', number: 16, title: 'Defining Functions', description: 'Create reusable code blocks', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['def keyword defines functions', 'Parameters pass data in', 'return sends data back'], starterCode: '', task: 'Create a function that adds two numbers', validation: 'def add', expectedOutput: 'def add(a, b):\n    return a + b' } },
+          { id: 'py-17', number: 17, title: 'Function Arguments', description: 'Default and keyword args', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Default values: def fn(x=10)', '*args for variable args', '**kwargs for keyword args'], starterCode: '', task: 'Create a greet function with default name', validation: 'def greet', expectedOutput: 'def greet(name="World"):\n    print(f"Hello, {name}!")' } },
+          { id: 'py-18', number: 18, title: 'Lambda Functions', description: 'Anonymous functions', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['lambda creates small functions', 'Syntax: lambda x: expression', 'Great with map, filter, sort'], starterCode: '', task: 'Create a lambda that doubles a number', validation: 'lambda', expectedOutput: 'double = lambda x: x * 2' } },
+          { id: 'py-19', number: 19, title: 'Modules & Imports', description: 'Organize and reuse code', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['import brings in modules', 'from module import item', 'Create your own modules'], starterCode: '', task: 'Import the math module and use sqrt', validation: 'import math', expectedOutput: 'import math\nresult = math.sqrt(16)' } },
+          { id: 'py-20', number: 20, title: 'Chapter Practice', description: 'Functions project', duration: '40 min', xp: 150, type: 'practice' }
+        ]
+      },
+      {
+        id: 5,
+        title: 'Object-Oriented Programming',
+        description: 'Master OOP in Python',
+        lessons: [
+          { id: 'py-21', number: 21, title: 'Classes & Objects', description: 'Create custom types', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['class defines a blueprint', '__init__ is the constructor', 'self refers to the instance'], starterCode: '', task: 'Create a Person class with name attribute', validation: 'class Person', expectedOutput: 'class Person:\n    def __init__(self, name):\n        self.name = name' } },
+          { id: 'py-22', number: 22, title: 'Methods', description: 'Add behavior to classes', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Methods are functions in classes', 'Always include self parameter', 'Call with object.method()'], starterCode: 'class Person:\n    def __init__(self, name):\n        self.name = name\n', task: 'Add a greet method', validation: 'def greet', expectedOutput: '    def greet(self):\n        print(f"Hello, I am {self.name}")' } },
+          { id: 'py-23', number: 23, title: 'Inheritance', description: 'Extend existing classes', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['class Child(Parent):', 'super() calls parent methods', 'Override methods to customize'], starterCode: '', task: 'Create a Student class that extends Person', validation: 'class Student(Person)', expectedOutput: 'class Student(Person):\n    def __init__(self, name, grade):\n        super().__init__(name)\n        self.grade = grade' } },
+          { id: 'py-24', number: 24, title: 'Encapsulation', description: 'Protect your data', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['_single underscore is protected', '__double is private', 'Use properties for access'], starterCode: '', task: 'Create a class with private attribute', validation: 'self.__', expectedOutput: 'class BankAccount:\n    def __init__(self):\n        self.__balance = 0' } },
+          { id: 'py-25', number: 25, title: 'Chapter Practice', description: 'OOP project', duration: '50 min', xp: 180, type: 'practice' }
+        ]
+      },
+      {
+        id: 6,
+        title: 'Advanced Python',
+        description: 'Level up your skills',
+        lessons: [
+          { id: 'py-26', number: 26, title: 'File Handling', description: 'Read and write files', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['open() opens files', 'with statement auto-closes', 'Modes: r, w, a, r+'], starterCode: '', task: 'Write text to a file', validation: 'with open', expectedOutput: 'with open("file.txt", "w") as f:\n    f.write("Hello!")' } },
+          { id: 'py-27', number: 27, title: 'Exception Handling', description: 'Handle errors gracefully', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['try/except catches errors', 'finally always runs', 'raise creates exceptions'], starterCode: '', task: 'Handle a division by zero error', validation: 'try:', expectedOutput: 'try:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    print("Cannot divide by zero")' } },
+          { id: 'py-28', number: 28, title: 'Decorators', description: 'Modify function behavior', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['@decorator syntax', 'Functions that wrap functions', 'Common: @property, @staticmethod'], starterCode: '', task: 'Create a simple logging decorator', validation: 'def decorator', expectedOutput: 'def logger(func):\n    def wrapper(*args):\n        print(f"Calling {func.__name__}")\n        return func(*args)\n    return wrapper' } },
+          { id: 'py-29', number: 29, title: 'Generators', description: 'Memory-efficient iteration', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['yield instead of return', 'Lazy evaluation', 'Great for large datasets'], starterCode: '', task: 'Create a generator for even numbers', validation: 'yield', expectedOutput: 'def even_numbers(n):\n    for i in range(n):\n        if i % 2 == 0:\n            yield i' } },
+          { id: 'py-30', number: 30, title: 'Final Project', description: 'Build a complete Python application', duration: '90 min', xp: 350, type: 'project' }
+        ]
+      }
+    ]
+  },
+
+  java: {
+    id: 'java',
+    title: 'Java Programming',
+    subtitle: 'Enterprise Development',
+    description: 'Learn Java from fundamentals to advanced concepts. Master OOP, collections, multithreading, and build enterprise applications.',
+    icon: 'Coffee',
+    color: '#f89820',
+    totalLessons: 30,
+    totalDuration: '18 hours',
+    level: 'Beginner',
+    chapters: [
+      {
+        id: 1,
+        title: 'Java Fundamentals',
+        description: 'Start your Java journey',
+        lessons: [
+          { id: 'java-1', number: 1, title: 'Introduction to Java', description: 'What makes Java special', duration: '12 min', xp: 30, type: 'lesson', content: { instructions: ['Java is platform-independent', 'Write once, run anywhere', 'Used in enterprise, Android, web'], starterCode: '', task: 'Create a Hello World program', validation: 'public class', expectedOutput: 'public class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, World!");\n    }\n}' } },
+          { id: 'java-2', number: 2, title: 'Variables & Data Types', description: 'Store data in Java', duration: '18 min', xp: 50, type: 'lesson', content: { instructions: ['Java is strongly typed', 'Primitives: int, double, boolean, char', 'Objects: String, Integer, etc.'], starterCode: '', task: 'Declare variables of different types', validation: 'int', expectedOutput: 'int age = 25;\ndouble price = 19.99;\nboolean isActive = true;\nString name = "John";' } },
+          { id: 'java-3', number: 3, title: 'Operators', description: 'Perform operations', duration: '15 min', xp: 40, type: 'lesson', content: { instructions: ['Arithmetic: +, -, *, /, %', 'Comparison: ==, !=, <, >', 'Logical: &&, ||, !'], starterCode: '', task: 'Use different operators', validation: '&&', expectedOutput: 'int sum = 10 + 5;\nboolean result = (sum > 10) && (sum < 20);' } },
+          { id: 'java-4', number: 4, title: 'Input & Output', description: 'Interact with users', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['System.out.println() for output', 'Scanner for input', 'Import java.util.Scanner'], starterCode: 'import java.util.Scanner;\n', task: 'Read user input', validation: 'Scanner', expectedOutput: 'Scanner scanner = new Scanner(System.in);\nString name = scanner.nextLine();' } },
+          { id: 'java-5', number: 5, title: 'Chapter Practice', description: 'Java basics exercises', duration: '30 min', xp: 100, type: 'practice' }
+        ]
+      },
+      {
+        id: 2,
+        title: 'Control Structures',
+        description: 'Control program flow',
+        lessons: [
+          { id: 'java-6', number: 6, title: 'If-Else Statements', description: 'Make decisions', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['if (condition) { }', 'else if for multiple conditions', 'else for default case'], starterCode: 'int score = 85;\n', task: 'Grade a score (A/B/C/D/F)', validation: 'if (score', expectedOutput: 'if (score >= 90) {\n    System.out.println("A");\n} else if (score >= 80) {\n    System.out.println("B");\n}' } },
+          { id: 'java-7', number: 7, title: 'Switch Statement', description: 'Multiple choice selection', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['switch (variable)', 'case value:', 'break to exit, default for else'], starterCode: '', task: 'Create a day-of-week switch', validation: 'switch', expectedOutput: 'switch (day) {\n    case 1: System.out.println("Monday"); break;\n    case 2: System.out.println("Tuesday"); break;\n    default: System.out.println("Unknown");\n}' } },
+          { id: 'java-8', number: 8, title: 'For Loops', description: 'Count-controlled loops', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['for (init; condition; update)', 'Enhanced for-each loop', 'break and continue'], starterCode: '', task: 'Print numbers 1 to 10', validation: 'for (int', expectedOutput: 'for (int i = 1; i <= 10; i++) {\n    System.out.println(i);\n}' } },
+          { id: 'java-9', number: 9, title: 'While & Do-While', description: 'Condition-controlled loops', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['while checks before loop', 'do-while runs at least once', 'Careful of infinite loops'], starterCode: '', task: 'Count down using while', validation: 'while', expectedOutput: 'int count = 5;\nwhile (count > 0) {\n    System.out.println(count);\n    count--;\n}' } },
+          { id: 'java-10', number: 10, title: 'Chapter Practice', description: 'Control flow exercises', duration: '35 min', xp: 120, type: 'practice' }
+        ]
+      },
+      {
+        id: 3,
+        title: 'Arrays & Collections',
+        description: 'Work with data collections',
+        lessons: [
+          { id: 'java-11', number: 11, title: 'Arrays', description: 'Fixed-size collections', duration: '20 min', xp: 60, type: 'lesson', content: { instructions: ['type[] name = new type[size]', 'Access by index: arr[0]', 'Arrays have fixed size'], starterCode: '', task: 'Create an array of 5 integers', validation: 'int[]', expectedOutput: 'int[] numbers = new int[5];\nnumbers[0] = 10;' } },
+          { id: 'java-12', number: 12, title: 'ArrayList', description: 'Dynamic arrays', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['ArrayList<Type> grows dynamically', 'Methods: add, get, remove, size', 'Import java.util.ArrayList'], starterCode: 'import java.util.ArrayList;\n', task: 'Create an ArrayList of strings', validation: 'ArrayList<String>', expectedOutput: 'ArrayList<String> names = new ArrayList<>();\nnames.add("John");\nnames.add("Jane");' } },
+          { id: 'java-13', number: 13, title: 'HashMap', description: 'Key-value storage', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['HashMap<K,V> stores pairs', 'Methods: put, get, containsKey', 'Keys must be unique'], starterCode: 'import java.util.HashMap;\n', task: 'Create a HashMap for student grades', validation: 'HashMap<String', expectedOutput: 'HashMap<String, Integer> grades = new HashMap<>();\ngrades.put("John", 95);\ngrades.put("Jane", 88);' } },
+          { id: 'java-14', number: 14, title: 'Iterating Collections', description: 'Loop through data', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Enhanced for loop', 'Iterator pattern', 'forEach with lambdas'], starterCode: '', task: 'Iterate over an ArrayList', validation: 'for (String', expectedOutput: 'for (String name : names) {\n    System.out.println(name);\n}' } },
+          { id: 'java-15', number: 15, title: 'Chapter Practice', description: 'Collections project', duration: '40 min', xp: 140, type: 'practice' }
+        ]
+      },
+      {
+        id: 4,
+        title: 'Object-Oriented Programming',
+        description: 'Master OOP in Java',
+        lessons: [
+          { id: 'java-16', number: 16, title: 'Classes & Objects', description: 'Create blueprints', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['class defines structure', 'new creates objects', 'Fields store state, methods define behavior'], starterCode: '', task: 'Create a Car class', validation: 'class Car', expectedOutput: 'class Car {\n    String brand;\n    int year;\n    \n    void start() {\n        System.out.println("Starting...");\n    }\n}' } },
+          { id: 'java-17', number: 17, title: 'Constructors', description: 'Initialize objects', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Same name as class', 'No return type', 'Called with new'], starterCode: 'class Car {\n    String brand;\n    int year;\n', task: 'Add a constructor', validation: 'Car(String', expectedOutput: '    Car(String brand, int year) {\n        this.brand = brand;\n        this.year = year;\n    }' } },
+          { id: 'java-18', number: 18, title: 'Encapsulation', description: 'Hide implementation', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['private fields', 'public getters/setters', 'Protect data integrity'], starterCode: '', task: 'Create getters and setters', validation: 'private String', expectedOutput: 'private String name;\n\npublic String getName() {\n    return name;\n}\n\npublic void setName(String name) {\n    this.name = name;\n}' } },
+          { id: 'java-19', number: 19, title: 'Inheritance', description: 'Extend classes', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['extends keyword', 'super() calls parent constructor', 'Override methods with @Override'], starterCode: '', task: 'Create ElectricCar extending Car', validation: 'extends Car', expectedOutput: 'class ElectricCar extends Car {\n    int batteryCapacity;\n    \n    ElectricCar(String brand, int year, int battery) {\n        super(brand, year);\n        this.batteryCapacity = battery;\n    }\n}' } },
+          { id: 'java-20', number: 20, title: 'Chapter Practice', description: 'OOP project', duration: '50 min', xp: 180, type: 'practice' }
+        ]
+      },
+      {
+        id: 5,
+        title: 'Advanced OOP',
+        description: 'Polymorphism, interfaces, abstracts',
+        lessons: [
+          { id: 'java-21', number: 21, title: 'Polymorphism', description: 'Many forms', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Method overloading: same name, different params', 'Method overriding: redefine in subclass', 'Runtime polymorphism'], starterCode: '', task: 'Override a method', validation: '@Override', expectedOutput: '@Override\nvoid start() {\n    System.out.println("Electric car starting silently...");\n}' } },
+          { id: 'java-22', number: 22, title: 'Abstract Classes', description: 'Partial implementations', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['abstract class cannot be instantiated', 'abstract methods have no body', 'Subclasses must implement'], starterCode: '', task: 'Create an abstract Shape class', validation: 'abstract class', expectedOutput: 'abstract class Shape {\n    abstract double area();\n    \n    void display() {\n        System.out.println("Area: " + area());\n    }\n}' } },
+          { id: 'java-23', number: 23, title: 'Interfaces', description: 'Define contracts', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['interface defines behavior', 'implements keyword', 'A class can implement multiple'], starterCode: '', task: 'Create a Drawable interface', validation: 'interface', expectedOutput: 'interface Drawable {\n    void draw();\n}\n\nclass Circle implements Drawable {\n    public void draw() {\n        System.out.println("Drawing circle");\n    }\n}' } },
+          { id: 'java-24', number: 24, title: 'Static & Final', description: 'Class-level members', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['static belongs to class', 'final cannot be changed', 'static final for constants'], starterCode: '', task: 'Create a counter with static', validation: 'static int', expectedOutput: 'class Counter {\n    static int count = 0;\n    \n    Counter() {\n        count++;\n    }\n}' } },
+          { id: 'java-25', number: 25, title: 'Chapter Practice', description: 'Advanced OOP project', duration: '45 min', xp: 160, type: 'practice' }
+        ]
+      },
+      {
+        id: 6,
+        title: 'Exception Handling & I/O',
+        description: 'Handle errors and files',
+        lessons: [
+          { id: 'java-26', number: 26, title: 'Try-Catch', description: 'Handle exceptions', duration: '20 min', xp: 60, type: 'lesson', content: { instructions: ['try contains risky code', 'catch handles specific errors', 'finally always executes'], starterCode: '', task: 'Handle NumberFormatException', validation: 'try {', expectedOutput: 'try {\n    int num = Integer.parseInt("abc");\n} catch (NumberFormatException e) {\n    System.out.println("Invalid number");\n}' } },
+          { id: 'java-27', number: 27, title: 'Throwing Exceptions', description: 'Signal errors', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['throw new Exception()', 'throws in method signature', 'Custom exceptions extend Exception'], starterCode: '', task: 'Create a method that throws', validation: 'throws', expectedOutput: 'void validateAge(int age) throws IllegalArgumentException {\n    if (age < 0) {\n        throw new IllegalArgumentException("Age cannot be negative");\n    }\n}' } },
+          { id: 'java-28', number: 28, title: 'File I/O', description: 'Read and write files', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['FileReader/FileWriter for text', 'BufferedReader for efficiency', 'Try-with-resources auto-closes'], starterCode: 'import java.io.*;\n', task: 'Read a file line by line', validation: 'BufferedReader', expectedOutput: 'try (BufferedReader reader = new BufferedReader(new FileReader("file.txt"))) {\n    String line;\n    while ((line = reader.readLine()) != null) {\n        System.out.println(line);\n    }\n}' } },
+          { id: 'java-29', number: 29, title: 'Streams API', description: 'Functional data processing', duration: '28 min', xp: 90, type: 'lesson', content: { instructions: ['stream() starts pipeline', 'filter, map, reduce operations', 'collect to gather results'], starterCode: 'import java.util.stream.*;\n', task: 'Filter and transform a list', validation: '.stream()', expectedOutput: 'List<String> filtered = names.stream()\n    .filter(n -> n.length() > 3)\n    .map(String::toUpperCase)\n    .collect(Collectors.toList());' } },
+          { id: 'java-30', number: 30, title: 'Final Project', description: 'Build a Java application', duration: '90 min', xp: 350, type: 'project' }
+        ]
+      }
+    ]
+  },
+
+  php: {
+    id: 'php',
+    title: 'PHP Development',
+    subtitle: 'Web Backend Mastery',
+    description: 'Learn PHP for web development. Master server-side programming, databases, sessions, and build dynamic web applications.',
+    icon: 'Server',
+    color: '#777bb4',
+    totalLessons: 28,
+    totalDuration: '14 hours',
+    level: 'Beginner',
+    chapters: [
+      {
+        id: 1,
+        title: 'PHP Basics',
+        description: 'Get started with PHP',
+        lessons: [
+          { id: 'php-1', number: 1, title: 'Introduction to PHP', description: 'Server-side scripting', duration: '10 min', xp: 25, type: 'lesson', content: { instructions: ['PHP runs on the server', 'Code goes between <?php ?>', 'Generates HTML for browsers'], starterCode: '', task: 'Write your first PHP script', validation: '<?php', expectedOutput: '<?php\necho "Hello, World!";\n?>' } },
+          { id: 'php-2', number: 2, title: 'Variables & Types', description: 'Store data in PHP', duration: '15 min', xp: 40, type: 'lesson', content: { instructions: ['Variables start with $', 'No type declaration needed', 'Types: string, int, float, bool, array'], starterCode: '<?php\n', task: 'Create different variable types', validation: '$name', expectedOutput: '$name = "John";\n$age = 25;\n$price = 19.99;\n$isActive = true;' } },
+          { id: 'php-3', number: 3, title: 'Strings & Interpolation', description: 'Work with text', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Double quotes allow variables', 'Concatenate with .', 'String functions: strlen, substr, str_replace'], starterCode: '<?php\n$name = "John";\n', task: 'Create an interpolated string', validation: '"Hello, $', expectedOutput: 'echo "Hello, $name! Welcome.";' } },
+          { id: 'php-4', number: 4, title: 'Arrays', description: 'Store multiple values', duration: '20 min', xp: 60, type: 'lesson', content: { instructions: ['Indexed: [1, 2, 3]', 'Associative: ["key" => "value"]', 'Functions: count, array_push, in_array'], starterCode: '<?php\n', task: 'Create an associative array', validation: '=>', expectedOutput: '$person = [\n    "name" => "John",\n    "age" => 25,\n    "city" => "NYC"\n];' } },
+          { id: 'php-5', number: 5, title: 'Chapter Practice', description: 'PHP basics exercises', duration: '25 min', xp: 80, type: 'practice' }
+        ]
+      },
+      {
+        id: 2,
+        title: 'Control Flow',
+        description: 'Make decisions and repeat',
+        lessons: [
+          { id: 'php-6', number: 6, title: 'If-Else Statements', description: 'Conditional logic', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['if (condition) { }', 'elseif for more conditions', 'else for default'], starterCode: '<?php\n$age = 20;\n', task: 'Check if user is adult', validation: 'if ($age', expectedOutput: 'if ($age >= 18) {\n    echo "Adult";\n} else {\n    echo "Minor";\n}' } },
+          { id: 'php-7', number: 7, title: 'Switch Statement', description: 'Multiple choices', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['switch ($var)', 'case value:', 'break to exit'], starterCode: '<?php\n$day = "Monday";\n', task: 'Create a day switch', validation: 'switch', expectedOutput: 'switch ($day) {\n    case "Monday":\n        echo "Start of week";\n        break;\n    case "Friday":\n        echo "Weekend soon!";\n        break;\n    default:\n        echo "Regular day";\n}' } },
+          { id: 'php-8', number: 8, title: 'For & Foreach Loops', description: 'Iterate over data', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['for ($i = 0; $i < 10; $i++)', 'foreach ($arr as $item)', 'foreach ($arr as $key => $val)'], starterCode: '<?php\n$fruits = ["apple", "banana", "orange"];\n', task: 'Loop through fruits', validation: 'foreach', expectedOutput: 'foreach ($fruits as $fruit) {\n    echo $fruit . "\\n";\n}' } },
+          { id: 'php-9', number: 9, title: 'While Loops', description: 'Condition-based loops', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['while (condition) { }', 'do { } while (condition)', 'Remember to update condition'], starterCode: '<?php\n', task: 'Count down from 5', validation: 'while', expectedOutput: '$count = 5;\nwhile ($count > 0) {\n    echo $count . "\\n";\n    $count--;\n}' } },
+          { id: 'php-10', number: 10, title: 'Chapter Practice', description: 'Control flow exercises', duration: '30 min', xp: 100, type: 'practice' }
+        ]
+      },
+      {
+        id: 3,
+        title: 'Functions',
+        description: 'Create reusable code',
+        lessons: [
+          { id: 'php-11', number: 11, title: 'Defining Functions', description: 'Create your own functions', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['function name() { }', 'Parameters pass data in', 'return sends data back'], starterCode: '<?php\n', task: 'Create an add function', validation: 'function add', expectedOutput: 'function add($a, $b) {\n    return $a + $b;\n}' } },
+          { id: 'php-12', number: 12, title: 'Default Parameters', description: 'Optional arguments', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['function fn($x = default)', 'Default params must be last', 'Allows flexible calling'], starterCode: '<?php\n', task: 'Create greet with default', validation: '= "World"', expectedOutput: 'function greet($name = "World") {\n    return "Hello, $name!";\n}' } },
+          { id: 'php-13', number: 13, title: 'Variable Scope', description: 'Where variables live', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Local: inside function only', 'Global: use global keyword', 'Static: persists between calls'], starterCode: '<?php\n', task: 'Use static variable', validation: 'static $', expectedOutput: 'function counter() {\n    static $count = 0;\n    $count++;\n    return $count;\n}' } },
+          { id: 'php-14', number: 14, title: 'Anonymous Functions', description: 'Closures in PHP', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['$fn = function() { }', 'use ($var) to capture variables', 'Arrow functions: fn($x) => $x * 2'], starterCode: '<?php\n', task: 'Create an anonymous function', validation: 'function(', expectedOutput: '$multiply = function($a, $b) {\n    return $a * $b;\n};\necho $multiply(3, 4);' } },
+          { id: 'php-15', number: 15, title: 'Chapter Practice', description: 'Functions exercises', duration: '30 min', xp: 100, type: 'practice' }
+        ]
+      },
+      {
+        id: 4,
+        title: 'Object-Oriented PHP',
+        description: 'Classes and objects',
+        lessons: [
+          { id: 'php-16', number: 16, title: 'Classes & Objects', description: 'Create blueprints', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['class Name { }', 'new creates objects', 'Properties and methods'], starterCode: '<?php\n', task: 'Create a Person class', validation: 'class Person', expectedOutput: 'class Person {\n    public $name;\n    public $age;\n    \n    public function greet() {\n        return "Hello, I am $this->name";\n    }\n}' } },
+          { id: 'php-17', number: 17, title: 'Constructors', description: 'Initialize objects', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['__construct() method', 'Called automatically on new', 'Set initial values'], starterCode: '<?php\nclass Person {\n    public $name;\n', task: 'Add a constructor', validation: '__construct', expectedOutput: '    public function __construct($name) {\n        $this->name = $name;\n    }' } },
+          { id: 'php-18', number: 18, title: 'Visibility', description: 'Public, private, protected', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['public: accessible everywhere', 'private: only in class', 'protected: class and children'], starterCode: '<?php\n', task: 'Create private property with getter', validation: 'private $', expectedOutput: 'class BankAccount {\n    private $balance = 0;\n    \n    public function getBalance() {\n        return $this->balance;\n    }\n}' } },
+          { id: 'php-19', number: 19, title: 'Inheritance', description: 'Extend classes', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['class Child extends Parent', 'parent:: calls parent methods', 'Override methods to customize'], starterCode: '<?php\n', task: 'Create Student extending Person', validation: 'extends Person', expectedOutput: 'class Student extends Person {\n    public $grade;\n    \n    public function __construct($name, $grade) {\n        parent::__construct($name);\n        $this->grade = $grade;\n    }\n}' } },
+          { id: 'php-20', number: 20, title: 'Chapter Practice', description: 'OOP exercises', duration: '40 min', xp: 140, type: 'practice' }
+        ]
+      },
+      {
+        id: 5,
+        title: 'Web Development',
+        description: 'Build dynamic websites',
+        lessons: [
+          { id: 'php-21', number: 21, title: 'GET & POST', description: 'Handle form data', duration: '20 min', xp: 60, type: 'lesson', content: { instructions: ['$_GET for URL parameters', '$_POST for form submissions', 'Always validate input'], starterCode: '<?php\n', task: 'Handle a POST form', validation: '$_POST', expectedOutput: 'if ($_SERVER["REQUEST_METHOD"] == "POST") {\n    $name = $_POST["name"];\n    echo "Hello, $name!";\n}' } },
+          { id: 'php-22', number: 22, title: 'Sessions', description: 'Track user state', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['session_start() first', '$_SESSION stores data', 'session_destroy() to clear'], starterCode: '<?php\nsession_start();\n', task: 'Store user in session', validation: '$_SESSION', expectedOutput: '$_SESSION["user"] = "John";\necho "Welcome, " . $_SESSION["user"];' } },
+          { id: 'php-23', number: 23, title: 'Cookies', description: 'Store data in browser', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['setcookie(name, value, expiry)', '$_COOKIE to read', 'Set before any output'], starterCode: '<?php\n', task: 'Set and read a cookie', validation: 'setcookie', expectedOutput: 'setcookie("username", "John", time() + 86400);\nif (isset($_COOKIE["username"])) {\n    echo "Hello, " . $_COOKIE["username"];\n}' } },
+          { id: 'php-24', number: 24, title: 'File Uploads', description: 'Handle file uploads', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['$_FILES contains uploads', 'Check file type and size', 'move_uploaded_file() to save'], starterCode: '<?php\n', task: 'Handle an image upload', validation: '$_FILES', expectedOutput: 'if ($_FILES["image"]["error"] == 0) {\n    $target = "uploads/" . $_FILES["image"]["name"];\n    move_uploaded_file($_FILES["image"]["tmp_name"], $target);\n}' } },
+          { id: 'php-25', number: 25, title: 'Chapter Practice', description: 'Web development project', duration: '45 min', xp: 160, type: 'practice' }
+        ]
+      },
+      {
+        id: 6,
+        title: 'Database & MySQL',
+        description: 'Connect to databases',
+        lessons: [
+          { id: 'php-26', number: 26, title: 'PDO Connection', description: 'Connect to MySQL', duration: '20 min', xp: 60, type: 'lesson', content: { instructions: ['PDO is secure and flexible', 'Use try-catch for errors', 'Set error mode to exceptions'], starterCode: '<?php\n', task: 'Create a PDO connection', validation: 'new PDO', expectedOutput: 'try {\n    $pdo = new PDO("mysql:host=localhost;dbname=test", "user", "pass");\n    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);\n} catch (PDOException $e) {\n    die("Connection failed: " . $e->getMessage());\n}' } },
+          { id: 'php-27', number: 27, title: 'CRUD Operations', description: 'Create, Read, Update, Delete', duration: '30 min', xp: 100, type: 'lesson', content: { instructions: ['prepare() for safety', 'execute() runs query', 'fetch() gets results'], starterCode: '<?php\n// Assume $pdo is connected\n', task: 'Insert and select data', validation: 'prepare(', expectedOutput: '// Insert\n$stmt = $pdo->prepare("INSERT INTO users (name, email) VALUES (?, ?)");\n$stmt->execute(["John", "john@email.com"]);\n\n// Select\n$stmt = $pdo->query("SELECT * FROM users");\n$users = $stmt->fetchAll(PDO::FETCH_ASSOC);' } },
+          { id: 'php-28', number: 28, title: 'Final Project', description: 'Build a complete PHP web app', duration: '90 min', xp: 350, type: 'project' }
+        ]
+      }
+    ]
+  },
+
+  csharp: {
+    id: 'csharp',
+    title: 'C# Programming',
+    subtitle: '.NET Development',
+    description: 'Master C# and .NET development. Build Windows apps, web APIs, games with Unity, and enterprise applications.',
+    icon: 'Cpu',
+    color: '#68217a',
+    totalLessons: 30,
+    totalDuration: '16 hours',
+    level: 'Beginner',
+    chapters: [
+      {
+        id: 1,
+        title: 'C# Fundamentals',
+        description: 'Start with C# basics',
+        lessons: [
+          { id: 'cs-1', number: 1, title: 'Introduction to C#', description: 'What is C# and .NET', duration: '12 min', xp: 30, type: 'lesson', content: { instructions: ['C# is a modern, object-oriented language', 'Runs on .NET framework/Core', 'Used for Windows, web, games, mobile'], starterCode: '', task: 'Create Hello World program', validation: 'Console.WriteLine', expectedOutput: 'using System;\n\nclass Program\n{\n    static void Main()\n    {\n        Console.WriteLine("Hello, World!");\n    }\n}' } },
+          { id: 'cs-2', number: 2, title: 'Variables & Data Types', description: 'Store and type data', duration: '18 min', xp: 50, type: 'lesson', content: { instructions: ['C# is strongly typed', 'Common types: int, double, string, bool', 'var for type inference'], starterCode: '', task: 'Declare different variables', validation: 'int', expectedOutput: 'int age = 25;\ndouble price = 19.99;\nstring name = "John";\nbool isActive = true;\nvar count = 10;' } },
+          { id: 'cs-3', number: 3, title: 'Operators & Expressions', description: 'Perform operations', duration: '15 min', xp: 40, type: 'lesson', content: { instructions: ['Arithmetic: +, -, *, /, %', 'Comparison: ==, !=, <, >', 'Logical: &&, ||, !'], starterCode: '', task: 'Use various operators', validation: '&&', expectedOutput: 'int sum = 10 + 5;\nbool result = (sum > 10) && (sum < 20);\nstring greeting = "Hello" + " World";' } },
+          { id: 'cs-4', number: 4, title: 'User Input & Output', description: 'Interact with users', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Console.WriteLine() for output', 'Console.ReadLine() for input', 'Convert.ToInt32() to parse'], starterCode: '', task: 'Read user input', validation: 'Console.ReadLine', expectedOutput: 'Console.Write("Enter name: ");\nstring name = Console.ReadLine();\nConsole.WriteLine($"Hello, {name}!");' } },
+          { id: 'cs-5', number: 5, title: 'Chapter Practice', description: 'C# basics exercises', duration: '25 min', xp: 80, type: 'practice' }
+        ]
+      },
+      {
+        id: 2,
+        title: 'Control Flow',
+        description: 'Direct program execution',
+        lessons: [
+          { id: 'cs-6', number: 6, title: 'If-Else Statements', description: 'Make decisions', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['if (condition) { }', 'else if for alternatives', 'else for default'], starterCode: 'int score = 85;\n', task: 'Grade a score', validation: 'if (score', expectedOutput: 'if (score >= 90)\n    Console.WriteLine("A");\nelse if (score >= 80)\n    Console.WriteLine("B");\nelse\n    Console.WriteLine("C or below");' } },
+          { id: 'cs-7', number: 7, title: 'Switch & Patterns', description: 'Pattern matching', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['switch with case', 'Pattern matching in C# 8+', 'switch expressions'], starterCode: '', task: 'Use switch expression', validation: 'switch', expectedOutput: 'string result = day switch\n{\n    1 => "Monday",\n    2 => "Tuesday",\n    _ => "Other"\n};' } },
+          { id: 'cs-8', number: 8, title: 'For & Foreach Loops', description: 'Iterate collections', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['for (init; condition; step)', 'foreach (var item in collection)', 'break and continue'], starterCode: '', task: 'Loop through an array', validation: 'foreach', expectedOutput: 'string[] names = {"John", "Jane", "Bob"};\nforeach (string name in names)\n{\n    Console.WriteLine(name);\n}' } },
+          { id: 'cs-9', number: 9, title: 'While & Do-While', description: 'Conditional loops', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['while checks first', 'do-while runs once minimum', 'Good for unknown iterations'], starterCode: '', task: 'Create a countdown', validation: 'while', expectedOutput: 'int count = 5;\nwhile (count > 0)\n{\n    Console.WriteLine(count);\n    count--;\n}' } },
+          { id: 'cs-10', number: 10, title: 'Chapter Practice', description: 'Control flow exercises', duration: '30 min', xp: 100, type: 'practice' }
+        ]
+      },
+      {
+        id: 3,
+        title: 'Arrays & Collections',
+        description: 'Work with data structures',
+        lessons: [
+          { id: 'cs-11', number: 11, title: 'Arrays', description: 'Fixed-size collections', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['type[] name = new type[size]', 'Access by index', 'Array.Sort, Array.Reverse'], starterCode: '', task: 'Create and use an array', validation: 'int[]', expectedOutput: 'int[] numbers = new int[5];\nnumbers[0] = 10;\nnumbers[1] = 20;\n// Or initialize directly\nint[] scores = {85, 92, 78, 95};' } },
+          { id: 'cs-12', number: 12, title: 'Lists', description: 'Dynamic arrays', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['List<T> grows dynamically', 'Add, Remove, Contains', 'using System.Collections.Generic'], starterCode: 'using System.Collections.Generic;\n', task: 'Create and manipulate a List', validation: 'List<', expectedOutput: 'List<string> names = new List<string>();\nnames.Add("John");\nnames.Add("Jane");\nnames.Remove("John");\nConsole.WriteLine(names.Count);' } },
+          { id: 'cs-13', number: 13, title: 'Dictionaries', description: 'Key-value pairs', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Dictionary<TKey, TValue>', 'Add, ContainsKey, TryGetValue', 'Access by key'], starterCode: 'using System.Collections.Generic;\n', task: 'Create a dictionary', validation: 'Dictionary<', expectedOutput: 'Dictionary<string, int> ages = new Dictionary<string, int>();\nages["John"] = 25;\nages["Jane"] = 30;\nif (ages.ContainsKey("John"))\n    Console.WriteLine(ages["John"]);' } },
+          { id: 'cs-14', number: 14, title: 'LINQ Basics', description: 'Query collections', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['using System.Linq', 'Where, Select, OrderBy', 'Method and query syntax'], starterCode: 'using System.Linq;\n', task: 'Filter and transform data', validation: '.Where(', expectedOutput: 'int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};\nvar evens = numbers.Where(n => n % 2 == 0).ToList();\nvar doubled = numbers.Select(n => n * 2).ToList();' } },
+          { id: 'cs-15', number: 15, title: 'Chapter Practice', description: 'Collections project', duration: '35 min', xp: 120, type: 'practice' }
+        ]
+      },
+      {
+        id: 4,
+        title: 'Object-Oriented Programming',
+        description: 'Master OOP in C#',
+        lessons: [
+          { id: 'cs-16', number: 16, title: 'Classes & Objects', description: 'Create blueprints', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['class defines structure', 'Fields, properties, methods', 'new creates instances'], starterCode: '', task: 'Create a Person class', validation: 'class Person', expectedOutput: 'class Person\n{\n    public string Name { get; set; }\n    public int Age { get; set; }\n    \n    public void Greet()\n    {\n        Console.WriteLine($"Hi, I am {Name}");\n    }\n}' } },
+          { id: 'cs-17', number: 17, title: 'Constructors', description: 'Initialize objects', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Same name as class', 'Can have multiple (overloading)', 'this keyword refers to instance'], starterCode: 'class Person\n{\n    public string Name { get; set; }\n', task: 'Add a constructor', validation: 'public Person(', expectedOutput: '    public Person(string name)\n    {\n        Name = name;\n    }\n    \n    public Person(string name, int age) : this(name)\n    {\n        Age = age;\n    }' } },
+          { id: 'cs-18', number: 18, title: 'Properties', description: 'Controlled access', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Auto-properties: { get; set; }', 'Full properties with backing field', 'init for immutable'], starterCode: '', task: 'Create properties', validation: '{ get;', expectedOutput: 'class Product\n{\n    public string Name { get; set; }\n    public decimal Price { get; private set; }\n    \n    private int _stock;\n    public int Stock\n    {\n        get => _stock;\n        set => _stock = value >= 0 ? value : 0;\n    }\n}' } },
+          { id: 'cs-19', number: 19, title: 'Inheritance', description: 'Extend classes', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['class Child : Parent', 'base() calls parent constructor', 'virtual/override for polymorphism'], starterCode: '', task: 'Create Employee extending Person', validation: ': Person', expectedOutput: 'class Employee : Person\n{\n    public string Position { get; set; }\n    \n    public Employee(string name, string position) : base(name)\n    {\n        Position = position;\n    }\n}' } },
+          { id: 'cs-20', number: 20, title: 'Chapter Practice', description: 'OOP project', duration: '45 min', xp: 160, type: 'practice' }
+        ]
+      },
+      {
+        id: 5,
+        title: 'Advanced OOP',
+        description: 'Interfaces, abstracts, generics',
+        lessons: [
+          { id: 'cs-21', number: 21, title: 'Interfaces', description: 'Define contracts', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['interface IName { }', 'Members are implicitly public', 'Classes can implement multiple'], starterCode: '', task: 'Create and implement interface', validation: 'interface I', expectedOutput: 'interface IDrawable\n{\n    void Draw();\n}\n\nclass Circle : IDrawable\n{\n    public void Draw()\n    {\n        Console.WriteLine("Drawing circle");\n    }\n}' } },
+          { id: 'cs-22', number: 22, title: 'Abstract Classes', description: 'Partial implementations', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['abstract class cannot be instantiated', 'abstract methods must be implemented', 'Can have concrete methods too'], starterCode: '', task: 'Create abstract Shape class', validation: 'abstract class', expectedOutput: 'abstract class Shape\n{\n    public abstract double Area();\n    \n    public void Display()\n    {\n        Console.WriteLine($"Area: {Area()}");\n    }\n}' } },
+          { id: 'cs-23', number: 23, title: 'Generics', description: 'Type-safe flexibility', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['class Name<T>', 'Type constraints: where T : class', 'Generic methods too'], starterCode: '', task: 'Create a generic class', validation: '<T>', expectedOutput: 'class Box<T>\n{\n    public T Content { get; set; }\n    \n    public Box(T content)\n    {\n        Content = content;\n    }\n}\n\nvar intBox = new Box<int>(42);\nvar strBox = new Box<string>("Hello");' } },
+          { id: 'cs-24', number: 24, title: 'Extension Methods', description: 'Add methods to types', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['static class with static methods', 'this keyword on first parameter', 'Appears as instance method'], starterCode: '', task: 'Create a string extension', validation: 'this string', expectedOutput: 'static class StringExtensions\n{\n    public static bool IsNullOrEmpty(this string str)\n    {\n        return string.IsNullOrEmpty(str);\n    }\n    \n    public static string Reverse(this string str)\n    {\n        return new string(str.ToCharArray().Reverse().ToArray());\n    }\n}' } },
+          { id: 'cs-25', number: 25, title: 'Chapter Practice', description: 'Advanced OOP exercises', duration: '40 min', xp: 140, type: 'practice' }
+        ]
+      },
+      {
+        id: 6,
+        title: 'Async & Exception Handling',
+        description: 'Modern C# patterns',
+        lessons: [
+          { id: 'cs-26', number: 26, title: 'Exception Handling', description: 'Handle errors gracefully', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['try-catch-finally', 'Specific exceptions first', 'throw to re-throw'], starterCode: '', task: 'Handle divide by zero', validation: 'try', expectedOutput: 'try\n{\n    int result = 10 / 0;\n}\ncatch (DivideByZeroException ex)\n{\n    Console.WriteLine("Cannot divide by zero");\n}\nfinally\n{\n    Console.WriteLine("Cleanup code");\n}' } },
+          { id: 'cs-27', number: 27, title: 'Custom Exceptions', description: 'Create your own exceptions', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Inherit from Exception', 'Add custom properties', 'throw new CustomException()'], starterCode: '', task: 'Create ValidationException', validation: ': Exception', expectedOutput: 'class ValidationException : Exception\n{\n    public string Field { get; }\n    \n    public ValidationException(string field, string message) \n        : base(message)\n    {\n        Field = field;\n    }\n}' } },
+          { id: 'cs-28', number: 28, title: 'Async/Await', description: 'Asynchronous programming', duration: '28 min', xp: 95, type: 'lesson', content: { instructions: ['async marks method', 'await pauses for result', 'Task<T> is the return type'], starterCode: 'using System.Threading.Tasks;\n', task: 'Create an async method', validation: 'async Task', expectedOutput: 'async Task<string> FetchDataAsync()\n{\n    await Task.Delay(1000); // Simulate network call\n    return "Data loaded";\n}\n\n// Usage\nstring result = await FetchDataAsync();' } },
+          { id: 'cs-29', number: 29, title: 'File I/O', description: 'Read and write files', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['File.ReadAllText/WriteAllText', 'StreamReader/StreamWriter', 'async versions available'], starterCode: 'using System.IO;\n', task: 'Read and write a file', validation: 'File.', expectedOutput: '// Write\nFile.WriteAllText("test.txt", "Hello, World!");\n\n// Read\nstring content = File.ReadAllText("test.txt");\nConsole.WriteLine(content);\n\n// Async\nstring asyncContent = await File.ReadAllTextAsync("test.txt");' } },
+          { id: 'cs-30', number: 30, title: 'Final Project', description: 'Build a complete C# application', duration: '90 min', xp: 350, type: 'project' }
+        ]
+      }
+    ]
   }
 }
 
