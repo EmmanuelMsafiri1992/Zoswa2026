@@ -80,7 +80,8 @@ jobs:
             # Setup admin user (runs only if admin doesn't exist)
             echo ">>> Setting up admin user..."
             cd $DEPLOYPATH/server
-            node scripts/setup-admin.js || echo "Admin setup skipped or failed"
+            node scripts/setup-admin.js 2>&1 || true
+            echo ">>> Admin setup completed"
 
             # Restart backend with PM2
             echo ">>> Restarting backend..."

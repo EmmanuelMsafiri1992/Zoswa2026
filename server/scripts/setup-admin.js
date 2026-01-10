@@ -16,8 +16,11 @@ const ADMIN_NAME = 'Admin'
 
 async function setupAdmin() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/zoswa')
-    console.log('Connected to MongoDB')
+    const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/zoswa'
+    console.log('Connecting to MongoDB...')
+    console.log('URI:', mongoUri.replace(/\/\/.*@/, '//<credentials>@'))
+    await mongoose.connect(mongoUri)
+    console.log('Connected to MongoDB successfully')
 
     const usersCollection = mongoose.connection.db.collection('users')
 
