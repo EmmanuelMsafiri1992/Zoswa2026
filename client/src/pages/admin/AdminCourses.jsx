@@ -1,17 +1,21 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { BookOpen, Users, Clock, Star } from 'lucide-react'
-import { courses } from '../../data/courses'
+import { courses as coursesData } from '../../data/courses'
 
 export default function AdminCourses() {
   const [selectedCourse, setSelectedCourse] = useState(null)
 
+  // Convert courses object to array
+  const coursesArray = coursesData ? Object.values(coursesData) : []
+
   // Calculate stats for each course
-  const courseStats = courses.map(course => ({
+  const courseStats = coursesArray.map(course => ({
     ...course,
-    totalLessons: course.modules.reduce((acc, mod) => acc + mod.lessons.length, 0),
-    totalDuration: course.modules.reduce((acc, mod) =>
-      acc + mod.lessons.reduce((a, l) => a + (l.duration || 10), 0), 0
+    modules: course.chapters || course.modules || [],
+    totalLessons: (course.chapters || course.modules || []).reduce((acc, mod) => acc + (mod.lessons?.length || 0), 0),
+    totalDuration: parseInt(course.totalDuration) || (course.chapters || course.modules || []).reduce((acc, mod) =>
+      acc + (mod.lessons || []).reduce((a, l) => a + (parseInt(l.duration) || 10), 0), 0
     )
   }))
 
@@ -41,7 +45,7 @@ export default function AdminCourses() {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <p className="text-xl font-bold text-neon-cyan">{course.modules.length}</p>
+                  <p className="text-xl font-bold text-neon-cyan">{course.modules?.length || 0}</p>
                   <p className="text-xs text-gray-400">Modules</p>
                 </div>
                 <div>
@@ -107,7 +111,7 @@ export default function AdminCourses() {
               <div className="grid grid-cols-4 gap-4 mb-6">
                 <div className="bg-dark-700 rounded-xl p-4 text-center">
                   <BookOpen className="w-6 h-6 text-neon-cyan mx-auto mb-2" />
-                  <p className="text-xl font-bold text-white">{selectedCourse.modules.length}</p>
+                  <p className="text-xl font-bold text-white">{selectedCourse.modules?.length || 0}</p>
                   <p className="text-xs text-gray-400">Modules</p>
                 </div>
                 <div className="bg-dark-700 rounded-xl p-4 text-center">
@@ -130,9 +134,9 @@ export default function AdminCourses() {
               {/* Modules */}
               <h3 className="text-lg font-bold text-white mb-4">Modules</h3>
               <div className="space-y-3">
-                {selectedCourse.modules.map((module, index) => (
+                {(selectedCourse.modules || []).map((module, index) => (
                   <div
-                    key={module.id}
+                    key={module.id || index}
                     className="bg-dark-700 rounded-xl p-4 flex items-center justify-between"
                   >
                     <div className="flex items-center gap-4">
@@ -141,11 +145,11 @@ export default function AdminCourses() {
                       </div>
                       <div>
                         <p className="text-white font-medium">{module.title}</p>
-                        <p className="text-sm text-gray-400">{module.lessons.length} lessons</p>
+                        <p className="text-sm text-gray-400">{module.lessons?.length || 0} lessons</p>
                       </div>
                     </div>
                     <span className="text-sm text-gray-400">
-                      {module.lessons.reduce((a, l) => a + (l.duration || 10), 0)} min
+                      {(module.lessons || []).reduce((a, l) => a + (parseInt(l.duration) || 10), 0)} min
                     </span>
                   </div>
                 ))}
