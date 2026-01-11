@@ -4,527 +4,191 @@ export const courses = {
   frontend: {
     id: 'frontend',
     title: 'Web Development Fundamentals',
-    subtitle: 'HTML, CSS & JavaScript',
-    description: 'Learn to build beautiful, interactive websites from scratch. Start with the basics and progress to creating real web applications.',
+    subtitle: 'HTML, CSS, JavaScript & React',
+    description: 'The most comprehensive web development course. Master HTML, CSS, JavaScript, and React from basics to advanced. Build real-world projects and become a professional frontend developer.',
     icon: 'Monitor',
     color: '#00fff5',
-    totalLessons: 24,
-    totalDuration: '12 hours',
-    level: 'Beginner',
+    totalLessons: 95,
+    totalDuration: '50 hours',
+    level: 'Beginner to Advanced',
     chapters: [
       {
         id: 1,
-        title: 'Getting Started with HTML',
+        title: 'HTML Fundamentals',
         description: 'Learn the foundation of every website',
         lessons: [
-          {
-            id: 'html-1',
-            number: 1,
-            title: 'What is HTML?',
-            description: 'Understand what HTML is and why it matters',
-            duration: '8 min',
-            xp: 25,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'HTML stands for HyperText Markup Language',
-                'It is the standard language for creating web pages',
-                'HTML describes the structure of a web page using elements'
-              ],
-              starterCode: '',
-              task: 'Type <!DOCTYPE html> to declare this is an HTML5 document',
-              validation: '<!DOCTYPE html>',
-              expectedOutput: '<!DOCTYPE html>'
-            }
-          },
-          {
-            id: 'html-2',
-            number: 2,
-            title: 'Your First Web Page',
-            description: 'Create a complete HTML document structure',
-            duration: '12 min',
-            xp: 50,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'Every HTML page needs a basic structure',
-                'The <html> tag wraps all content',
-                'The <head> contains metadata, <body> contains visible content'
-              ],
-              starterCode: '<!DOCTYPE html>\n',
-              task: 'Add <html>, <head>, and <body> tags to complete the structure',
-              validation: '<html>',
-              expectedOutput: '<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n</body>\n</html>'
-            }
-          },
-          {
-            id: 'html-3',
-            number: 3,
-            title: 'Headings & Paragraphs',
-            description: 'Add text content to your page',
-            duration: '10 min',
-            xp: 40,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'Headings go from <h1> (largest) to <h6> (smallest)',
-                'Paragraphs use the <p> tag',
-                'Use headings to structure your content logically'
-              ],
-              starterCode: '<body>\n\n</body>',
-              task: 'Add an <h1> heading and a <p> paragraph inside the body',
-              validation: '<h1>',
-              expectedOutput: '<body>\n<h1>Welcome</h1>\n<p>This is my first web page.</p>\n</body>'
-            }
-          },
-          {
-            id: 'html-4',
-            number: 4,
-            title: 'Links & Images',
-            description: 'Connect pages and add visual content',
-            duration: '15 min',
-            xp: 60,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'Links use <a href="url">text</a>',
-                'Images use <img src="url" alt="description">',
-                'The alt attribute describes the image for accessibility'
-              ],
-              starterCode: '<body>\n<h1>My Website</h1>\n\n</body>',
-              task: 'Add a link to google.com and an image',
-              validation: '<a href=',
-              expectedOutput: '<body>\n<h1>My Website</h1>\n<a href="https://google.com">Visit Google</a>\n<img src="photo.jpg" alt="A photo">\n</body>'
-            }
-          },
-          {
-            id: 'html-5',
-            number: 5,
-            title: 'Chapter 1 Practice',
-            description: 'Build a simple personal page',
-            duration: '20 min',
-            xp: 100,
-            type: 'practice',
-            content: {
-              instructions: [
-                'Combine everything you learned',
-                'Create a personal introduction page',
-                'Include heading, paragraph, link, and image'
-              ],
-              starterCode: '<!DOCTYPE html>\n<html>\n<head>\n  <title>About Me</title>\n</head>\n<body>\n\n</body>\n</html>',
-              task: 'Create a complete "About Me" page with your name, bio, and a link',
-              validation: '<h1>',
-              expectedOutput: ''
-            }
-          }
+          { id: 'html-1', number: 1, title: 'What is HTML?', description: 'Understand what HTML is and why it matters', duration: '8 min', xp: 25, type: 'lesson', content: { instructions: ['HTML stands for HyperText Markup Language', 'It is the standard language for creating web pages', 'HTML describes the structure of a web page using elements'], starterCode: '', task: 'Type <!DOCTYPE html> to declare this is an HTML5 document', validation: '<!DOCTYPE html>', expectedOutput: '<!DOCTYPE html>' } },
+          { id: 'html-2', number: 2, title: 'Document Structure', description: 'Create a complete HTML document', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['Every HTML page needs a basic structure', 'The <html> tag wraps all content', 'The <head> contains metadata, <body> contains visible content'], starterCode: '<!DOCTYPE html>\n', task: 'Add <html>, <head>, and <body> tags', validation: '<html>', expectedOutput: '<!DOCTYPE html>\n<html>\n<head>\n  <title>My Page</title>\n</head>\n<body>\n</body>\n</html>' } },
+          { id: 'html-3', number: 3, title: 'Headings & Paragraphs', description: 'Add text content to your page', duration: '10 min', xp: 35, type: 'lesson', content: { instructions: ['Headings go from <h1> (largest) to <h6> (smallest)', 'Paragraphs use the <p> tag', 'Use headings to structure your content logically'], starterCode: '<body>\n\n</body>', task: 'Add an <h1> heading and a <p> paragraph', validation: '<h1>', expectedOutput: '<body>\n<h1>Welcome</h1>\n<p>This is my first web page.</p>\n</body>' } },
+          { id: 'html-4', number: 4, title: 'Text Formatting', description: 'Style text with semantic tags', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['<strong> for bold/important text', '<em> for italic/emphasized text', '<mark>, <del>, <ins> for highlighting, strikethrough, underline'], starterCode: '<p>\n\n</p>', task: 'Create formatted text using strong and em tags', validation: '<strong>', expectedOutput: '<p>\nThis is <strong>important</strong> and this is <em>emphasized</em>.\n</p>' } },
+          { id: 'html-5', number: 5, title: 'Links', description: 'Connect pages with hyperlinks', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Links use <a href="url">text</a>', 'target="_blank" opens in new tab', 'Use relative paths for internal links'], starterCode: '', task: 'Create a link to google.com that opens in a new tab', validation: '<a href=', expectedOutput: '<a href="https://google.com" target="_blank">Visit Google</a>' } },
+          { id: 'html-6', number: 6, title: 'Images', description: 'Add visual content to pages', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['Images use <img src="url" alt="description">', 'alt attribute is required for accessibility', 'width and height control dimensions'], starterCode: '', task: 'Add an image with proper alt text', validation: '<img', expectedOutput: '<img src="photo.jpg" alt="A beautiful landscape" width="400">' } },
+          { id: 'html-7', number: 7, title: 'Lists', description: 'Organize content with lists', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['<ul> for unordered (bullet) lists', '<ol> for ordered (numbered) lists', '<li> for each list item'], starterCode: '', task: 'Create an unordered list of 3 fruits', validation: '<ul>', expectedOutput: '<ul>\n  <li>Apple</li>\n  <li>Banana</li>\n  <li>Orange</li>\n</ul>' } },
+          { id: 'html-8', number: 8, title: 'Chapter Practice', description: 'Build a personal intro page', duration: '25 min', xp: 100, type: 'practice', content: { instructions: ['Combine everything you learned', 'Create a personal introduction page', 'Include heading, paragraphs, links, image, and list'], starterCode: '<!DOCTYPE html>\n<html>\n<head>\n  <title>About Me</title>\n</head>\n<body>\n\n</body>\n</html>', task: 'Create a complete "About Me" page', validation: '<h1>', expectedOutput: '' } }
         ]
       },
       {
         id: 2,
-        title: 'Styling with CSS',
-        description: 'Make your websites beautiful',
+        title: 'HTML Advanced',
+        description: 'Master advanced HTML elements',
         lessons: [
-          {
-            id: 'css-1',
-            number: 6,
-            title: 'Introduction to CSS',
-            description: 'Learn how CSS transforms HTML',
-            duration: '10 min',
-            xp: 30,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'CSS stands for Cascading Style Sheets',
-                'It controls colors, fonts, layout, and more',
-                'CSS rules have a selector and declarations'
-              ],
-              starterCode: '<style>\n\n</style>',
-              task: 'Write a CSS rule to make h1 elements blue',
-              validation: 'h1',
-              expectedOutput: '<style>\nh1 {\n  color: blue;\n}\n</style>'
-            }
-          },
-          {
-            id: 'css-2',
-            number: 7,
-            title: 'Colors & Backgrounds',
-            description: 'Add color to your designs',
-            duration: '12 min',
-            xp: 45,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'Use color names: red, blue, green',
-                'Or hex codes: #ff0000, #00ff00',
-                'Or RGB: rgb(255, 0, 0)'
-              ],
-              starterCode: '<style>\nbody {\n\n}\n</style>',
-              task: 'Set a dark background color and white text',
-              validation: 'background',
-              expectedOutput: '<style>\nbody {\n  background-color: #1a1a2e;\n  color: white;\n}\n</style>'
-            }
-          },
-          {
-            id: 'css-3',
-            number: 8,
-            title: 'Fonts & Text',
-            description: 'Control typography',
-            duration: '12 min',
-            xp: 45,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'font-family changes the typeface',
-                'font-size controls text size',
-                'font-weight makes text bold or light'
-              ],
-              starterCode: '<style>\np {\n\n}\n</style>',
-              task: 'Style paragraphs with a custom font and size',
-              validation: 'font-family',
-              expectedOutput: '<style>\np {\n  font-family: Arial, sans-serif;\n  font-size: 18px;\n  line-height: 1.6;\n}\n</style>'
-            }
-          },
-          {
-            id: 'css-4',
-            number: 9,
-            title: 'The Box Model',
-            description: 'Understand spacing and borders',
-            duration: '15 min',
-            xp: 60,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'Every element is a box',
-                'Content → Padding → Border → Margin',
-                'padding is inside, margin is outside'
-              ],
-              starterCode: '<style>\n.card {\n\n}\n</style>',
-              task: 'Create a card with padding, border, and margin',
-              validation: 'padding',
-              expectedOutput: '<style>\n.card {\n  padding: 20px;\n  margin: 10px;\n  border: 1px solid #ccc;\n  border-radius: 8px;\n}\n</style>'
-            }
-          },
-          {
-            id: 'css-5',
-            number: 10,
-            title: 'Chapter 2 Practice',
-            description: 'Style a profile card',
-            duration: '25 min',
-            xp: 120,
-            type: 'practice',
-            content: {
-              instructions: [
-                'Apply all CSS concepts learned',
-                'Create a visually appealing profile card',
-                'Use colors, fonts, and spacing'
-              ],
-              starterCode: '',
-              task: 'Build a styled profile card component',
-              validation: '',
-              expectedOutput: ''
-            }
-          }
+          { id: 'html-9', number: 9, title: 'Tables', description: 'Display data in tables', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['<table> wraps the table', '<tr> for rows, <th> for headers, <td> for data', 'colspan and rowspan for spanning cells'], starterCode: '', task: 'Create a 3x3 table with headers', validation: '<table>', expectedOutput: '<table>\n  <tr>\n    <th>Name</th>\n    <th>Age</th>\n    <th>City</th>\n  </tr>\n  <tr>\n    <td>John</td>\n    <td>25</td>\n    <td>NYC</td>\n  </tr>\n</table>' } },
+          { id: 'html-10', number: 10, title: 'Forms Basics', description: 'Create interactive forms', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['<form> wraps form elements', '<input> for text, email, password, etc.', '<label> associates text with inputs'], starterCode: '', task: 'Create a form with name and email inputs', validation: '<form>', expectedOutput: '<form>\n  <label for="name">Name:</label>\n  <input type="text" id="name" name="name">\n  <label for="email">Email:</label>\n  <input type="email" id="email" name="email">\n  <button type="submit">Submit</button>\n</form>' } },
+          { id: 'html-11', number: 11, title: 'Form Controls', description: 'Advanced form elements', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['<select> for dropdowns', '<textarea> for multi-line text', '<input type="checkbox/radio"> for selections'], starterCode: '', task: 'Create a form with select, textarea, and checkbox', validation: '<select>', expectedOutput: '<select name="country">\n  <option value="us">USA</option>\n  <option value="uk">UK</option>\n</select>\n<textarea name="message" rows="4"></textarea>\n<input type="checkbox" name="agree"> I agree' } },
+          { id: 'html-12', number: 12, title: 'Form Validation', description: 'Validate user input', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['required attribute makes field mandatory', 'pattern for regex validation', 'min, max, minlength, maxlength for limits'], starterCode: '', task: 'Add validation to form inputs', validation: 'required', expectedOutput: '<input type="email" required>\n<input type="text" pattern="[A-Za-z]{3,}" required>\n<input type="number" min="1" max="100">' } },
+          { id: 'html-13', number: 13, title: 'Semantic HTML', description: 'Use meaningful elements', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['<header>, <nav>, <main>, <footer> for page structure', '<article>, <section>, <aside> for content', 'Improves SEO and accessibility'], starterCode: '', task: 'Structure a page with semantic elements', validation: '<header>', expectedOutput: '<header>\n  <nav>...</nav>\n</header>\n<main>\n  <article>...</article>\n  <aside>...</aside>\n</main>\n<footer>...</footer>' } },
+          { id: 'html-14', number: 14, title: 'Audio & Video', description: 'Embed media content', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['<video> for video content', '<audio> for audio content', 'controls attribute adds player controls'], starterCode: '', task: 'Embed a video with controls', validation: '<video', expectedOutput: '<video controls width="640">\n  <source src="movie.mp4" type="video/mp4">\n  Your browser does not support video.\n</video>' } },
+          { id: 'html-15', number: 15, title: 'IFrames & Embeds', description: 'Embed external content', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['<iframe> embeds external pages', 'Used for maps, videos, widgets', 'sandbox attribute for security'], starterCode: '', task: 'Embed a YouTube video', validation: '<iframe', expectedOutput: '<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>' } },
+          { id: 'html-16', number: 16, title: 'Meta Tags & SEO', description: 'Optimize for search engines', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['<meta> provides page metadata', 'description and keywords for SEO', 'viewport for responsive design'], starterCode: '<head>\n\n</head>', task: 'Add essential meta tags', validation: '<meta', expectedOutput: '<head>\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  <meta name="description" content="My website description">\n  <title>My Website</title>\n</head>' } },
+          { id: 'html-17', number: 17, title: 'Chapter Practice', description: 'Build a contact form page', duration: '30 min', xp: 120, type: 'practice', content: { instructions: ['Create a complete contact page', 'Include form with validation', 'Use semantic HTML structure'], starterCode: '', task: 'Build a contact form page', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 3,
-        title: 'CSS Layout',
-        description: 'Position and arrange elements',
+        title: 'CSS Fundamentals',
+        description: 'Make your websites beautiful',
         lessons: [
-          {
-            id: 'layout-1',
-            number: 11,
-            title: 'Display Property',
-            description: 'Control how elements appear',
-            duration: '10 min',
-            xp: 40,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'display: block - takes full width',
-                'display: inline - flows with text',
-                'display: none - hides element'
-              ],
-              starterCode: '',
-              task: 'Change a span to display as block',
-              validation: 'display',
-              expectedOutput: ''
-            }
-          },
-          {
-            id: 'layout-2',
-            number: 12,
-            title: 'Flexbox Basics',
-            description: 'The modern way to layout',
-            duration: '15 min',
-            xp: 70,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'display: flex creates a flex container',
-                'justify-content aligns items horizontally',
-                'align-items aligns items vertically'
-              ],
-              starterCode: '<style>\n.container {\n\n}\n</style>',
-              task: 'Create a flexbox container that centers its children',
-              validation: 'display: flex',
-              expectedOutput: '<style>\n.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n</style>'
-            }
-          },
-          {
-            id: 'layout-3',
-            number: 13,
-            title: 'Flexbox Direction',
-            description: 'Control the flow of items',
-            duration: '12 min',
-            xp: 50,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'flex-direction: row (default) - horizontal',
-                'flex-direction: column - vertical',
-                'gap adds space between items'
-              ],
-              starterCode: '',
-              task: 'Create a vertical navigation menu with flexbox',
-              validation: 'flex-direction',
-              expectedOutput: ''
-            }
-          },
-          {
-            id: 'layout-4',
-            number: 14,
-            title: 'CSS Grid Introduction',
-            description: 'Two-dimensional layouts',
-            duration: '18 min',
-            xp: 80,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'display: grid creates a grid container',
-                'grid-template-columns defines column sizes',
-                'gap adds space between grid items'
-              ],
-              starterCode: '',
-              task: 'Create a 3-column grid layout',
-              validation: 'grid-template-columns',
-              expectedOutput: ''
-            }
-          },
-          {
-            id: 'layout-5',
-            number: 15,
-            title: 'Chapter 3 Practice',
-            description: 'Build a responsive layout',
-            duration: '30 min',
-            xp: 150,
-            type: 'practice',
-            content: {
-              instructions: [
-                'Combine flexbox and grid',
-                'Create a page layout with header, sidebar, and content',
-                'Make it look professional'
-              ],
-              starterCode: '',
-              task: 'Build a complete page layout',
-              validation: '',
-              expectedOutput: ''
-            }
-          }
+          { id: 'css-1', number: 18, title: 'Introduction to CSS', description: 'Learn how CSS transforms HTML', duration: '10 min', xp: 30, type: 'lesson', content: { instructions: ['CSS stands for Cascading Style Sheets', 'It controls colors, fonts, layout, and more', 'CSS rules have a selector and declarations'], starterCode: '<style>\n\n</style>', task: 'Write a CSS rule to make h1 elements blue', validation: 'h1', expectedOutput: '<style>\nh1 {\n  color: blue;\n}\n</style>' } },
+          { id: 'css-2', number: 19, title: 'Selectors', description: 'Target elements precisely', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Element: p, h1, div', 'Class: .classname', 'ID: #idname'], starterCode: '', task: 'Use element, class, and ID selectors', validation: '.', expectedOutput: 'h1 { color: blue; }\n.highlight { background: yellow; }\n#header { font-size: 24px; }' } },
+          { id: 'css-3', number: 20, title: 'Colors & Backgrounds', description: 'Add color to your designs', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Color names: red, blue, green', 'Hex codes: #ff0000, #00ff00', 'RGB/RGBA: rgb(255, 0, 0), rgba(0,0,0,0.5)'], starterCode: '', task: 'Style body with dark background and white text', validation: 'background', expectedOutput: 'body {\n  background-color: #1a1a2e;\n  color: white;\n}' } },
+          { id: 'css-4', number: 21, title: 'Typography', description: 'Control fonts and text', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['font-family changes typeface', 'font-size controls text size', 'font-weight for bold, line-height for spacing'], starterCode: '', task: 'Style paragraphs with custom typography', validation: 'font-family', expectedOutput: 'p {\n  font-family: Arial, sans-serif;\n  font-size: 18px;\n  line-height: 1.6;\n  font-weight: 400;\n}' } },
+          { id: 'css-5', number: 22, title: 'The Box Model', description: 'Understand spacing and borders', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Every element is a box', 'Content → Padding → Border → Margin', 'box-sizing: border-box is recommended'], starterCode: '', task: 'Create a card with padding, border, and margin', validation: 'padding', expectedOutput: '.card {\n  padding: 20px;\n  margin: 10px;\n  border: 1px solid #ccc;\n  border-radius: 8px;\n  box-sizing: border-box;\n}' } },
+          { id: 'css-6', number: 23, title: 'Width & Height', description: 'Control element dimensions', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['width and height set dimensions', 'max-width prevents overflow', 'min-height ensures minimum size'], starterCode: '', task: 'Create a responsive container', validation: 'max-width', expectedOutput: '.container {\n  width: 100%;\n  max-width: 1200px;\n  min-height: 100vh;\n  margin: 0 auto;\n}' } },
+          { id: 'css-7', number: 24, title: 'Borders & Shadows', description: 'Add depth and definition', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['border: width style color', 'border-radius for rounded corners', 'box-shadow for depth'], starterCode: '', task: 'Create a card with shadow', validation: 'box-shadow', expectedOutput: '.card {\n  border: 1px solid #e0e0e0;\n  border-radius: 12px;\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}' } },
+          { id: 'css-8', number: 25, title: 'Chapter Practice', description: 'Style a profile card', duration: '30 min', xp: 120, type: 'practice', content: { instructions: ['Apply all CSS concepts learned', 'Create a visually appealing profile card', 'Use colors, fonts, box model, shadows'], starterCode: '', task: 'Build a styled profile card', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 4,
-        title: 'JavaScript Fundamentals',
-        description: 'Add interactivity to your sites',
+        title: 'CSS Layout',
+        description: 'Position and arrange elements',
         lessons: [
-          {
-            id: 'js-1',
-            number: 16,
-            title: 'What is JavaScript?',
-            description: 'The programming language of the web',
-            duration: '8 min',
-            xp: 30,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'JavaScript makes websites interactive',
-                'It can respond to user actions',
-                'It can modify HTML and CSS dynamically'
-              ],
-              starterCode: '<script>\n\n</script>',
-              task: 'Write an alert that says "Hello World"',
-              validation: 'alert',
-              expectedOutput: '<script>\nalert("Hello World");\n</script>'
-            }
-          },
-          {
-            id: 'js-2',
-            number: 17,
-            title: 'Variables & Data Types',
-            description: 'Store and use information',
-            duration: '15 min',
-            xp: 60,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'let creates a changeable variable',
-                'const creates a constant (unchangeable)',
-                'Types: string, number, boolean, array, object'
-              ],
-              starterCode: '',
-              task: 'Create variables for name, age, and isStudent',
-              validation: 'let',
-              expectedOutput: ''
-            }
-          },
-          {
-            id: 'js-3',
-            number: 18,
-            title: 'Functions',
-            description: 'Reusable blocks of code',
-            duration: '18 min',
-            xp: 75,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'Functions group code that performs a task',
-                'They can take inputs (parameters)',
-                'They can return outputs'
-              ],
-              starterCode: '',
-              task: 'Create a function that adds two numbers',
-              validation: 'function',
-              expectedOutput: ''
-            }
-          },
-          {
-            id: 'js-4',
-            number: 19,
-            title: 'DOM Manipulation',
-            description: 'Change the page with code',
-            duration: '20 min',
-            xp: 90,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'DOM = Document Object Model',
-                'document.querySelector finds elements',
-                'element.textContent changes text'
-              ],
-              starterCode: '',
-              task: 'Select an element and change its text',
-              validation: 'querySelector',
-              expectedOutput: ''
-            }
-          },
-          {
-            id: 'js-5',
-            number: 20,
-            title: 'Event Handling',
-            description: 'Respond to user actions',
-            duration: '18 min',
-            xp: 80,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'Events: click, submit, keypress, etc.',
-                'addEventListener attaches event handlers',
-                'The callback function runs when event occurs'
-              ],
-              starterCode: '',
-              task: 'Add a click event to a button',
-              validation: 'addEventListener',
-              expectedOutput: ''
-            }
-          },
-          {
-            id: 'js-6',
-            number: 21,
-            title: 'Chapter 4 Practice',
-            description: 'Build an interactive component',
-            duration: '30 min',
-            xp: 150,
-            type: 'practice',
-            content: {
-              instructions: [
-                'Combine HTML, CSS, and JavaScript',
-                'Create something interactive',
-                'Handle user input and update the page'
-              ],
-              starterCode: '',
-              task: 'Build a simple counter or to-do item',
-              validation: '',
-              expectedOutput: ''
-            }
-          }
+          { id: 'layout-1', number: 26, title: 'Display Property', description: 'Control how elements appear', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['display: block - takes full width', 'display: inline - flows with text', 'display: inline-block - inline with box properties'], starterCode: '', task: 'Change display types', validation: 'display', expectedOutput: '.block { display: block; }\n.inline { display: inline; }\n.inline-block { display: inline-block; }' } },
+          { id: 'layout-2', number: 27, title: 'Position', description: 'Position elements precisely', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['static (default), relative, absolute, fixed, sticky', 'top, right, bottom, left for positioning', 'z-index for stacking order'], starterCode: '', task: 'Create a fixed navigation bar', validation: 'position: fixed', expectedOutput: '.navbar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 1000;\n}' } },
+          { id: 'layout-3', number: 28, title: 'Flexbox Basics', description: 'Modern layout with flexbox', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['display: flex creates flex container', 'justify-content for horizontal alignment', 'align-items for vertical alignment'], starterCode: '', task: 'Center content with flexbox', validation: 'display: flex', expectedOutput: '.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n}' } },
+          { id: 'layout-4', number: 29, title: 'Flexbox Direction', description: 'Control flex flow', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['flex-direction: row (default) or column', 'flex-wrap for wrapping items', 'gap for spacing between items'], starterCode: '', task: 'Create a vertical navigation', validation: 'flex-direction', expectedOutput: '.nav {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n}' } },
+          { id: 'layout-5', number: 30, title: 'Flex Items', description: 'Control individual items', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['flex-grow: how much item grows', 'flex-shrink: how much item shrinks', 'flex-basis: initial size'], starterCode: '', task: 'Create a flexible layout', validation: 'flex:', expectedOutput: '.sidebar { flex: 0 0 250px; }\n.main { flex: 1; }\n.aside { flex: 0 0 200px; }' } },
+          { id: 'layout-6', number: 31, title: 'CSS Grid Basics', description: 'Two-dimensional layouts', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['display: grid creates grid container', 'grid-template-columns defines columns', 'grid-template-rows defines rows'], starterCode: '', task: 'Create a 3-column grid', validation: 'display: grid', expectedOutput: '.grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 20px;\n}' } },
+          { id: 'layout-7', number: 32, title: 'Grid Areas', description: 'Name and place grid areas', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['grid-template-areas for layout', 'grid-area assigns item to area', 'Create complex layouts easily'], starterCode: '', task: 'Create a page layout with grid areas', validation: 'grid-template-areas', expectedOutput: '.layout {\n  display: grid;\n  grid-template-areas:\n    "header header"\n    "sidebar main"\n    "footer footer";\n}\n.header { grid-area: header; }\n.sidebar { grid-area: sidebar; }' } },
+          { id: 'layout-8', number: 33, title: 'Responsive Design', description: 'Adapt to screen sizes', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['@media queries for breakpoints', 'Mobile-first approach recommended', 'Common breakpoints: 768px, 1024px'], starterCode: '', task: 'Create responsive grid', validation: '@media', expectedOutput: '.grid {\n  display: grid;\n  grid-template-columns: 1fr;\n}\n@media (min-width: 768px) {\n  .grid { grid-template-columns: repeat(2, 1fr); }\n}\n@media (min-width: 1024px) {\n  .grid { grid-template-columns: repeat(3, 1fr); }\n}' } },
+          { id: 'layout-9', number: 34, title: 'Chapter Practice', description: 'Build a responsive layout', duration: '35 min', xp: 140, type: 'practice', content: { instructions: ['Create a complete page layout', 'Use both flexbox and grid', 'Make it fully responsive'], starterCode: '', task: 'Build a responsive page layout', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 5,
-        title: 'Final Project',
-        description: 'Put it all together',
+        title: 'CSS Advanced',
+        description: 'Master advanced CSS techniques',
         lessons: [
-          {
-            id: 'final-1',
-            number: 22,
-            title: 'Project Planning',
-            description: 'Design your final project',
-            duration: '15 min',
-            xp: 50,
-            type: 'lesson',
-            content: {
-              instructions: [
-                'Choose a project: portfolio, landing page, or app',
-                'Sketch out the layout',
-                'List the features you need'
-              ],
-              starterCode: '',
-              task: 'Write a project plan',
-              validation: '',
-              expectedOutput: ''
-            }
-          },
-          {
-            id: 'final-2',
-            number: 23,
-            title: 'Building Your Project',
-            description: 'Code your final project',
-            duration: '60 min',
-            xp: 300,
-            type: 'project',
-            content: {
-              instructions: [
-                'Start with HTML structure',
-                'Add CSS styling',
-                'Implement JavaScript functionality'
-              ],
-              starterCode: '',
-              task: 'Build your complete project',
-              validation: '',
-              expectedOutput: ''
-            }
-          },
-          {
-            id: 'final-3',
-            number: 24,
-            title: 'Course Complete!',
-            description: 'Congratulations on finishing',
-            duration: '5 min',
-            xp: 200,
-            type: 'completion',
-            content: {
-              instructions: [
-                'You have completed Web Development Fundamentals!',
-                'You can now build real websites',
-                'Continue to the next course to level up'
-              ],
-              starterCode: '',
-              task: 'Claim your certificate',
-              validation: '',
-              expectedOutput: ''
-            }
-          }
+          { id: 'css-adv-1', number: 35, title: 'Transitions', description: 'Animate property changes', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['transition: property duration timing', 'Smooth hover effects', 'Multiple properties with comma'], starterCode: '', task: 'Add hover transition to a button', validation: 'transition', expectedOutput: '.btn {\n  background: blue;\n  transition: background 0.3s ease, transform 0.2s;\n}\n.btn:hover {\n  background: darkblue;\n  transform: scale(1.05);\n}' } },
+          { id: 'css-adv-2', number: 36, title: 'Animations', description: 'Create keyframe animations', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['@keyframes defines animation', 'animation property applies it', 'Control timing, iteration, direction'], starterCode: '', task: 'Create a fade-in animation', validation: '@keyframes', expectedOutput: '@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n.element {\n  animation: fadeIn 0.5s ease forwards;\n}' } },
+          { id: 'css-adv-3', number: 37, title: 'Transforms', description: 'Rotate, scale, and move', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['translate() moves element', 'rotate() rotates element', 'scale() resizes element'], starterCode: '', task: 'Apply multiple transforms', validation: 'transform:', expectedOutput: '.card:hover {\n  transform: translateY(-10px) rotate(2deg) scale(1.02);\n}' } },
+          { id: 'css-adv-4', number: 38, title: 'CSS Variables', description: 'Custom properties', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['--variable-name: value in :root', 'var(--variable-name) to use', 'Great for theming'], starterCode: '', task: 'Create a color theme with variables', validation: '--', expectedOutput: ':root {\n  --primary: #00fff5;\n  --secondary: #a855f7;\n  --bg: #1a1a2e;\n}\n.btn {\n  background: var(--primary);\n  color: var(--bg);\n}' } },
+          { id: 'css-adv-5', number: 39, title: 'Pseudo-classes', description: 'Style element states', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: [':hover, :focus, :active for interactions', ':first-child, :last-child, :nth-child()', ':not() for exclusions'], starterCode: '', task: 'Style list items with pseudo-classes', validation: ':nth-child', expectedOutput: 'li:first-child { font-weight: bold; }\nli:last-child { border-bottom: none; }\nli:nth-child(odd) { background: #f5f5f5; }\nli:hover:not(.disabled) { background: #e0e0e0; }' } },
+          { id: 'css-adv-6', number: 40, title: 'Pseudo-elements', description: 'Style parts of elements', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['::before and ::after add content', '::first-letter and ::first-line', 'content property is required'], starterCode: '', task: 'Add decorative elements', validation: '::before', expectedOutput: '.quote::before {\n  content: open-quote;\n  font-size: 2em;\n}\n.required::after {\n  content: " *";\n  color: red;\n}' } },
+          { id: 'css-adv-7', number: 41, title: 'Filters & Blend Modes', description: 'Visual effects', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['filter: blur, brightness, contrast', 'mix-blend-mode for blending', 'backdrop-filter for backgrounds'], starterCode: '', task: 'Apply filters to images', validation: 'filter:', expectedOutput: '.image {\n  filter: grayscale(100%);\n  transition: filter 0.3s;\n}\n.image:hover {\n  filter: grayscale(0%);\n}\n.overlay {\n  backdrop-filter: blur(10px);\n}' } },
+          { id: 'css-adv-8', number: 42, title: 'Chapter Practice', description: 'Create animated components', duration: '35 min', xp: 140, type: 'practice', content: { instructions: ['Build interactive UI components', 'Use transitions and animations', 'Apply advanced CSS techniques'], starterCode: '', task: 'Create an animated card gallery', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 6,
+        title: 'JavaScript Basics',
+        description: 'Add interactivity to websites',
+        lessons: [
+          { id: 'js-1', number: 43, title: 'Introduction to JavaScript', description: 'The language of the web', duration: '10 min', xp: 30, type: 'lesson', content: { instructions: ['JavaScript makes websites interactive', 'It runs in the browser', 'console.log() outputs to console'], starterCode: '', task: 'Write your first console.log', validation: 'console.log', expectedOutput: 'console.log("Hello, World!");' } },
+          { id: 'js-2', number: 44, title: 'Variables', description: 'Store data', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['let for changeable variables', 'const for constants', 'var is old style (avoid)'], starterCode: '', task: 'Create variables with let and const', validation: 'let', expectedOutput: 'let name = "John";\nconst age = 25;\nlet isStudent = true;' } },
+          { id: 'js-3', number: 45, title: 'Data Types', description: 'Types of data in JS', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Primitives: string, number, boolean, null, undefined', 'Objects: {}, []', 'typeof checks type'], starterCode: '', task: 'Create different data types', validation: 'typeof', expectedOutput: 'let str = "hello";\nlet num = 42;\nlet bool = true;\nlet obj = { name: "John" };\nlet arr = [1, 2, 3];\nconsole.log(typeof str);' } },
+          { id: 'js-4', number: 46, title: 'Operators', description: 'Perform operations', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Arithmetic: +, -, *, /, %, **', 'Comparison: ===, !==, <, >', 'Logical: &&, ||, !'], starterCode: '', task: 'Use different operators', validation: '===', expectedOutput: 'let sum = 10 + 5;\nlet isEqual = sum === 15;\nlet isValid = sum > 10 && sum < 20;' } },
+          { id: 'js-5', number: 47, title: 'Strings', description: 'Work with text', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Template literals: `Hello ${name}`', 'String methods: length, toUpperCase, slice', 'Concatenation with +'], starterCode: '', task: 'Use template literals and methods', validation: '`', expectedOutput: 'let name = "John";\nlet greeting = `Hello, ${name}!`;\nlet upper = name.toUpperCase();\nlet first = name.slice(0, 1);' } },
+          { id: 'js-6', number: 48, title: 'Arrays', description: 'Ordered collections', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Arrays: [1, 2, 3]', 'Access by index: arr[0]', 'Methods: push, pop, shift, unshift'], starterCode: '', task: 'Create and manipulate an array', validation: '.push(', expectedOutput: 'let fruits = ["apple", "banana"];\nfruits.push("orange");\nlet first = fruits[0];\nlet length = fruits.length;' } },
+          { id: 'js-7', number: 49, title: 'Objects', description: 'Key-value collections', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Objects: { key: value }', 'Access: obj.key or obj["key"]', 'Methods are functions in objects'], starterCode: '', task: 'Create and use an object', validation: '{', expectedOutput: 'let person = {\n  name: "John",\n  age: 25,\n  greet() {\n    return `Hi, I am ${this.name}`;\n  }\n};\nconsole.log(person.name);' } },
+          { id: 'js-8', number: 50, title: 'Chapter Practice', description: 'Variables and data exercises', duration: '30 min', xp: 120, type: 'practice', content: { instructions: ['Practice with all data types', 'Manipulate arrays and objects', 'Use string methods'], starterCode: '', task: 'Complete data manipulation exercises', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 7,
+        title: 'JavaScript Control Flow',
+        description: 'Control program execution',
+        lessons: [
+          { id: 'js-9', number: 51, title: 'If Statements', description: 'Make decisions', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['if (condition) { }', 'else if for alternatives', 'else for default'], starterCode: '', task: 'Write an if-else statement', validation: 'if (', expectedOutput: 'let age = 20;\nif (age >= 18) {\n  console.log("Adult");\n} else {\n  console.log("Minor");\n}' } },
+          { id: 'js-10', number: 52, title: 'Ternary Operator', description: 'Short conditionals', duration: '10 min', xp: 35, type: 'lesson', content: { instructions: ['condition ? true : false', 'Good for simple conditions', 'Returns a value'], starterCode: '', task: 'Use ternary operator', validation: '?', expectedOutput: 'let age = 20;\nlet status = age >= 18 ? "adult" : "minor";\nconsole.log(status);' } },
+          { id: 'js-11', number: 53, title: 'Switch Statement', description: 'Multiple choices', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['switch (value)', 'case for each option', 'break to exit, default for else'], starterCode: '', task: 'Create a switch statement', validation: 'switch', expectedOutput: 'let day = "Monday";\nswitch (day) {\n  case "Monday":\n    console.log("Start of week");\n    break;\n  case "Friday":\n    console.log("Weekend!");\n    break;\n  default:\n    console.log("Regular day");\n}' } },
+          { id: 'js-12', number: 54, title: 'For Loops', description: 'Repeat actions', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['for (let i = 0; i < n; i++)', 'for...of for arrays', 'for...in for objects'], starterCode: '', task: 'Loop through an array', validation: 'for (', expectedOutput: 'let fruits = ["apple", "banana", "orange"];\nfor (let fruit of fruits) {\n  console.log(fruit);\n}\nfor (let i = 0; i < fruits.length; i++) {\n  console.log(i, fruits[i]);\n}' } },
+          { id: 'js-13', number: 55, title: 'While Loops', description: 'Loop while condition is true', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['while (condition) { }', 'do { } while (condition)', 'Be careful of infinite loops'], starterCode: '', task: 'Create a while loop', validation: 'while', expectedOutput: 'let count = 5;\nwhile (count > 0) {\n  console.log(count);\n  count--;\n}\nconsole.log("Done!");' } },
+          { id: 'js-14', number: 56, title: 'Array Methods', description: 'Powerful array operations', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['map() transforms each item', 'filter() keeps matching items', 'reduce() combines to single value'], starterCode: '', task: 'Use map, filter, reduce', validation: '.map(', expectedOutput: 'let numbers = [1, 2, 3, 4, 5];\nlet doubled = numbers.map(n => n * 2);\nlet evens = numbers.filter(n => n % 2 === 0);\nlet sum = numbers.reduce((acc, n) => acc + n, 0);' } },
+          { id: 'js-15', number: 57, title: 'Break & Continue', description: 'Control loop flow', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['break exits the loop', 'continue skips to next iteration', 'Useful for early exit or skipping'], starterCode: '', task: 'Use break and continue', validation: 'break', expectedOutput: 'for (let i = 0; i < 10; i++) {\n  if (i === 3) continue;\n  if (i === 7) break;\n  console.log(i);\n}' } },
+          { id: 'js-16', number: 58, title: 'Chapter Practice', description: 'Control flow exercises', duration: '30 min', xp: 120, type: 'practice', content: { instructions: ['Combine conditionals and loops', 'Use array methods', 'Solve logic problems'], starterCode: '', task: 'Complete control flow exercises', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 8,
+        title: 'JavaScript Functions',
+        description: 'Reusable code blocks',
+        lessons: [
+          { id: 'js-17', number: 59, title: 'Function Declarations', description: 'Create functions', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['function name(params) { }', 'return sends value back', 'Parameters are inputs'], starterCode: '', task: 'Create a function', validation: 'function', expectedOutput: 'function add(a, b) {\n  return a + b;\n}\nlet sum = add(5, 3);\nconsole.log(sum);' } },
+          { id: 'js-18', number: 60, title: 'Arrow Functions', description: 'Modern function syntax', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['const fn = (params) => { }', 'Short form: const fn = x => x * 2', 'No own this binding'], starterCode: '', task: 'Convert to arrow functions', validation: '=>', expectedOutput: 'const add = (a, b) => a + b;\nconst square = x => x * x;\nconst greet = name => `Hello, ${name}!`;' } },
+          { id: 'js-19', number: 61, title: 'Default Parameters', description: 'Optional arguments', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['function fn(x = default)', 'Applied when argument missing', 'Can use expressions'], starterCode: '', task: 'Add default parameters', validation: '=', expectedOutput: 'function greet(name = "World", greeting = "Hello") {\n  return `${greeting}, ${name}!`;\n}\nconsole.log(greet());\nconsole.log(greet("John"));' } },
+          { id: 'js-20', number: 62, title: 'Rest & Spread', description: 'Variable arguments', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['...rest collects arguments', '...spread expands arrays', 'Useful for flexible functions'], starterCode: '', task: 'Use rest and spread', validation: '...', expectedOutput: 'function sum(...numbers) {\n  return numbers.reduce((a, b) => a + b, 0);\n}\nlet arr1 = [1, 2];\nlet arr2 = [...arr1, 3, 4];' } },
+          { id: 'js-21', number: 63, title: 'Destructuring', description: 'Extract values', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['const { a, b } = obj', 'const [x, y] = arr', 'Rename with { a: newName }'], starterCode: '', task: 'Use destructuring', validation: '{', expectedOutput: 'const person = { name: "John", age: 25 };\nconst { name, age } = person;\n\nconst coords = [10, 20];\nconst [x, y] = coords;' } },
+          { id: 'js-22', number: 64, title: 'Callbacks', description: 'Functions as arguments', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Pass function as argument', 'Called later by receiving function', 'Common in async operations'], starterCode: '', task: 'Use callback functions', validation: 'callback', expectedOutput: 'function fetchData(callback) {\n  setTimeout(() => {\n    callback("Data loaded");\n  }, 1000);\n}\nfetchData(data => console.log(data));' } },
+          { id: 'js-23', number: 65, title: 'Closures', description: 'Functions remembering scope', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Inner function accesses outer scope', 'Creates private variables', 'Powerful pattern for encapsulation'], starterCode: '', task: 'Create a closure', validation: 'return function', expectedOutput: 'function createCounter() {\n  let count = 0;\n  return function() {\n    count++;\n    return count;\n  };\n}\nconst counter = createCounter();\nconsole.log(counter()); // 1\nconsole.log(counter()); // 2' } },
+          { id: 'js-24', number: 66, title: 'Chapter Practice', description: 'Functions project', duration: '35 min', xp: 140, type: 'practice', content: { instructions: ['Build utility functions', 'Use closures and callbacks', 'Apply all function concepts'], starterCode: '', task: 'Create a function library', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 9,
+        title: 'DOM Manipulation',
+        description: 'Change the page dynamically',
+        lessons: [
+          { id: 'dom-1', number: 67, title: 'Selecting Elements', description: 'Find elements in the DOM', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['document.querySelector() - first match', 'document.querySelectorAll() - all matches', 'document.getElementById() - by ID'], starterCode: '', task: 'Select elements from the DOM', validation: 'querySelector', expectedOutput: 'const header = document.querySelector("h1");\nconst buttons = document.querySelectorAll(".btn");\nconst main = document.getElementById("main");' } },
+          { id: 'dom-2', number: 68, title: 'Modifying Content', description: 'Change text and HTML', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['textContent for plain text', 'innerHTML for HTML', 'Be careful with innerHTML (XSS)'], starterCode: '', task: 'Modify element content', validation: 'textContent', expectedOutput: 'const title = document.querySelector("h1");\ntitle.textContent = "New Title";\n\nconst container = document.querySelector(".container");\ncontainer.innerHTML = "<p>New content</p>";' } },
+          { id: 'dom-3', number: 69, title: 'Modifying Styles', description: 'Change CSS dynamically', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['element.style.property = value', 'element.classList.add/remove/toggle', 'classList is preferred'], starterCode: '', task: 'Modify element styles', validation: '.classList', expectedOutput: 'const box = document.querySelector(".box");\nbox.style.backgroundColor = "blue";\nbox.classList.add("active");\nbox.classList.toggle("hidden");' } },
+          { id: 'dom-4', number: 70, title: 'Attributes', description: 'Work with element attributes', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['getAttribute() and setAttribute()', 'dataset for data-* attributes', 'Properties vs attributes'], starterCode: '', task: 'Modify attributes', validation: 'setAttribute', expectedOutput: 'const link = document.querySelector("a");\nlink.setAttribute("href", "https://example.com");\nlink.setAttribute("target", "_blank");\n\nconst item = document.querySelector("[data-id]");\nconsole.log(item.dataset.id);' } },
+          { id: 'dom-5', number: 71, title: 'Creating Elements', description: 'Add new elements', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['document.createElement()', 'parent.appendChild(child)', 'parent.insertBefore(new, reference)'], starterCode: '', task: 'Create and add elements', validation: 'createElement', expectedOutput: 'const newDiv = document.createElement("div");\nnewDiv.textContent = "New Element";\nnewDiv.classList.add("card");\n\nconst container = document.querySelector(".container");\ncontainer.appendChild(newDiv);' } },
+          { id: 'dom-6', number: 72, title: 'Removing Elements', description: 'Remove elements from DOM', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['element.remove()', 'parent.removeChild(child)', 'Clear with innerHTML = ""'], starterCode: '', task: 'Remove elements', validation: '.remove()', expectedOutput: 'const item = document.querySelector(".item");\nitem.remove();\n\nconst list = document.querySelector("ul");\nlist.innerHTML = ""; // Clear all children' } },
+          { id: 'dom-7', number: 73, title: 'Event Listeners', description: 'Respond to user actions', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['addEventListener(event, handler)', 'Events: click, submit, keydown, etc.', 'Event object contains details'], starterCode: '', task: 'Add event listeners', validation: 'addEventListener', expectedOutput: 'const button = document.querySelector("button");\nbutton.addEventListener("click", (e) => {\n  console.log("Clicked!", e.target);\n});\n\nconst input = document.querySelector("input");\ninput.addEventListener("input", (e) => {\n  console.log(e.target.value);\n});' } },
+          { id: 'dom-8', number: 74, title: 'Event Delegation', description: 'Efficient event handling', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Add listener to parent', 'Check event.target for source', 'Works for dynamic elements'], starterCode: '', task: 'Use event delegation', validation: 'e.target', expectedOutput: 'const list = document.querySelector("ul");\nlist.addEventListener("click", (e) => {\n  if (e.target.matches("li")) {\n    e.target.classList.toggle("completed");\n  }\n});' } },
+          { id: 'dom-9', number: 75, title: 'Form Handling', description: 'Work with forms', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['submit event on form', 'preventDefault() stops submission', 'FormData for easy access'], starterCode: '', task: 'Handle form submission', validation: 'preventDefault', expectedOutput: 'const form = document.querySelector("form");\nform.addEventListener("submit", (e) => {\n  e.preventDefault();\n  const formData = new FormData(form);\n  console.log(formData.get("email"));\n});' } },
+          { id: 'dom-10', number: 76, title: 'Chapter Practice', description: 'Build interactive UI', duration: '40 min', xp: 160, type: 'practice', content: { instructions: ['Build an interactive component', 'Handle multiple events', 'Create and remove elements dynamically'], starterCode: '', task: 'Create a todo list', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 10,
+        title: 'Async JavaScript',
+        description: 'Handle asynchronous operations',
+        lessons: [
+          { id: 'async-1', number: 77, title: 'Async Concepts', description: 'Understanding async', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['JavaScript is single-threaded', 'Async allows non-blocking operations', 'Event loop handles async tasks'], starterCode: '', task: 'Understand async behavior', validation: 'setTimeout', expectedOutput: 'console.log("Start");\nsetTimeout(() => {\n  console.log("Async");\n}, 1000);\nconsole.log("End");\n// Output: Start, End, Async' } },
+          { id: 'async-2', number: 78, title: 'Promises', description: 'Handle async results', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Promise represents future value', '.then() for success', '.catch() for errors'], starterCode: '', task: 'Create and use a promise', validation: 'new Promise', expectedOutput: 'const fetchData = new Promise((resolve, reject) => {\n  setTimeout(() => {\n    resolve("Data loaded");\n  }, 1000);\n});\n\nfetchData\n  .then(data => console.log(data))\n  .catch(err => console.error(err));' } },
+          { id: 'async-3', number: 79, title: 'Async/Await', description: 'Modern async syntax', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['async function returns Promise', 'await pauses for result', 'try/catch for error handling'], starterCode: '', task: 'Use async/await', validation: 'async', expectedOutput: 'async function loadData() {\n  try {\n    const response = await fetch("/api/data");\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.error(error);\n  }\n}' } },
+          { id: 'async-4', number: 80, title: 'Fetch API', description: 'Make HTTP requests', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['fetch(url) returns Promise', 'response.json() parses JSON', 'Second arg for options'], starterCode: '', task: 'Fetch data from an API', validation: 'fetch(', expectedOutput: 'async function getUsers() {\n  const response = await fetch("https://api.example.com/users");\n  if (!response.ok) throw new Error("Failed");\n  const users = await response.json();\n  return users;\n}' } },
+          { id: 'async-5', number: 81, title: 'POST Requests', description: 'Send data to APIs', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['method: "POST" in options', 'body: JSON.stringify(data)', 'Content-Type header required'], starterCode: '', task: 'Make a POST request', validation: 'method:', expectedOutput: 'async function createUser(user) {\n  const response = await fetch("/api/users", {\n    method: "POST",\n    headers: {\n      "Content-Type": "application/json"\n    },\n    body: JSON.stringify(user)\n  });\n  return response.json();\n}' } },
+          { id: 'async-6', number: 82, title: 'Error Handling', description: 'Handle async errors', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['try/catch for async/await', '.catch() for promises', 'Always handle errors gracefully'], starterCode: '', task: 'Handle fetch errors', validation: 'catch', expectedOutput: 'async function safeFetch(url) {\n  try {\n    const response = await fetch(url);\n    if (!response.ok) {\n      throw new Error(`HTTP ${response.status}`);\n    }\n    return await response.json();\n  } catch (error) {\n    console.error("Fetch failed:", error);\n    return null;\n  }\n}' } },
+          { id: 'async-7', number: 83, title: 'Chapter Practice', description: 'Build async features', duration: '40 min', xp: 160, type: 'practice', content: { instructions: ['Fetch data from an API', 'Display data on the page', 'Handle loading and errors'], starterCode: '', task: 'Build a data fetching feature', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 11,
+        title: 'React Fundamentals',
+        description: 'Build modern UIs with React',
+        lessons: [
+          { id: 'react-1', number: 84, title: 'Introduction to React', description: 'What is React', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['React is a UI library', 'Component-based architecture', 'Virtual DOM for performance'], starterCode: '', task: 'Create a React app', validation: 'create-react-app', expectedOutput: '# Create new React app\nnpx create-react-app my-app\ncd my-app\nnpm start' } },
+          { id: 'react-2', number: 85, title: 'JSX', description: 'JavaScript XML syntax', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['JSX looks like HTML in JS', 'Use {} for expressions', 'className instead of class'], starterCode: '', task: 'Write JSX code', validation: 'return (', expectedOutput: 'function Welcome() {\n  const name = "John";\n  return (\n    <div className="welcome">\n      <h1>Hello, {name}!</h1>\n      <p>Welcome to React</p>\n    </div>\n  );\n}' } },
+          { id: 'react-3', number: 86, title: 'Components', description: 'Build reusable UI blocks', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Function components are preferred', 'Return JSX from component', 'One component per file'], starterCode: '', task: 'Create a component', validation: 'function', expectedOutput: 'function Card({ title, children }) {\n  return (\n    <div className="card">\n      <h2>{title}</h2>\n      <div>{children}</div>\n    </div>\n  );\n}\n\nexport default Card;' } },
+          { id: 'react-4', number: 87, title: 'Props', description: 'Pass data to components', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Props are read-only', 'Destructure in parameters', 'Default props with = '], starterCode: '', task: 'Use props in components', validation: 'props', expectedOutput: 'function UserCard({ name, email, avatar = "/default.png" }) {\n  return (\n    <div className="user-card">\n      <img src={avatar} alt={name} />\n      <h3>{name}</h3>\n      <p>{email}</p>\n    </div>\n  );\n}' } },
+          { id: 'react-5', number: 88, title: 'useState Hook', description: 'Manage component state', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['const [state, setState] = useState(initial)', 'setState triggers re-render', 'Use function form for updates'], starterCode: '', task: 'Use useState hook', validation: 'useState', expectedOutput: 'import { useState } from "react";\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n  \n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={() => setCount(c => c + 1)}>\n        Increment\n      </button>\n    </div>\n  );\n}' } },
+          { id: 'react-6', number: 89, title: 'useEffect Hook', description: 'Handle side effects', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['useEffect runs after render', 'Dependency array controls when', 'Return cleanup function'], starterCode: '', task: 'Use useEffect hook', validation: 'useEffect', expectedOutput: 'import { useState, useEffect } from "react";\n\nfunction UserData({ userId }) {\n  const [user, setUser] = useState(null);\n  \n  useEffect(() => {\n    fetch(`/api/users/${userId}`)\n      .then(res => res.json())\n      .then(data => setUser(data));\n  }, [userId]);\n  \n  return user ? <div>{user.name}</div> : <p>Loading...</p>;\n}' } },
+          { id: 'react-7', number: 90, title: 'Handling Events', description: 'React event handling', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['onClick, onChange, onSubmit', 'Pass function, not call', 'Use arrow functions for params'], starterCode: '', task: 'Handle events in React', validation: 'onClick', expectedOutput: 'function Form() {\n  const [text, setText] = useState("");\n  \n  const handleSubmit = (e) => {\n    e.preventDefault();\n    console.log(text);\n  };\n  \n  return (\n    <form onSubmit={handleSubmit}>\n      <input \n        value={text}\n        onChange={(e) => setText(e.target.value)}\n      />\n      <button type="submit">Submit</button>\n    </form>\n  );\n}' } },
+          { id: 'react-8', number: 91, title: 'Conditional Rendering', description: 'Show content conditionally', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Use && for simple conditions', 'Ternary for if/else', 'Early return for loading/error'], starterCode: '', task: 'Implement conditional rendering', validation: '&&', expectedOutput: 'function UserProfile({ user, isLoading, error }) {\n  if (isLoading) return <p>Loading...</p>;\n  if (error) return <p>Error: {error}</p>;\n  if (!user) return null;\n  \n  return (\n    <div>\n      <h1>{user.name}</h1>\n      {user.isAdmin && <span>Admin</span>}\n      {user.bio ? <p>{user.bio}</p> : <p>No bio</p>}\n    </div>\n  );\n}' } },
+          { id: 'react-9', number: 92, title: 'Lists & Keys', description: 'Render arrays', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Use .map() to render arrays', 'key prop is required', 'Key should be unique and stable'], starterCode: '', task: 'Render a list', validation: '.map(', expectedOutput: 'function UserList({ users }) {\n  return (\n    <ul>\n      {users.map(user => (\n        <li key={user.id}>\n          {user.name}\n        </li>\n      ))}\n    </ul>\n  );\n}' } },
+          { id: 'react-10', number: 93, title: 'Chapter Practice', description: 'Build a React app', duration: '50 min', xp: 200, type: 'practice', content: { instructions: ['Build a complete React component', 'Use state and effects', 'Handle events and render lists'], starterCode: '', task: 'Create a todo list app', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 12,
+        title: 'Final Projects',
+        description: 'Build real-world applications',
+        lessons: [
+          { id: 'proj-1', number: 94, title: 'Project: Portfolio Website', description: 'Personal portfolio', duration: '120 min', xp: 400, type: 'project', content: { instructions: ['Create a personal portfolio', 'Showcase your projects', 'Responsive design', 'Contact form'], starterCode: '', task: 'Build your portfolio website', validation: '', expectedOutput: 'A complete portfolio with:\n- Hero section\n- About section\n- Projects gallery\n- Skills section\n- Contact form\n- Responsive design' } },
+          { id: 'proj-2', number: 95, title: 'Project: E-commerce UI', description: 'Online store frontend', duration: '180 min', xp: 600, type: 'project', content: { instructions: ['Product listing page', 'Product detail page', 'Shopping cart', 'Checkout form'], starterCode: '', task: 'Build an e-commerce frontend', validation: '', expectedOutput: 'A complete e-commerce UI with:\n- Product grid\n- Filtering and sorting\n- Cart functionality\n- Responsive design\n- React components' } }
         ]
       }
     ]
@@ -533,60 +197,177 @@ export const courses = {
   backend: {
     id: 'backend',
     title: 'Backend Development',
-    subtitle: 'Node.js, Express & Databases',
-    description: 'Learn to build server-side applications, APIs, and work with databases. Power the backend of modern web apps.',
+    subtitle: 'Node.js, Express, MongoDB & APIs',
+    description: 'Master server-side development with Node.js, Express, and MongoDB. Build RESTful APIs, implement authentication, and deploy production-ready applications.',
     icon: 'Server',
     color: '#a855f7',
-    totalLessons: 20,
-    totalDuration: '14 hours',
-    level: 'Intermediate',
+    totalLessons: 88,
+    totalDuration: '45 hours',
+    level: 'Intermediate to Advanced',
     chapters: [
       {
         id: 1,
-        title: 'Node.js Essentials',
+        title: 'Node.js Fundamentals',
         description: 'Server-side JavaScript runtime',
         lessons: [
-          { id: 'node-1', number: 1, title: 'What is Node.js?', description: 'JavaScript outside the browser', duration: '10 min', xp: 35, type: 'lesson' },
-          { id: 'node-2', number: 2, title: 'Node.js Modules', description: 'Organize your code', duration: '15 min', xp: 50, type: 'lesson' },
-          { id: 'node-3', number: 3, title: 'NPM Package Manager', description: 'Use external libraries', duration: '12 min', xp: 45, type: 'lesson' },
-          { id: 'node-4', number: 4, title: 'File System Operations', description: 'Read and write files', duration: '18 min', xp: 65, type: 'lesson' },
-          { id: 'node-5', number: 5, title: 'Chapter Practice', description: 'Build a file manager', duration: '25 min', xp: 100, type: 'practice' }
+          { id: 'node-1', number: 1, title: 'What is Node.js?', description: 'JavaScript outside the browser', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Node.js runs JavaScript on the server', 'Built on Chrome V8 engine', 'Event-driven, non-blocking I/O'], starterCode: '', task: 'Run your first Node.js script', validation: 'console.log', expectedOutput: 'console.log("Hello from Node.js!");\n// Run: node app.js' } },
+          { id: 'node-2', number: 2, title: 'Node.js REPL', description: 'Interactive shell', duration: '10 min', xp: 30, type: 'lesson', content: { instructions: ['REPL: Read-Eval-Print-Loop', 'Type node to start', 'Great for testing code'], starterCode: '', task: 'Use Node REPL', validation: 'node', expectedOutput: '# Start REPL\nnode\n\n# Try commands\n> 2 + 2\n> const name = "John"\n> console.log(name)' } },
+          { id: 'node-3', number: 3, title: 'Modules & require', description: 'Organize your code', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['CommonJS: require() and module.exports', 'Each file is a module', 'Import built-in or custom modules'], starterCode: '', task: 'Create and use a module', validation: 'module.exports', expectedOutput: '// math.js\nmodule.exports = {\n  add: (a, b) => a + b,\n  subtract: (a, b) => a - b\n};\n\n// app.js\nconst math = require("./math");\nconsole.log(math.add(5, 3));' } },
+          { id: 'node-4', number: 4, title: 'ES Modules', description: 'Modern import/export', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Use "type": "module" in package.json', 'import and export syntax', 'Named and default exports'], starterCode: '', task: 'Use ES modules', validation: 'export', expectedOutput: '// math.js\nexport const add = (a, b) => a + b;\nexport default { add };\n\n// app.js\nimport { add } from "./math.js";\nimport math from "./math.js";' } },
+          { id: 'node-5', number: 5, title: 'NPM Basics', description: 'Package management', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['npm init creates package.json', 'npm install adds packages', 'node_modules contains dependencies'], starterCode: '', task: 'Initialize a project and install packages', validation: 'npm install', expectedOutput: 'npm init -y\nnpm install express\nnpm install --save-dev nodemon' } },
+          { id: 'node-6', number: 6, title: 'Package.json Scripts', description: 'Automate tasks', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['scripts section in package.json', 'npm run <script> executes', 'Common: start, dev, test, build'], starterCode: '', task: 'Add npm scripts', validation: '"scripts"', expectedOutput: '{\n  "scripts": {\n    "start": "node server.js",\n    "dev": "nodemon server.js",\n    "test": "jest"\n  }\n}' } },
+          { id: 'node-7', number: 7, title: 'Built-in Modules', description: 'Core Node modules', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['path: file paths', 'os: operating system info', 'url: URL parsing'], starterCode: '', task: 'Use built-in modules', validation: 'require("path")', expectedOutput: 'const path = require("path");\nconst os = require("os");\n\nconsole.log(path.join(__dirname, "files"));\nconsole.log(os.platform());\nconsole.log(os.cpus().length);' } },
+          { id: 'node-8', number: 8, title: 'File System - Reading', description: 'Read files with fs', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['fs.readFile for async', 'fs.readFileSync for sync', 'fs.promises for async/await'], starterCode: '', task: 'Read a file', validation: 'fs.readFile', expectedOutput: 'const fs = require("fs");\n\n// Callback style\nfs.readFile("data.txt", "utf8", (err, data) => {\n  if (err) throw err;\n  console.log(data);\n});\n\n// Promise style\nconst data = await fs.promises.readFile("data.txt", "utf8");' } },
+          { id: 'node-9', number: 9, title: 'File System - Writing', description: 'Write files with fs', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['fs.writeFile creates/overwrites', 'fs.appendFile adds to file', 'fs.mkdir creates directories'], starterCode: '', task: 'Write to a file', validation: 'fs.writeFile', expectedOutput: 'const fs = require("fs").promises;\n\nawait fs.writeFile("output.txt", "Hello World");\nawait fs.appendFile("log.txt", "New entry\\n");\nawait fs.mkdir("uploads", { recursive: true });' } },
+          { id: 'node-10', number: 10, title: 'Environment Variables', description: 'Configuration with dotenv', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Store secrets in .env file', 'Use dotenv package to load', 'Access via process.env'], starterCode: '', task: 'Use environment variables', validation: 'process.env', expectedOutput: '// .env\nPORT=3000\nDB_URL=mongodb://localhost\n\n// app.js\nrequire("dotenv").config();\nconst port = process.env.PORT || 3000;\nconst dbUrl = process.env.DB_URL;' } },
+          { id: 'node-11', number: 11, title: 'Chapter Practice', description: 'Build a file manager CLI', duration: '30 min', xp: 120, type: 'practice', content: { instructions: ['Create a CLI tool', 'List, read, create, delete files', 'Use process.argv for arguments'], starterCode: '', task: 'Build file manager CLI', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 2,
-        title: 'Express.js Framework',
-        description: 'Build web servers easily',
+        title: 'HTTP & Web Servers',
+        description: 'Understanding HTTP protocol',
         lessons: [
-          { id: 'express-1', number: 6, title: 'Express Setup', description: 'Create your first server', duration: '12 min', xp: 45, type: 'lesson' },
-          { id: 'express-2', number: 7, title: 'Routes & Endpoints', description: 'Handle different URLs', duration: '15 min', xp: 55, type: 'lesson' },
-          { id: 'express-3', number: 8, title: 'Middleware', description: 'Process requests', duration: '18 min', xp: 70, type: 'lesson' },
-          { id: 'express-4', number: 9, title: 'Request & Response', description: 'Handle data flow', duration: '15 min', xp: 55, type: 'lesson' },
-          { id: 'express-5', number: 10, title: 'Chapter Practice', description: 'Build a REST API', duration: '30 min', xp: 120, type: 'practice' }
+          { id: 'http-1', number: 12, title: 'HTTP Basics', description: 'How the web works', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['HTTP: HyperText Transfer Protocol', 'Request/Response cycle', 'Methods: GET, POST, PUT, DELETE'], starterCode: '', task: 'Understand HTTP methods', validation: 'GET', expectedOutput: 'GET - Retrieve data\nPOST - Create data\nPUT - Update data\nDELETE - Remove data\nPATCH - Partial update' } },
+          { id: 'http-2', number: 13, title: 'Status Codes', description: 'HTTP response codes', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['2xx: Success (200, 201, 204)', '4xx: Client error (400, 401, 404)', '5xx: Server error (500, 503)'], starterCode: '', task: 'Learn status codes', validation: '200', expectedOutput: '200 OK - Success\n201 Created - Resource created\n400 Bad Request - Invalid input\n401 Unauthorized - Auth required\n404 Not Found - Resource missing\n500 Internal Server Error' } },
+          { id: 'http-3', number: 14, title: 'Native HTTP Server', description: 'http module basics', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['http.createServer() creates server', 'Request and response objects', 'Listen on a port'], starterCode: '', task: 'Create basic HTTP server', validation: 'createServer', expectedOutput: 'const http = require("http");\n\nconst server = http.createServer((req, res) => {\n  res.writeHead(200, { "Content-Type": "text/plain" });\n  res.end("Hello World");\n});\n\nserver.listen(3000, () => {\n  console.log("Server on port 3000");\n});' } },
+          { id: 'http-4', number: 15, title: 'Handling Routes', description: 'Route based on URL', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['req.url contains the path', 'req.method is HTTP method', 'Route based on both'], starterCode: '', task: 'Handle different routes', validation: 'req.url', expectedOutput: 'const server = http.createServer((req, res) => {\n  if (req.url === "/" && req.method === "GET") {\n    res.end("Home");\n  } else if (req.url === "/api/users") {\n    res.end(JSON.stringify([{id: 1}]));\n  } else {\n    res.statusCode = 404;\n    res.end("Not Found");\n  }\n});' } },
+          { id: 'http-5', number: 16, title: 'Request Body Parsing', description: 'Handle POST data', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Body comes in chunks', 'Collect with data event', 'Parse JSON with JSON.parse'], starterCode: '', task: 'Parse request body', validation: 'req.on', expectedOutput: 'let body = "";\nreq.on("data", chunk => {\n  body += chunk;\n});\nreq.on("end", () => {\n  const data = JSON.parse(body);\n  console.log(data);\n  res.end("Received");\n});' } },
+          { id: 'http-6', number: 17, title: 'Chapter Practice', description: 'Build API without Express', duration: '35 min', xp: 140, type: 'practice', content: { instructions: ['Create REST API with http module', 'Handle CRUD operations', 'Store data in memory'], starterCode: '', task: 'Build native HTTP API', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 3,
-        title: 'Database Fundamentals',
-        description: 'Store and retrieve data',
+        title: 'Express.js Framework',
+        description: 'Web framework for Node.js',
         lessons: [
-          { id: 'db-1', number: 11, title: 'Database Concepts', description: 'SQL vs NoSQL', duration: '12 min', xp: 40, type: 'lesson' },
-          { id: 'db-2', number: 12, title: 'MongoDB Basics', description: 'Document database', duration: '18 min', xp: 65, type: 'lesson' },
-          { id: 'db-3', number: 13, title: 'CRUD Operations', description: 'Create, Read, Update, Delete', duration: '20 min', xp: 80, type: 'lesson' },
-          { id: 'db-4', number: 14, title: 'Mongoose ODM', description: 'MongoDB with Node.js', duration: '18 min', xp: 70, type: 'lesson' },
-          { id: 'db-5', number: 15, title: 'Chapter Practice', description: 'Build a data API', duration: '35 min', xp: 140, type: 'practice' }
+          { id: 'express-1', number: 18, title: 'Express Setup', description: 'Create Express app', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['npm install express', 'Create express application', 'app.listen() starts server'], starterCode: '', task: 'Create Express server', validation: 'express()', expectedOutput: 'const express = require("express");\nconst app = express();\n\napp.get("/", (req, res) => {\n  res.send("Hello Express!");\n});\n\napp.listen(3000, () => {\n  console.log("Server on 3000");\n});' } },
+          { id: 'express-2', number: 19, title: 'Routing Basics', description: 'Define routes', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['app.get(), post(), put(), delete()', 'Route parameters with :param', 'Query strings in req.query'], starterCode: '', task: 'Create routes', validation: 'app.get', expectedOutput: 'app.get("/users", (req, res) => {\n  res.json(users);\n});\n\napp.get("/users/:id", (req, res) => {\n  const user = users.find(u => u.id === req.params.id);\n  res.json(user);\n});\n\n// /search?q=john\napp.get("/search", (req, res) => {\n  console.log(req.query.q);\n});' } },
+          { id: 'express-3', number: 20, title: 'Request Object', description: 'Access request data', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['req.params - route parameters', 'req.query - query string', 'req.body - POST data (needs middleware)'], starterCode: '', task: 'Use request object', validation: 'req.body', expectedOutput: 'app.use(express.json());\n\napp.post("/users", (req, res) => {\n  const { name, email } = req.body;\n  const newUser = { id: Date.now(), name, email };\n  users.push(newUser);\n  res.status(201).json(newUser);\n});' } },
+          { id: 'express-4', number: 21, title: 'Response Object', description: 'Send responses', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['res.send() - any data', 'res.json() - JSON data', 'res.status() - set status code'], starterCode: '', task: 'Use response methods', validation: 'res.json', expectedOutput: 'res.status(200).json({ message: "Success" });\nres.status(201).json(newUser);\nres.status(400).json({ error: "Invalid data" });\nres.status(404).json({ error: "Not found" });\nres.status(500).json({ error: "Server error" });' } },
+          { id: 'express-5', number: 22, title: 'Middleware Basics', description: 'Process requests', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Middleware runs before route handlers', 'Use next() to continue', 'Order matters'], starterCode: '', task: 'Create middleware', validation: 'next()', expectedOutput: 'const logger = (req, res, next) => {\n  console.log(`${req.method} ${req.url}`);\n  next();\n};\n\napp.use(logger);\n\n// Or for specific routes\napp.get("/admin", authMiddleware, (req, res) => {\n  res.json({ admin: true });\n});' } },
+          { id: 'express-6', number: 23, title: 'Built-in Middleware', description: 'Express middleware', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['express.json() parses JSON', 'express.urlencoded() parses forms', 'express.static() serves files'], starterCode: '', task: 'Use built-in middleware', validation: 'express.json()', expectedOutput: 'app.use(express.json());\napp.use(express.urlencoded({ extended: true }));\napp.use(express.static("public"));\n\n// Now req.body works for JSON and forms\n// Static files served from /public folder' } },
+          { id: 'express-7', number: 24, title: 'Error Handling', description: 'Handle errors gracefully', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Error middleware has 4 params', 'Call next(error) to trigger', 'Catch async errors'], starterCode: '', task: 'Add error handling', validation: 'err, req, res, next', expectedOutput: 'app.get("/users/:id", async (req, res, next) => {\n  try {\n    const user = await User.findById(req.params.id);\n    if (!user) throw new Error("User not found");\n    res.json(user);\n  } catch (err) {\n    next(err);\n  }\n});\n\napp.use((err, req, res, next) => {\n  res.status(500).json({ error: err.message });\n});' } },
+          { id: 'express-8', number: 25, title: 'Express Router', description: 'Organize routes', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['express.Router() creates router', 'Mount routers on paths', 'Keep routes organized'], starterCode: '', task: 'Use Express Router', validation: 'express.Router()', expectedOutput: '// routes/users.js\nconst router = express.Router();\n\nrouter.get("/", getUsers);\nrouter.post("/", createUser);\nrouter.get("/:id", getUser);\n\nmodule.exports = router;\n\n// app.js\napp.use("/api/users", require("./routes/users"));' } },
+          { id: 'express-9', number: 26, title: 'Chapter Practice', description: 'Build REST API', duration: '40 min', xp: 160, type: 'practice', content: { instructions: ['Create full CRUD API', 'Use Router for organization', 'Add error handling'], starterCode: '', task: 'Build Express REST API', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 4,
-        title: 'Authentication & Security',
-        description: 'Secure your applications',
+        title: 'MongoDB & Mongoose',
+        description: 'NoSQL database with ODM',
         lessons: [
-          { id: 'auth-1', number: 16, title: 'Password Hashing', description: 'Secure password storage', duration: '15 min', xp: 60, type: 'lesson' },
-          { id: 'auth-2', number: 17, title: 'JWT Authentication', description: 'Token-based auth', duration: '20 min', xp: 85, type: 'lesson' },
-          { id: 'auth-3', number: 18, title: 'Protected Routes', description: 'Restrict access', duration: '15 min', xp: 60, type: 'lesson' },
-          { id: 'auth-4', number: 19, title: 'Final Project', description: 'Complete backend app', duration: '60 min', xp: 250, type: 'project' },
-          { id: 'auth-5', number: 20, title: 'Course Complete!', description: 'Claim your certificate', duration: '5 min', xp: 150, type: 'completion' }
+          { id: 'mongo-1', number: 27, title: 'MongoDB Basics', description: 'Document database', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['MongoDB stores JSON-like documents', 'Collections hold documents', 'No fixed schema required'], starterCode: '', task: 'Understand MongoDB concepts', validation: 'MongoDB', expectedOutput: 'Database > Collections > Documents\n\n// Document example\n{\n  "_id": ObjectId("..."),\n  "name": "John",\n  "email": "john@test.com",\n  "age": 25\n}' } },
+          { id: 'mongo-2', number: 28, title: 'Mongoose Setup', description: 'Connect to MongoDB', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['npm install mongoose', 'mongoose.connect() connects', 'Handle connection events'], starterCode: '', task: 'Connect with Mongoose', validation: 'mongoose.connect', expectedOutput: 'const mongoose = require("mongoose");\n\nmongoose.connect(process.env.MONGODB_URI)\n  .then(() => console.log("MongoDB connected"))\n  .catch(err => console.error(err));\n\nmongoose.connection.on("error", console.error);' } },
+          { id: 'mongo-3', number: 29, title: 'Defining Schemas', description: 'Structure your data', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Schema defines document structure', 'Types: String, Number, Date, Boolean', 'Required, default, unique options'], starterCode: '', task: 'Create a Mongoose schema', validation: 'new mongoose.Schema', expectedOutput: 'const userSchema = new mongoose.Schema({\n  name: { type: String, required: true },\n  email: { type: String, required: true, unique: true },\n  password: { type: String, required: true, minlength: 6 },\n  role: { type: String, default: "user" },\n  createdAt: { type: Date, default: Date.now }\n});' } },
+          { id: 'mongo-4', number: 30, title: 'Creating Models', description: 'Model from schema', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['mongoose.model() creates model', 'Model is a constructor', 'Use for CRUD operations'], starterCode: '', task: 'Create a model', validation: 'mongoose.model', expectedOutput: 'const User = mongoose.model("User", userSchema);\n\n// Create document\nconst user = new User({\n  name: "John",\n  email: "john@test.com",\n  password: "hashedpassword"\n});\n\nawait user.save();' } },
+          { id: 'mongo-5', number: 31, title: 'CRUD - Create', description: 'Insert documents', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['new Model() + save()', 'Model.create() shorthand', 'insertMany for bulk'], starterCode: '', task: 'Create documents', validation: '.create(', expectedOutput: '// Method 1: new + save\nconst user = new User({ name: "John" });\nawait user.save();\n\n// Method 2: create\nconst user = await User.create({ name: "John" });\n\n// Method 3: bulk insert\nawait User.insertMany([{ name: "A" }, { name: "B" }]);' } },
+          { id: 'mongo-6', number: 32, title: 'CRUD - Read', description: 'Query documents', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['find() returns all matches', 'findOne() returns first match', 'findById() by _id'], starterCode: '', task: 'Query documents', validation: '.find(', expectedOutput: '// Find all\nconst users = await User.find();\n\n// Find with conditions\nconst admins = await User.find({ role: "admin" });\n\n// Find one\nconst user = await User.findOne({ email: "john@test.com" });\n\n// Find by ID\nconst user = await User.findById(id);' } },
+          { id: 'mongo-7', number: 33, title: 'Query Operators', description: 'Advanced queries', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['$gt, $gte, $lt, $lte for comparison', '$in, $nin for arrays', '$or, $and for logic'], starterCode: '', task: 'Use query operators', validation: '$gt', expectedOutput: '// Age greater than 18\nawait User.find({ age: { $gt: 18 } });\n\n// Role in list\nawait User.find({ role: { $in: ["admin", "mod"] } });\n\n// Multiple conditions\nawait User.find({ $or: [{ age: { $lt: 18 } }, { role: "admin" }] });' } },
+          { id: 'mongo-8', number: 34, title: 'CRUD - Update', description: 'Modify documents', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['findByIdAndUpdate() common', 'updateOne, updateMany for bulk', 'Use $set, $inc operators'], starterCode: '', task: 'Update documents', validation: 'findByIdAndUpdate', expectedOutput: 'await User.findByIdAndUpdate(\n  id,\n  { name: "New Name" },\n  { new: true, runValidators: true }\n);\n\nawait User.updateMany(\n  { role: "user" },\n  { $set: { verified: true } }\n);' } },
+          { id: 'mongo-9', number: 35, title: 'CRUD - Delete', description: 'Remove documents', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['findByIdAndDelete() by ID', 'deleteOne, deleteMany for bulk', 'Returns deleted document'], starterCode: '', task: 'Delete documents', validation: 'findByIdAndDelete', expectedOutput: 'const deleted = await User.findByIdAndDelete(id);\n\nawait User.deleteOne({ email: "old@test.com" });\n\nawait User.deleteMany({ verified: false });' } },
+          { id: 'mongo-10', number: 36, title: 'Schema Methods', description: 'Instance methods', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['schema.methods adds instance methods', 'Access with this keyword', 'Good for model logic'], starterCode: '', task: 'Add schema methods', validation: 'schema.methods', expectedOutput: 'userSchema.methods.comparePassword = async function(password) {\n  return await bcrypt.compare(password, this.password);\n};\n\nuserSchema.methods.toJSON = function() {\n  const obj = this.toObject();\n  delete obj.password;\n  return obj;\n};' } },
+          { id: 'mongo-11', number: 37, title: 'Schema Statics', description: 'Model-level methods', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['schema.statics for class methods', 'Called on Model, not instance', 'Good for queries'], starterCode: '', task: 'Add static methods', validation: 'schema.statics', expectedOutput: 'userSchema.statics.findByEmail = function(email) {\n  return this.findOne({ email });\n};\n\nuserSchema.statics.findAdmins = function() {\n  return this.find({ role: "admin" });\n};\n\n// Usage\nconst user = await User.findByEmail("john@test.com");' } },
+          { id: 'mongo-12', number: 38, title: 'Middleware (Hooks)', description: 'Pre and post hooks', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['schema.pre() runs before', 'schema.post() runs after', 'Common: hash password before save'], starterCode: '', task: 'Use Mongoose middleware', validation: 'schema.pre', expectedOutput: 'userSchema.pre("save", async function(next) {\n  if (!this.isModified("password")) return next();\n  this.password = await bcrypt.hash(this.password, 10);\n  next();\n});\n\nuserSchema.post("save", function(doc) {\n  console.log(`User ${doc._id} saved`);\n});' } },
+          { id: 'mongo-13', number: 39, title: 'Relationships', description: 'References between documents', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['ref: "ModelName" for references', 'populate() loads referenced docs', 'ObjectId type for references'], starterCode: '', task: 'Create relationships', validation: 'ref:', expectedOutput: 'const postSchema = new mongoose.Schema({\n  title: String,\n  author: { type: mongoose.Schema.Types.ObjectId, ref: "User" }\n});\n\n// Query with populate\nconst posts = await Post.find().populate("author", "name email");' } },
+          { id: 'mongo-14', number: 40, title: 'Virtuals', description: 'Computed properties', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['schema.virtual() creates virtual', 'Not stored in database', 'Computed on access'], starterCode: '', task: 'Add virtual properties', validation: 'schema.virtual', expectedOutput: 'userSchema.virtual("fullName").get(function() {\n  return `${this.firstName} ${this.lastName}`;\n});\n\nuserSchema.set("toJSON", { virtuals: true });\n\n// user.fullName works but not stored' } },
+          { id: 'mongo-15', number: 41, title: 'Chapter Practice', description: 'Build data layer', duration: '45 min', xp: 180, type: 'practice', content: { instructions: ['Create models with relationships', 'Implement all CRUD operations', 'Add validation and middleware'], starterCode: '', task: 'Build complete data layer', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 5,
+        title: 'REST API Design',
+        description: 'Build professional APIs',
+        lessons: [
+          { id: 'rest-1', number: 42, title: 'REST Principles', description: 'RESTful architecture', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Resources identified by URLs', 'HTTP methods for actions', 'Stateless communication'], starterCode: '', task: 'Understand REST', validation: 'REST', expectedOutput: 'GET /users - List users\nPOST /users - Create user\nGET /users/:id - Get user\nPUT /users/:id - Update user\nDELETE /users/:id - Delete user' } },
+          { id: 'rest-2', number: 43, title: 'API Versioning', description: 'Version your APIs', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['Version in URL: /api/v1/', 'Or in header: Accept-Version', 'Allows breaking changes'], starterCode: '', task: 'Version your API', validation: '/api/v1', expectedOutput: 'app.use("/api/v1/users", usersV1Router);\napp.use("/api/v2/users", usersV2Router);\n\n// Client uses: GET /api/v1/users' } },
+          { id: 'rest-3', number: 44, title: 'Pagination', description: 'Handle large datasets', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['page and limit query params', 'skip and limit in Mongoose', 'Return metadata'], starterCode: '', task: 'Implement pagination', validation: '.skip(', expectedOutput: 'const page = parseInt(req.query.page) || 1;\nconst limit = parseInt(req.query.limit) || 10;\nconst skip = (page - 1) * limit;\n\nconst users = await User.find().skip(skip).limit(limit);\nconst total = await User.countDocuments();\n\nres.json({\n  data: users,\n  page,\n  totalPages: Math.ceil(total / limit)\n});' } },
+          { id: 'rest-4', number: 45, title: 'Filtering & Sorting', description: 'Query data efficiently', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Query params for filters', 'sort param for ordering', 'Build query dynamically'], starterCode: '', task: 'Add filtering and sorting', validation: '.sort(', expectedOutput: '// GET /users?role=admin&sort=-createdAt\nlet query = User.find();\n\nif (req.query.role) {\n  query = query.where("role", req.query.role);\n}\n\nif (req.query.sort) {\n  query = query.sort(req.query.sort);\n}\n\nconst users = await query;' } },
+          { id: 'rest-5', number: 46, title: 'Field Selection', description: 'Return only needed fields', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['select() chooses fields', 'Query param: fields=name,email', 'Reduce payload size'], starterCode: '', task: 'Implement field selection', validation: '.select(', expectedOutput: '// GET /users?fields=name,email\nlet query = User.find();\n\nif (req.query.fields) {\n  const fields = req.query.fields.split(",").join(" ");\n  query = query.select(fields);\n}\n\nconst users = await query;' } },
+          { id: 'rest-6', number: 47, title: 'Input Validation', description: 'Validate request data', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['express-validator package', 'Validation chains', 'Return validation errors'], starterCode: '', task: 'Add input validation', validation: 'express-validator', expectedOutput: 'const { body, validationResult } = require("express-validator");\n\nconst validateUser = [\n  body("email").isEmail().normalizeEmail(),\n  body("password").isLength({ min: 6 }),\n  (req, res, next) => {\n    const errors = validationResult(req);\n    if (!errors.isEmpty()) {\n      return res.status(400).json({ errors: errors.array() });\n    }\n    next();\n  }\n];' } },
+          { id: 'rest-7', number: 48, title: 'Error Responses', description: 'Consistent error format', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Standard error format', 'Include error code, message', 'Stack trace in dev only'], starterCode: '', task: 'Create error handler', validation: 'class AppError', expectedOutput: 'class AppError extends Error {\n  constructor(message, statusCode) {\n    super(message);\n    this.statusCode = statusCode;\n    this.status = statusCode < 500 ? "fail" : "error";\n  }\n}\n\napp.use((err, req, res, next) => {\n  res.status(err.statusCode || 500).json({\n    status: err.status,\n    message: err.message\n  });\n});' } },
+          { id: 'rest-8', number: 49, title: 'Rate Limiting', description: 'Protect your API', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['express-rate-limit package', 'Limit requests per IP', 'Different limits per route'], starterCode: '', task: 'Add rate limiting', validation: 'rateLimit', expectedOutput: 'const rateLimit = require("express-rate-limit");\n\nconst limiter = rateLimit({\n  windowMs: 15 * 60 * 1000, // 15 minutes\n  max: 100, // limit each IP\n  message: "Too many requests"\n});\n\napp.use("/api", limiter);' } },
+          { id: 'rest-9', number: 50, title: 'API Documentation', description: 'Document your API', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Swagger/OpenAPI standard', 'swagger-jsdoc + swagger-ui-express', 'Interactive documentation'], starterCode: '', task: 'Add Swagger docs', validation: 'swagger', expectedOutput: 'const swaggerJsdoc = require("swagger-jsdoc");\nconst swaggerUi = require("swagger-ui-express");\n\nconst specs = swaggerJsdoc({\n  definition: {\n    openapi: "3.0.0",\n    info: { title: "My API", version: "1.0.0" }\n  },\n  apis: ["./routes/*.js"]\n});\n\napp.use("/docs", swaggerUi.serve, swaggerUi.setup(specs));' } },
+          { id: 'rest-10', number: 51, title: 'Chapter Practice', description: 'Build production API', duration: '50 min', xp: 200, type: 'practice', content: { instructions: ['Implement all REST features', 'Add validation and docs', 'Include rate limiting'], starterCode: '', task: 'Build production-ready API', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 6,
+        title: 'Authentication & Authorization',
+        description: 'Secure your application',
+        lessons: [
+          { id: 'auth-1', number: 52, title: 'Password Hashing', description: 'Secure storage', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Never store plain passwords', 'bcrypt hashes passwords', 'Salt rounds determine security'], starterCode: '', task: 'Hash passwords', validation: 'bcrypt.hash', expectedOutput: 'const bcrypt = require("bcryptjs");\n\n// Hash password\nconst hashedPassword = await bcrypt.hash(password, 10);\n\n// Compare password\nconst isMatch = await bcrypt.compare(password, hashedPassword);' } },
+          { id: 'auth-2', number: 53, title: 'User Registration', description: 'Create accounts', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Validate input', 'Check if user exists', 'Hash password and save'], starterCode: '', task: 'Implement registration', validation: 'register', expectedOutput: 'const register = async (req, res) => {\n  const { email, password } = req.body;\n  \n  const exists = await User.findOne({ email });\n  if (exists) return res.status(400).json({ error: "Email exists" });\n  \n  const user = await User.create({ email, password });\n  res.status(201).json({ user: user.toJSON() });\n};' } },
+          { id: 'auth-3', number: 54, title: 'User Login', description: 'Authenticate users', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Find user by email', 'Compare password', 'Return token on success'], starterCode: '', task: 'Implement login', validation: 'login', expectedOutput: 'const login = async (req, res) => {\n  const { email, password } = req.body;\n  \n  const user = await User.findOne({ email });\n  if (!user) return res.status(401).json({ error: "Invalid credentials" });\n  \n  const isMatch = await user.comparePassword(password);\n  if (!isMatch) return res.status(401).json({ error: "Invalid credentials" });\n  \n  const token = generateToken(user._id);\n  res.json({ token });\n};' } },
+          { id: 'auth-4', number: 55, title: 'JWT Tokens', description: 'Token-based auth', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['JWT: JSON Web Token', 'Contains encoded user data', 'Signed with secret key'], starterCode: '', task: 'Create and verify JWTs', validation: 'jwt.sign', expectedOutput: 'const jwt = require("jsonwebtoken");\n\nconst generateToken = (userId) => {\n  return jwt.sign({ id: userId }, process.env.JWT_SECRET, {\n    expiresIn: "7d"\n  });\n};\n\nconst verifyToken = (token) => {\n  return jwt.verify(token, process.env.JWT_SECRET);\n};' } },
+          { id: 'auth-5', number: 56, title: 'Auth Middleware', description: 'Protect routes', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Extract token from header', 'Verify and decode token', 'Attach user to request'], starterCode: '', task: 'Create auth middleware', validation: 'req.user', expectedOutput: 'const protect = async (req, res, next) => {\n  const token = req.headers.authorization?.split(" ")[1];\n  if (!token) return res.status(401).json({ error: "Not authorized" });\n  \n  try {\n    const decoded = jwt.verify(token, process.env.JWT_SECRET);\n    req.user = await User.findById(decoded.id);\n    next();\n  } catch {\n    res.status(401).json({ error: "Invalid token" });\n  }\n};' } },
+          { id: 'auth-6', number: 57, title: 'Role-Based Access', description: 'Authorization levels', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Roles: user, admin, etc.', 'Check role in middleware', 'Restrict routes by role'], starterCode: '', task: 'Implement role-based access', validation: 'authorize', expectedOutput: 'const authorize = (...roles) => {\n  return (req, res, next) => {\n    if (!roles.includes(req.user.role)) {\n      return res.status(403).json({ error: "Not authorized" });\n    }\n    next();\n  };\n};\n\napp.delete("/users/:id", protect, authorize("admin"), deleteUser);' } },
+          { id: 'auth-7', number: 58, title: 'Refresh Tokens', description: 'Token refresh flow', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Short-lived access token', 'Long-lived refresh token', 'Refresh endpoint renews'], starterCode: '', task: 'Implement refresh tokens', validation: 'refreshToken', expectedOutput: 'const login = async (req, res) => {\n  const accessToken = jwt.sign({ id: user._id }, secret, { expiresIn: "15m" });\n  const refreshToken = jwt.sign({ id: user._id }, refreshSecret, { expiresIn: "7d" });\n  \n  res.json({ accessToken, refreshToken });\n};\n\nconst refresh = async (req, res) => {\n  const { refreshToken } = req.body;\n  const decoded = jwt.verify(refreshToken, refreshSecret);\n  const accessToken = jwt.sign({ id: decoded.id }, secret, { expiresIn: "15m" });\n  res.json({ accessToken });\n};' } },
+          { id: 'auth-8', number: 59, title: 'Password Reset', description: 'Forgot password flow', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Generate reset token', 'Send email with link', 'Verify token and update password'], starterCode: '', task: 'Implement password reset', validation: 'resetToken', expectedOutput: 'const forgotPassword = async (req, res) => {\n  const user = await User.findOne({ email: req.body.email });\n  if (!user) return res.status(404).json({ error: "User not found" });\n  \n  const resetToken = crypto.randomBytes(32).toString("hex");\n  user.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex");\n  user.resetPasswordExpire = Date.now() + 10 * 60 * 1000;\n  await user.save();\n  \n  // Send email with resetToken\n};' } },
+          { id: 'auth-9', number: 60, title: 'Chapter Practice', description: 'Complete auth system', duration: '50 min', xp: 200, type: 'practice', content: { instructions: ['Implement full auth flow', 'Register, login, refresh, reset', 'Role-based authorization'], starterCode: '', task: 'Build auth system', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 7,
+        title: 'File Uploads & Storage',
+        description: 'Handle file operations',
+        lessons: [
+          { id: 'file-1', number: 61, title: 'Multer Setup', description: 'File upload middleware', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['multer handles multipart/form-data', 'Configure storage destination', 'Set file size limits'], starterCode: '', task: 'Set up Multer', validation: 'multer', expectedOutput: 'const multer = require("multer");\n\nconst storage = multer.diskStorage({\n  destination: (req, file, cb) => cb(null, "uploads/"),\n  filename: (req, file, cb) => cb(null, Date.now() + "-" + file.originalname)\n});\n\nconst upload = multer({ storage, limits: { fileSize: 5 * 1024 * 1024 } });' } },
+          { id: 'file-2', number: 62, title: 'Single File Upload', description: 'Upload one file', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['upload.single("fieldName")', 'File available in req.file', 'Returns file info'], starterCode: '', task: 'Upload single file', validation: 'upload.single', expectedOutput: 'app.post("/upload", upload.single("avatar"), (req, res) => {\n  if (!req.file) return res.status(400).json({ error: "No file" });\n  \n  res.json({\n    filename: req.file.filename,\n    path: req.file.path,\n    size: req.file.size\n  });\n});' } },
+          { id: 'file-3', number: 63, title: 'Multiple Files', description: 'Upload many files', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['upload.array("fieldName", maxCount)', 'Files available in req.files', 'upload.fields for different fields'], starterCode: '', task: 'Handle multiple uploads', validation: 'upload.array', expectedOutput: 'app.post("/gallery", upload.array("photos", 10), (req, res) => {\n  const files = req.files.map(f => ({\n    filename: f.filename,\n    path: f.path\n  }));\n  res.json({ files });\n});' } },
+          { id: 'file-4', number: 64, title: 'File Validation', description: 'Filter file types', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['fileFilter function validates', 'Check mimetype or extension', 'Reject invalid files'], starterCode: '', task: 'Validate file types', validation: 'fileFilter', expectedOutput: 'const upload = multer({\n  storage,\n  fileFilter: (req, file, cb) => {\n    const allowed = ["image/jpeg", "image/png", "image/gif"];\n    if (allowed.includes(file.mimetype)) {\n      cb(null, true);\n    } else {\n      cb(new Error("Invalid file type"), false);\n    }\n  }\n});' } },
+          { id: 'file-5', number: 65, title: 'Cloud Storage (S3)', description: 'Upload to AWS S3', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['aws-sdk for S3', 'multer-s3 for integration', 'Store URL in database'], starterCode: '', task: 'Upload to S3', validation: 'multerS3', expectedOutput: 'const { S3Client } = require("@aws-sdk/client-s3");\nconst multerS3 = require("multer-s3");\n\nconst s3 = new S3Client({ region: "us-east-1" });\n\nconst upload = multer({\n  storage: multerS3({\n    s3,\n    bucket: "my-bucket",\n    key: (req, file, cb) => cb(null, Date.now() + "-" + file.originalname)\n  })\n});' } },
+          { id: 'file-6', number: 66, title: 'Image Processing', description: 'Resize and optimize', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['sharp for image processing', 'Resize, crop, format convert', 'Generate thumbnails'], starterCode: '', task: 'Process images', validation: 'sharp', expectedOutput: 'const sharp = require("sharp");\n\nconst processImage = async (inputPath, outputPath) => {\n  await sharp(inputPath)\n    .resize(300, 300, { fit: "cover" })\n    .jpeg({ quality: 80 })\n    .toFile(outputPath);\n};\n\n// Generate thumbnail after upload\nawait processImage(req.file.path, `thumbnails/${req.file.filename}`);' } },
+          { id: 'file-7', number: 67, title: 'Chapter Practice', description: 'File upload system', duration: '40 min', xp: 160, type: 'practice', content: { instructions: ['Build file upload API', 'Validate and process files', 'Store metadata in database'], starterCode: '', task: 'Create file management system', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 8,
+        title: 'Email & Notifications',
+        description: 'Send emails and notifications',
+        lessons: [
+          { id: 'email-1', number: 68, title: 'Nodemailer Setup', description: 'Send emails', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['nodemailer package', 'Configure SMTP transport', 'Gmail, SendGrid, etc.'], starterCode: '', task: 'Set up Nodemailer', validation: 'nodemailer', expectedOutput: 'const nodemailer = require("nodemailer");\n\nconst transporter = nodemailer.createTransport({\n  host: "smtp.gmail.com",\n  port: 587,\n  auth: {\n    user: process.env.EMAIL_USER,\n    pass: process.env.EMAIL_PASS\n  }\n});' } },
+          { id: 'email-2', number: 69, title: 'Sending Emails', description: 'Compose and send', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['transporter.sendMail()', 'to, subject, text, html', 'Handle errors'], starterCode: '', task: 'Send email', validation: 'sendMail', expectedOutput: 'const sendEmail = async (to, subject, html) => {\n  await transporter.sendMail({\n    from: `"My App" <${process.env.EMAIL_USER}>`,\n    to,\n    subject,\n    html\n  });\n};\n\nawait sendEmail("user@test.com", "Welcome!", "<h1>Welcome!</h1>");' } },
+          { id: 'email-3', number: 70, title: 'Email Templates', description: 'Reusable templates', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['HTML email templates', 'Template variables', 'Use template engine or strings'], starterCode: '', task: 'Create email templates', validation: 'template', expectedOutput: 'const welcomeTemplate = (name) => `\n  <div style="font-family: Arial;">\n    <h1>Welcome, ${name}!</h1>\n    <p>Thanks for joining us.</p>\n    <a href="${process.env.APP_URL}">Get Started</a>\n  </div>\n`;\n\nawait sendEmail(user.email, "Welcome!", welcomeTemplate(user.name));' } },
+          { id: 'email-4', number: 71, title: 'Chapter Practice', description: 'Email system', duration: '35 min', xp: 140, type: 'practice', content: { instructions: ['Set up email service', 'Create templates', 'Send verification emails'], starterCode: '', task: 'Build email notification system', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 9,
+        title: 'Testing',
+        description: 'Test your backend',
+        lessons: [
+          { id: 'test-1', number: 72, title: 'Jest Setup', description: 'Testing framework', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['npm install --save-dev jest', 'test files: *.test.js', 'npm test runs tests'], starterCode: '', task: 'Set up Jest', validation: 'jest', expectedOutput: '// package.json\n{\n  "scripts": {\n    "test": "jest",\n    "test:watch": "jest --watch"\n  }\n}\n\n// math.test.js\ntest("adds 1 + 2 to equal 3", () => {\n  expect(1 + 2).toBe(3);\n});' } },
+          { id: 'test-2', number: 73, title: 'Unit Testing', description: 'Test functions', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['describe groups tests', 'test/it defines test case', 'expect for assertions'], starterCode: '', task: 'Write unit tests', validation: 'describe', expectedOutput: 'describe("User Service", () => {\n  test("should hash password", async () => {\n    const hash = await hashPassword("password123");\n    expect(hash).not.toBe("password123");\n    expect(hash.length).toBeGreaterThan(20);\n  });\n\n  test("should validate email", () => {\n    expect(isValidEmail("test@test.com")).toBe(true);\n    expect(isValidEmail("invalid")).toBe(false);\n  });\n});' } },
+          { id: 'test-3', number: 74, title: 'Mocking', description: 'Mock dependencies', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['jest.mock() mocks modules', 'jest.fn() creates mock functions', 'Isolate unit under test'], starterCode: '', task: 'Use mocking', validation: 'jest.mock', expectedOutput: 'jest.mock("../models/User");\nconst User = require("../models/User");\n\ntest("should create user", async () => {\n  User.create.mockResolvedValue({ _id: "123", name: "John" });\n  \n  const result = await createUser({ name: "John" });\n  \n  expect(User.create).toHaveBeenCalledWith({ name: "John" });\n  expect(result._id).toBe("123");\n});' } },
+          { id: 'test-4', number: 75, title: 'API Testing', description: 'Test endpoints', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['supertest for HTTP testing', 'Test request/response', 'Test status codes and body'], starterCode: '', task: 'Test API endpoints', validation: 'supertest', expectedOutput: 'const request = require("supertest");\nconst app = require("../app");\n\ndescribe("GET /api/users", () => {\n  test("should return users", async () => {\n    const res = await request(app)\n      .get("/api/users")\n      .expect(200);\n    \n    expect(Array.isArray(res.body)).toBe(true);\n  });\n});' } },
+          { id: 'test-5', number: 76, title: 'Database Testing', description: 'Test with database', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Use test database', 'Clean up between tests', 'mongodb-memory-server for in-memory'], starterCode: '', task: 'Test database operations', validation: 'MongoMemoryServer', expectedOutput: 'const { MongoMemoryServer } = require("mongodb-memory-server");\n\nlet mongoServer;\n\nbeforeAll(async () => {\n  mongoServer = await MongoMemoryServer.create();\n  await mongoose.connect(mongoServer.getUri());\n});\n\nafterAll(async () => {\n  await mongoose.disconnect();\n  await mongoServer.stop();\n});' } },
+          { id: 'test-6', number: 77, title: 'Chapter Practice', description: 'Test suite', duration: '45 min', xp: 180, type: 'practice', content: { instructions: ['Write comprehensive tests', 'Unit and integration tests', 'Achieve good coverage'], starterCode: '', task: 'Create test suite', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 10,
+        title: 'Security Best Practices',
+        description: 'Secure your application',
+        lessons: [
+          { id: 'sec-1', number: 78, title: 'Security Headers', description: 'HTTP security headers', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['helmet sets security headers', 'Prevents common attacks', 'XSS, clickjacking protection'], starterCode: '', task: 'Add security headers', validation: 'helmet', expectedOutput: 'const helmet = require("helmet");\n\napp.use(helmet());\n\n// Adds headers like:\n// X-Content-Type-Options: nosniff\n// X-Frame-Options: DENY\n// X-XSS-Protection: 1; mode=block' } },
+          { id: 'sec-2', number: 79, title: 'CORS Configuration', description: 'Cross-origin requests', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['cors package for Express', 'Whitelist allowed origins', 'Configure methods and headers'], starterCode: '', task: 'Configure CORS', validation: 'cors', expectedOutput: 'const cors = require("cors");\n\napp.use(cors({\n  origin: ["https://myapp.com", "http://localhost:3000"],\n  methods: ["GET", "POST", "PUT", "DELETE"],\n  credentials: true\n}));' } },
+          { id: 'sec-3', number: 80, title: 'Input Sanitization', description: 'Clean user input', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['mongo-sanitize for NoSQL injection', 'xss-clean for XSS', 'hpp for HTTP parameter pollution'], starterCode: '', task: 'Sanitize input', validation: 'mongoSanitize', expectedOutput: 'const mongoSanitize = require("express-mongo-sanitize");\nconst xss = require("xss-clean");\nconst hpp = require("hpp");\n\napp.use(mongoSanitize());\napp.use(xss());\napp.use(hpp());' } },
+          { id: 'sec-4', number: 81, title: 'HTTPS & SSL', description: 'Encrypt communications', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Always use HTTPS in production', 'Redirect HTTP to HTTPS', 'SSL certificates from Let"s Encrypt'], starterCode: '', task: 'Enforce HTTPS', validation: 'https', expectedOutput: 'app.use((req, res, next) => {\n  if (req.header("x-forwarded-proto") !== "https") {\n    return res.redirect(`https://${req.header("host")}${req.url}`);\n  }\n  next();\n});' } },
+          { id: 'sec-5', number: 82, title: 'Chapter Practice', description: 'Security audit', duration: '40 min', xp: 160, type: 'practice', content: { instructions: ['Implement security measures', 'Test for vulnerabilities', 'Review OWASP guidelines'], starterCode: '', task: 'Secure your application', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 11,
+        title: 'Final Projects',
+        description: 'Build complete applications',
+        lessons: [
+          { id: 'proj-1', number: 83, title: 'Project: REST API', description: 'Full-featured API', duration: '120 min', xp: 400, type: 'project', content: { instructions: ['Complete CRUD API', 'Authentication', 'Documentation'], starterCode: '', task: 'Build production REST API', validation: '', expectedOutput: 'A complete REST API with:\n- User authentication (JWT)\n- CRUD operations\n- Validation & error handling\n- Rate limiting\n- API documentation' } },
+          { id: 'proj-2', number: 84, title: 'Project: Blog Backend', description: 'Blog API system', duration: '150 min', xp: 500, type: 'project', content: { instructions: ['Posts, comments, categories', 'User roles', 'File uploads'], starterCode: '', task: 'Build blog API', validation: '', expectedOutput: 'A blog backend with:\n- Posts with rich content\n- Comments system\n- Categories & tags\n- Image uploads\n- Admin panel API' } },
+          { id: 'proj-3', number: 85, title: 'Project: E-commerce API', description: 'Shopping platform', duration: '180 min', xp: 600, type: 'project', content: { instructions: ['Products, cart, orders', 'Payment integration', 'Inventory management'], starterCode: '', task: 'Build e-commerce backend', validation: '', expectedOutput: 'E-commerce API with:\n- Product catalog\n- Shopping cart\n- Checkout flow\n- Order management\n- Payment processing' } },
+          { id: 'proj-4', number: 86, title: 'Project: Real-time Chat', description: 'WebSocket chat', duration: '120 min', xp: 400, type: 'project', content: { instructions: ['Socket.io integration', 'Real-time messaging', 'Online status'], starterCode: '', task: 'Build chat application', validation: '', expectedOutput: 'Real-time chat with:\n- Private messaging\n- Group chats\n- Online presence\n- Message history\n- File sharing' } },
+          { id: 'proj-5', number: 87, title: 'Project: Task Management', description: 'Project management API', duration: '150 min', xp: 500, type: 'project', content: { instructions: ['Projects, tasks, teams', 'Deadlines, priorities', 'Notifications'], starterCode: '', task: 'Build task management system', validation: '', expectedOutput: 'Task management API with:\n- Projects & boards\n- Tasks with subtasks\n- Team collaboration\n- Due dates & reminders\n- Activity logs' } },
+          { id: 'proj-6', number: 88, title: 'Capstone Project', description: 'Your own backend', duration: '180 min', xp: 600, type: 'project', content: { instructions: ['Choose your project', 'Apply all concepts', 'Production-ready code'], starterCode: '', task: 'Build complete backend application', validation: '', expectedOutput: 'A production-ready backend:\n- Clean architecture\n- Full test coverage\n- Security best practices\n- Documentation\n- Deployment ready' } }
         ]
       }
     ]
@@ -595,46 +376,66 @@ export const courses = {
   devops: {
     id: 'devops',
     title: 'DevOps & Cloud',
-    subtitle: 'Docker, AWS & CI/CD',
-    description: 'Master cloud infrastructure, containerization, and deployment automation. Deploy applications like a pro.',
+    subtitle: 'Linux, Docker, AWS, Kubernetes & CI/CD',
+    description: 'Master cloud infrastructure, containerization, orchestration, and deployment automation. Learn to deploy, scale, and manage production applications.',
     icon: 'Cloud',
     color: '#f97316',
-    totalLessons: 18,
-    totalDuration: '16 hours',
-    level: 'Advanced',
+    totalLessons: 75,
+    totalDuration: '40 hours',
+    level: 'Intermediate to Advanced',
     chapters: [
       {
         id: 1,
-        title: 'Linux Command Line',
-        description: 'Master the terminal',
+        title: 'Linux Fundamentals',
+        description: 'Master the command line',
         lessons: [
-          { id: 'linux-1', number: 1, title: 'Terminal Basics', description: 'Navigate the command line', duration: '15 min', xp: 45, type: 'lesson' },
-          { id: 'linux-2', number: 2, title: 'File Operations', description: 'Manage files and folders', duration: '18 min', xp: 55, type: 'lesson' },
-          { id: 'linux-3', number: 3, title: 'Permissions & Users', description: 'Control access', duration: '20 min', xp: 70, type: 'lesson' },
-          { id: 'linux-4', number: 4, title: 'Chapter Practice', description: 'Server administration', duration: '25 min', xp: 100, type: 'practice' }
+          { id: 'linux-1', number: 1, title: 'Introduction to Linux', description: 'Linux overview', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Linux is an open-source OS', 'Powers most servers and cloud', 'Different distributions: Ubuntu, CentOS'], starterCode: '', task: 'Identify Linux distribution', validation: 'cat /etc/os-release', expectedOutput: 'cat /etc/os-release\n# Shows distribution info' } },
+          { id: 'linux-2', number: 2, title: 'Terminal Navigation', description: 'Navigate the filesystem', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['pwd shows current directory', 'cd changes directory', 'ls lists contents'], starterCode: '', task: 'Navigate filesystem', validation: 'cd', expectedOutput: 'pwd          # Print working directory\ncd /home     # Change to /home\ncd ..        # Go up one level\ncd ~         # Go to home directory\nls -la       # List all with details' } },
+          { id: 'linux-3', number: 3, title: 'File Operations', description: 'Manage files and folders', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['cp copies files', 'mv moves/renames', 'rm removes files'], starterCode: '', task: 'Manage files', validation: 'cp', expectedOutput: 'cp file.txt backup.txt    # Copy file\nmv old.txt new.txt        # Rename file\nmkdir mydir               # Create directory\nrm file.txt               # Remove file\nrm -rf directory          # Remove directory' } },
+          { id: 'linux-4', number: 4, title: 'File Viewing & Editing', description: 'View and edit files', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['cat displays file content', 'less for paging', 'nano/vim for editing'], starterCode: '', task: 'View and edit files', validation: 'cat', expectedOutput: 'cat file.txt         # View entire file\nhead -n 10 file.txt  # First 10 lines\ntail -n 10 file.txt  # Last 10 lines\nless file.txt        # Paginated view\nnano file.txt        # Simple editor' } },
+          { id: 'linux-5', number: 5, title: 'Permissions', description: 'Control file access', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['rwx: read, write, execute', 'Owner, group, others', 'chmod changes permissions'], starterCode: '', task: 'Set file permissions', validation: 'chmod', expectedOutput: 'chmod 755 script.sh  # rwxr-xr-x\nchmod 644 file.txt   # rw-r--r--\nchmod +x script.sh   # Add execute\nchown user:group file # Change owner' } },
+          { id: 'linux-6', number: 6, title: 'Users & Groups', description: 'Manage users', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['useradd creates user', 'usermod modifies user', 'groups manage access'], starterCode: '', task: 'Manage users', validation: 'useradd', expectedOutput: 'sudo useradd -m john      # Create user\nsudo passwd john          # Set password\nsudo usermod -aG sudo john # Add to sudo\ngroups john               # Show groups' } },
+          { id: 'linux-7', number: 7, title: 'Process Management', description: 'Monitor and control processes', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['ps lists processes', 'top shows live view', 'kill terminates processes'], starterCode: '', task: 'Manage processes', validation: 'ps aux', expectedOutput: 'ps aux           # List all processes\ntop              # Live process monitor\nhtop             # Better top (if installed)\nkill 1234        # Kill process by PID\nkillall node     # Kill all node processes' } },
+          { id: 'linux-8', number: 8, title: 'Package Management', description: 'Install software', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['apt for Debian/Ubuntu', 'yum/dnf for RHEL/CentOS', 'Update before installing'], starterCode: '', task: 'Install packages', validation: 'apt install', expectedOutput: 'sudo apt update           # Update package list\nsudo apt upgrade          # Upgrade packages\nsudo apt install nginx    # Install nginx\nsudo apt remove nginx     # Remove package' } },
+          { id: 'linux-9', number: 9, title: 'Networking Basics', description: 'Network commands', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['ifconfig/ip shows interfaces', 'netstat/ss shows connections', 'curl for HTTP requests'], starterCode: '', task: 'Network troubleshooting', validation: 'curl', expectedOutput: 'ip addr              # Show IP addresses\nss -tuln             # Show listening ports\nping google.com      # Test connectivity\ncurl http://api.com  # HTTP request\nwget file-url        # Download file' } },
+          { id: 'linux-10', number: 10, title: 'Shell Scripting Basics', description: 'Automate with scripts', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['#!/bin/bash shebang', 'Variables and conditions', 'Loops for automation'], starterCode: '', task: 'Write a shell script', validation: '#!/bin/bash', expectedOutput: '#!/bin/bash\n# Backup script\nDATE=$(date +%Y%m%d)\ntar -czf backup-$DATE.tar.gz /data\necho "Backup complete"' } },
+          { id: 'linux-11', number: 11, title: 'Chapter Practice', description: 'Server setup', duration: '35 min', xp: 140, type: 'practice', content: { instructions: ['Set up a Linux server', 'Create users, set permissions', 'Install and configure software'], starterCode: '', task: 'Configure Linux server', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 2,
-        title: 'Docker Containers',
-        description: 'Package and run applications',
+        title: 'Docker Fundamentals',
+        description: 'Container technology',
         lessons: [
-          { id: 'docker-1', number: 5, title: 'What is Docker?', description: 'Container fundamentals', duration: '12 min', xp: 40, type: 'lesson' },
-          { id: 'docker-2', number: 6, title: 'Dockerfiles', description: 'Build custom images', duration: '20 min', xp: 75, type: 'lesson' },
-          { id: 'docker-3', number: 7, title: 'Docker Compose', description: 'Multi-container apps', duration: '22 min', xp: 85, type: 'lesson' },
-          { id: 'docker-4', number: 8, title: 'Chapter Practice', description: 'Containerize an app', duration: '30 min', xp: 120, type: 'practice' }
+          { id: 'docker-1', number: 12, title: 'What is Docker?', description: 'Container concepts', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Containers package apps with dependencies', 'Lightweight, portable, consistent', 'Different from VMs'], starterCode: '', task: 'Understand Docker concepts', validation: 'docker', expectedOutput: 'Containers vs VMs:\n- Containers share host OS kernel\n- VMs have full OS\n- Containers are lighter and faster' } },
+          { id: 'docker-2', number: 13, title: 'Docker Installation', description: 'Set up Docker', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['Install Docker Engine', 'Docker Desktop for Mac/Windows', 'Verify installation'], starterCode: '', task: 'Install Docker', validation: 'docker --version', expectedOutput: 'sudo apt install docker.io\nsudo systemctl start docker\nsudo usermod -aG docker $USER\ndocker --version' } },
+          { id: 'docker-3', number: 14, title: 'Running Containers', description: 'Start your first container', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['docker run starts container', 'Pull images from Docker Hub', '-d for detached mode'], starterCode: '', task: 'Run a container', validation: 'docker run', expectedOutput: 'docker run hello-world\ndocker run -d nginx\ndocker run -it ubuntu bash\ndocker run -d -p 80:80 nginx' } },
+          { id: 'docker-4', number: 15, title: 'Container Management', description: 'Manage containers', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['docker ps lists containers', 'docker stop/start controls', 'docker logs shows output'], starterCode: '', task: 'Manage containers', validation: 'docker ps', expectedOutput: 'docker ps           # Running containers\ndocker ps -a        # All containers\ndocker stop abc123  # Stop container\ndocker rm abc123    # Remove container\ndocker logs abc123  # View logs' } },
+          { id: 'docker-5', number: 16, title: 'Docker Images', description: 'Work with images', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Images are container blueprints', 'Pull from registry', 'List and remove images'], starterCode: '', task: 'Manage images', validation: 'docker images', expectedOutput: 'docker pull nginx:latest\ndocker images\ndocker rmi nginx:latest\ndocker image prune   # Remove unused' } },
+          { id: 'docker-6', number: 17, title: 'Dockerfile Basics', description: 'Build custom images', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['FROM specifies base image', 'COPY adds files', 'RUN executes commands'], starterCode: '', task: 'Create a Dockerfile', validation: 'FROM', expectedOutput: 'FROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 3000\nCMD ["node", "server.js"]' } },
+          { id: 'docker-7', number: 18, title: 'Building Images', description: 'Build from Dockerfile', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['docker build creates image', 'Tag with name:version', 'Build context matters'], starterCode: '', task: 'Build an image', validation: 'docker build', expectedOutput: 'docker build -t myapp:1.0 .\ndocker build -t myapp:latest .\ndocker build --no-cache -t myapp .' } },
+          { id: 'docker-8', number: 19, title: 'Docker Volumes', description: 'Persistent storage', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Volumes persist data', 'Named volumes vs bind mounts', 'Share data between containers'], starterCode: '', task: 'Use volumes', validation: '-v', expectedOutput: 'docker volume create mydata\ndocker run -v mydata:/app/data nginx\ndocker run -v $(pwd):/app node\ndocker volume ls' } },
+          { id: 'docker-9', number: 20, title: 'Docker Networks', description: 'Container networking', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Default bridge network', 'Custom networks for isolation', 'Container DNS resolution'], starterCode: '', task: 'Configure networks', validation: 'docker network', expectedOutput: 'docker network create mynet\ndocker run --network mynet --name db mongo\ndocker run --network mynet --name app myapp\n# app can connect to db by name' } },
+          { id: 'docker-10', number: 21, title: 'Docker Compose', description: 'Multi-container apps', duration: '28 min', xp: 95, type: 'lesson', content: { instructions: ['Define services in YAML', 'docker-compose up starts all', 'Networks and volumes included'], starterCode: '', task: 'Create docker-compose.yml', validation: 'services:', expectedOutput: 'version: "3.8"\nservices:\n  app:\n    build: .\n    ports:\n      - "3000:3000"\n    depends_on:\n      - db\n  db:\n    image: mongo\n    volumes:\n      - dbdata:/data/db\nvolumes:\n  dbdata:' } },
+          { id: 'docker-11', number: 22, title: 'Compose Commands', description: 'Manage with Compose', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['docker-compose up/down', 'Logs and exec', 'Scale services'], starterCode: '', task: 'Use Compose commands', validation: 'docker-compose', expectedOutput: 'docker-compose up -d      # Start\ndocker-compose down       # Stop\ndocker-compose logs -f    # Follow logs\ndocker-compose exec app sh # Shell access\ndocker-compose ps         # Status' } },
+          { id: 'docker-12', number: 23, title: 'Chapter Practice', description: 'Dockerize an app', duration: '40 min', xp: 160, type: 'practice', content: { instructions: ['Create Dockerfile for Node app', 'Add MongoDB with Compose', 'Configure volumes and networks'], starterCode: '', task: 'Containerize full-stack app', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 3,
-        title: 'AWS Cloud Services',
-        description: 'Amazon Web Services essentials',
+        title: 'AWS Cloud Essentials',
+        description: 'Cloud computing with AWS',
         lessons: [
-          { id: 'aws-1', number: 9, title: 'AWS Overview', description: 'Cloud computing basics', duration: '15 min', xp: 50, type: 'lesson' },
-          { id: 'aws-2', number: 10, title: 'EC2 Instances', description: 'Virtual servers', duration: '25 min', xp: 95, type: 'lesson' },
-          { id: 'aws-3', number: 11, title: 'S3 Storage', description: 'Cloud file storage', duration: '18 min', xp: 65, type: 'lesson' },
-          { id: 'aws-4', number: 12, title: 'RDS Databases', description: 'Managed databases', duration: '20 min', xp: 75, type: 'lesson' },
-          { id: 'aws-5', number: 13, title: 'Chapter Practice', description: 'Deploy to AWS', duration: '40 min', xp: 160, type: 'practice' }
+          { id: 'aws-1', number: 24, title: 'AWS Overview', description: 'Cloud computing intro', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['AWS is Amazon cloud platform', 'Pay for what you use', 'Global infrastructure'], starterCode: '', task: 'Understand AWS', validation: 'AWS', expectedOutput: 'Core concepts:\n- Regions and Availability Zones\n- Services: Compute, Storage, Database\n- IAM for access control' } },
+          { id: 'aws-2', number: 25, title: 'IAM Basics', description: 'Identity management', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Users, groups, roles', 'Policies define permissions', 'Never use root account'], starterCode: '', task: 'Configure IAM', validation: 'IAM', expectedOutput: 'Create IAM user:\n1. Users > Add user\n2. Attach policies\n3. Generate access keys\n4. Enable MFA' } },
+          { id: 'aws-3', number: 26, title: 'EC2 Introduction', description: 'Virtual servers', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['EC2: Elastic Compute Cloud', 'Choose instance type and size', 'AMI is the template'], starterCode: '', task: 'Launch EC2 instance', validation: 'EC2', expectedOutput: 'Launch instance:\n1. Choose AMI (Amazon Linux 2)\n2. Select instance type (t2.micro)\n3. Configure security group\n4. Create key pair\n5. Launch!' } },
+          { id: 'aws-4', number: 27, title: 'EC2 Security Groups', description: 'Firewall rules', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Inbound/outbound rules', 'Allow specific ports/IPs', 'Stateful: response auto-allowed'], starterCode: '', task: 'Configure security group', validation: 'security group', expectedOutput: 'Inbound rules:\n- SSH (22) from My IP\n- HTTP (80) from Anywhere\n- HTTPS (443) from Anywhere\n- Custom (3000) from Anywhere' } },
+          { id: 'aws-5', number: 28, title: 'SSH to EC2', description: 'Connect to instances', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Use private key (.pem)', 'SSH as ec2-user', 'SCP for file transfer'], starterCode: '', task: 'SSH into EC2', validation: 'ssh', expectedOutput: 'chmod 400 mykey.pem\nssh -i mykey.pem ec2-user@<public-ip>\n\n# Copy file to EC2\nscp -i mykey.pem file.txt ec2-user@ip:/home/ec2-user/' } },
+          { id: 'aws-6', number: 29, title: 'S3 Storage', description: 'Object storage', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['S3 stores objects in buckets', 'Globally unique bucket names', 'Storage classes for cost'], starterCode: '', task: 'Use S3', validation: 's3', expectedOutput: 'aws s3 mb s3://my-bucket\naws s3 cp file.txt s3://my-bucket/\naws s3 ls s3://my-bucket\naws s3 sync ./folder s3://my-bucket/folder' } },
+          { id: 'aws-7', number: 30, title: 'RDS Databases', description: 'Managed databases', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Managed database service', 'MySQL, PostgreSQL, etc.', 'Automated backups'], starterCode: '', task: 'Create RDS instance', validation: 'RDS', expectedOutput: 'Create RDS:\n1. Choose engine (PostgreSQL)\n2. Select instance size\n3. Configure storage\n4. Set credentials\n5. Configure networking\n6. Create database' } },
+          { id: 'aws-8', number: 31, title: 'Elastic Beanstalk', description: 'Easy deployment', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['PaaS for web apps', 'Handles scaling, load balancing', 'Just upload your code'], starterCode: '', task: 'Deploy to Elastic Beanstalk', validation: 'eb', expectedOutput: 'eb init my-app\neb create my-env\neb deploy\neb open' } },
+          { id: 'aws-9', number: 32, title: 'AWS CLI', description: 'Command line tools', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Install AWS CLI', 'Configure with access keys', 'Manage resources from terminal'], starterCode: '', task: 'Use AWS CLI', validation: 'aws configure', expectedOutput: 'aws configure\n# Enter Access Key ID\n# Enter Secret Access Key\n# Enter region (us-east-1)\n\naws ec2 describe-instances\naws s3 ls' } },
+          { id: 'aws-10', number: 33, title: 'Chapter Practice', description: 'Deploy to AWS', duration: '50 min', xp: 200, type: 'practice', content: { instructions: ['Launch EC2 instance', 'Deploy application', 'Configure RDS database'], starterCode: '', task: 'Full AWS deployment', validation: '', expectedOutput: '' } }
         ]
       },
       {
@@ -642,11 +443,73 @@ export const courses = {
         title: 'CI/CD Pipelines',
         description: 'Automate deployments',
         lessons: [
-          { id: 'cicd-1', number: 14, title: 'CI/CD Concepts', description: 'Continuous integration', duration: '12 min', xp: 45, type: 'lesson' },
-          { id: 'cicd-2', number: 15, title: 'GitHub Actions', description: 'Automated workflows', duration: '25 min', xp: 95, type: 'lesson' },
-          { id: 'cicd-3', number: 16, title: 'Deployment Strategies', description: 'Blue-green, rolling', duration: '18 min', xp: 70, type: 'lesson' },
-          { id: 'cicd-4', number: 17, title: 'Final Project', description: 'Full pipeline setup', duration: '50 min', xp: 200, type: 'project' },
-          { id: 'cicd-5', number: 18, title: 'Course Complete!', description: 'Claim your certificate', duration: '5 min', xp: 150, type: 'completion' }
+          { id: 'cicd-1', number: 34, title: 'CI/CD Concepts', description: 'Continuous integration/delivery', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['CI: Automatically test code', 'CD: Automatically deploy', 'Pipeline automates workflow'], starterCode: '', task: 'Understand CI/CD', validation: 'CI/CD', expectedOutput: 'CI/CD Pipeline:\n1. Code pushed to repo\n2. Build triggered\n3. Tests run\n4. Deploy to staging\n5. Deploy to production' } },
+          { id: 'cicd-2', number: 35, title: 'GitHub Actions Intro', description: 'GitHub automation', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Workflows in .github/workflows', 'Triggered by events', 'Jobs run on runners'], starterCode: '', task: 'Create first workflow', validation: 'on:', expectedOutput: 'name: CI\non: [push, pull_request]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - run: npm install\n      - run: npm test' } },
+          { id: 'cicd-3', number: 36, title: 'Workflow Syntax', description: 'YAML configuration', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['name, on, jobs, steps', 'uses for actions', 'run for commands'], starterCode: '', task: 'Write workflow YAML', validation: 'jobs:', expectedOutput: 'name: Build\non:\n  push:\n    branches: [main]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n        with:\n          node-version: 18\n      - run: npm ci\n      - run: npm run build' } },
+          { id: 'cicd-4', number: 37, title: 'Environment Variables', description: 'Secrets and config', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['secrets.* for sensitive data', 'env: for variables', 'Set in repo settings'], starterCode: '', task: 'Use secrets', validation: 'secrets.', expectedOutput: 'env:\n  NODE_ENV: production\nsteps:\n  - name: Deploy\n    env:\n      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}\n      AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}\n    run: npm run deploy' } },
+          { id: 'cicd-5', number: 38, title: 'Build & Test Jobs', description: 'Automate testing', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Install dependencies', 'Run linting and tests', 'Build application'], starterCode: '', task: 'Create test workflow', validation: 'npm test', expectedOutput: 'jobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n      - run: npm ci\n      - run: npm run lint\n      - run: npm test\n      - run: npm run build' } },
+          { id: 'cicd-6', number: 39, title: 'Docker in CI', description: 'Build and push images', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Build Docker image in CI', 'Push to Docker Hub/ECR', 'Tag with commit SHA'], starterCode: '', task: 'Build Docker in CI', validation: 'docker build', expectedOutput: 'jobs:\n  docker:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - uses: docker/login-action@v2\n        with:\n          username: ${{ secrets.DOCKER_USER }}\n          password: ${{ secrets.DOCKER_PASS }}\n      - run: docker build -t myapp:${{ github.sha }} .\n      - run: docker push myapp:${{ github.sha }}' } },
+          { id: 'cicd-7', number: 40, title: 'Deployment Workflows', description: 'Deploy automatically', duration: '28 min', xp: 95, type: 'lesson', content: { instructions: ['Deploy on main branch', 'Multiple environments', 'Approval for production'], starterCode: '', task: 'Create deploy workflow', validation: 'deploy', expectedOutput: 'on:\n  push:\n    branches: [main]\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    environment: production\n    steps:\n      - uses: actions/checkout@v3\n      - run: npm ci && npm run build\n      - name: Deploy to server\n        run: scp -r build/* user@server:/var/www/' } },
+          { id: 'cicd-8', number: 41, title: 'Matrix Builds', description: 'Test multiple versions', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['strategy.matrix for combinations', 'Test multiple Node versions', 'Test multiple OS'], starterCode: '', task: 'Create matrix build', validation: 'matrix:', expectedOutput: 'jobs:\n  test:\n    runs-on: ${{ matrix.os }}\n    strategy:\n      matrix:\n        os: [ubuntu-latest, windows-latest]\n        node: [16, 18, 20]\n    steps:\n      - uses: actions/setup-node@v3\n        with:\n          node-version: ${{ matrix.node }}' } },
+          { id: 'cicd-9', number: 42, title: 'Chapter Practice', description: 'Full CI/CD pipeline', duration: '50 min', xp: 200, type: 'practice', content: { instructions: ['Create complete pipeline', 'Test, build, deploy', 'Use secrets and environments'], starterCode: '', task: 'Build complete CI/CD', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 5,
+        title: 'Kubernetes Basics',
+        description: 'Container orchestration',
+        lessons: [
+          { id: 'k8s-1', number: 43, title: 'What is Kubernetes?', description: 'K8s introduction', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Orchestrates containers', 'Handles scaling, healing', 'Declarative configuration'], starterCode: '', task: 'Understand K8s', validation: 'Kubernetes', expectedOutput: 'Kubernetes manages:\n- Container deployment\n- Scaling (auto & manual)\n- Load balancing\n- Self-healing\n- Rolling updates' } },
+          { id: 'k8s-2', number: 44, title: 'K8s Architecture', description: 'Components overview', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Control plane manages cluster', 'Nodes run containers', 'Pods are smallest unit'], starterCode: '', task: 'Learn K8s architecture', validation: 'control plane', expectedOutput: 'Control Plane:\n- API Server\n- Scheduler\n- Controller Manager\n- etcd\n\nNodes:\n- Kubelet\n- Container runtime\n- Kube-proxy' } },
+          { id: 'k8s-3', number: 45, title: 'kubectl Basics', description: 'K8s CLI', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['kubectl is K8s CLI', 'get, describe, apply', 'Manage all resources'], starterCode: '', task: 'Use kubectl', validation: 'kubectl', expectedOutput: 'kubectl get pods\nkubectl get services\nkubectl describe pod myapp\nkubectl logs myapp\nkubectl apply -f manifest.yaml' } },
+          { id: 'k8s-4', number: 46, title: 'Pods', description: 'Container groups', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Pod is group of containers', 'Share network and storage', 'Defined in YAML'], starterCode: '', task: 'Create a Pod', validation: 'kind: Pod', expectedOutput: 'apiVersion: v1\nkind: Pod\nmetadata:\n  name: myapp\nspec:\n  containers:\n  - name: app\n    image: nginx:latest\n    ports:\n    - containerPort: 80' } },
+          { id: 'k8s-5', number: 47, title: 'Deployments', description: 'Manage replicas', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Deployment manages Pods', 'Replicas for scaling', 'Rolling updates'], starterCode: '', task: 'Create Deployment', validation: 'kind: Deployment', expectedOutput: 'apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: myapp\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: myapp\n  template:\n    metadata:\n      labels:\n        app: myapp\n    spec:\n      containers:\n      - name: app\n        image: myapp:1.0' } },
+          { id: 'k8s-6', number: 48, title: 'Services', description: 'Expose applications', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Service exposes Pods', 'Types: ClusterIP, NodePort, LoadBalancer', 'DNS for service discovery'], starterCode: '', task: 'Create Service', validation: 'kind: Service', expectedOutput: 'apiVersion: v1\nkind: Service\nmetadata:\n  name: myapp-service\nspec:\n  type: LoadBalancer\n  selector:\n    app: myapp\n  ports:\n  - port: 80\n    targetPort: 3000' } },
+          { id: 'k8s-7', number: 49, title: 'ConfigMaps & Secrets', description: 'Configuration management', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['ConfigMap for config', 'Secrets for sensitive data', 'Mount as env or files'], starterCode: '', task: 'Use ConfigMaps and Secrets', validation: 'kind: ConfigMap', expectedOutput: 'apiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: app-config\ndata:\n  DB_HOST: mongodb\n  LOG_LEVEL: info\n---\napiVersion: v1\nkind: Secret\nmetadata:\n  name: app-secrets\ntype: Opaque\ndata:\n  DB_PASSWORD: base64encoded' } },
+          { id: 'k8s-8', number: 50, title: 'Ingress', description: 'HTTP routing', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Ingress routes external traffic', 'Path-based routing', 'TLS termination'], starterCode: '', task: 'Configure Ingress', validation: 'kind: Ingress', expectedOutput: 'apiVersion: networking.k8s.io/v1\nkind: Ingress\nmetadata:\n  name: myapp-ingress\nspec:\n  rules:\n  - host: myapp.com\n    http:\n      paths:\n      - path: /\n        pathType: Prefix\n        backend:\n          service:\n            name: myapp-service\n            port:\n              number: 80' } },
+          { id: 'k8s-9', number: 51, title: 'Chapter Practice', description: 'Deploy to K8s', duration: '50 min', xp: 200, type: 'practice', content: { instructions: ['Create Deployment', 'Add Service and Ingress', 'Configure with ConfigMap'], starterCode: '', task: 'Full K8s deployment', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 6,
+        title: 'Infrastructure as Code',
+        description: 'Terraform and automation',
+        lessons: [
+          { id: 'iac-1', number: 52, title: 'What is IaC?', description: 'Infrastructure as Code intro', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Define infrastructure in code', 'Version controlled', 'Reproducible environments'], starterCode: '', task: 'Understand IaC', validation: 'IaC', expectedOutput: 'Benefits of IaC:\n- Consistency\n- Version control\n- Automation\n- Documentation\n- Disaster recovery' } },
+          { id: 'iac-2', number: 53, title: 'Terraform Basics', description: 'HashiCorp Terraform', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['HCL configuration language', 'Providers for cloud platforms', 'State tracks resources'], starterCode: '', task: 'Learn Terraform basics', validation: 'terraform', expectedOutput: 'terraform init     # Initialize\nterraform plan     # Preview changes\nterraform apply    # Apply changes\nterraform destroy  # Remove resources' } },
+          { id: 'iac-3', number: 54, title: 'Terraform Resources', description: 'Define resources', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['resource block defines infrastructure', 'Provider-specific resources', 'Arguments configure resource'], starterCode: '', task: 'Create Terraform resource', validation: 'resource', expectedOutput: 'provider "aws" {\n  region = "us-east-1"\n}\n\nresource "aws_instance" "web" {\n  ami           = "ami-12345"\n  instance_type = "t2.micro"\n  tags = {\n    Name = "WebServer"\n  }\n}' } },
+          { id: 'iac-4', number: 55, title: 'Variables & Outputs', description: 'Parameterize configs', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Variables for inputs', 'Outputs for values', 'tfvars for values'], starterCode: '', task: 'Use variables', validation: 'variable', expectedOutput: 'variable "instance_type" {\n  default = "t2.micro"\n}\n\nresource "aws_instance" "web" {\n  instance_type = var.instance_type\n}\n\noutput "public_ip" {\n  value = aws_instance.web.public_ip\n}' } },
+          { id: 'iac-5', number: 56, title: 'Terraform Modules', description: 'Reusable components', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Modules group resources', 'Reuse across projects', 'Public modules available'], starterCode: '', task: 'Create a module', validation: 'module', expectedOutput: 'module "vpc" {\n  source = "./modules/vpc"\n  cidr   = "10.0.0.0/16"\n}\n\nmodule "web" {\n  source     = "./modules/ec2"\n  subnet_id  = module.vpc.public_subnet_id\n}' } },
+          { id: 'iac-6', number: 57, title: 'Chapter Practice', description: 'Terraform project', duration: '45 min', xp: 180, type: 'practice', content: { instructions: ['Create infrastructure with Terraform', 'Use variables and modules', 'Deploy to AWS'], starterCode: '', task: 'Build with Terraform', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 7,
+        title: 'Monitoring & Logging',
+        description: 'Observability essentials',
+        lessons: [
+          { id: 'mon-1', number: 58, title: 'Monitoring Basics', description: 'Why monitor?', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Detect issues early', 'Metrics, logs, traces', 'Alerting for problems'], starterCode: '', task: 'Understand monitoring', validation: 'monitoring', expectedOutput: 'Key metrics:\n- CPU, Memory usage\n- Request latency\n- Error rates\n- Throughput' } },
+          { id: 'mon-2', number: 59, title: 'Prometheus', description: 'Metrics collection', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Time-series database', 'Scrapes metrics endpoints', 'PromQL for queries'], starterCode: '', task: 'Set up Prometheus', validation: 'prometheus', expectedOutput: '# prometheus.yml\nscrape_configs:\n  - job_name: "app"\n    static_configs:\n      - targets: ["localhost:3000"]' } },
+          { id: 'mon-3', number: 60, title: 'Grafana Dashboards', description: 'Visualization', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Beautiful dashboards', 'Multiple data sources', 'Alerting built-in'], starterCode: '', task: 'Create Grafana dashboard', validation: 'grafana', expectedOutput: 'Dashboard panels:\n- CPU usage graph\n- Memory usage graph\n- Request rate\n- Error rate\n- Response time histogram' } },
+          { id: 'mon-4', number: 61, title: 'Log Management', description: 'Centralized logging', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Aggregate logs centrally', 'ELK stack or alternatives', 'Structured logging'], starterCode: '', task: 'Set up logging', validation: 'logging', expectedOutput: 'Structured log:\n{\n  "level": "error",\n  "message": "Request failed",\n  "requestId": "abc123",\n  "userId": "user456",\n  "duration": 150\n}' } },
+          { id: 'mon-5', number: 62, title: 'Alerting', description: 'Get notified', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Set thresholds', 'Multiple channels: Slack, email', 'Avoid alert fatigue'], starterCode: '', task: 'Configure alerts', validation: 'alert', expectedOutput: 'Alert rules:\n- CPU > 80% for 5 min\n- Error rate > 1%\n- Response time > 2s\n- Service down' } },
+          { id: 'mon-6', number: 63, title: 'Chapter Practice', description: 'Monitoring stack', duration: '45 min', xp: 180, type: 'practice', content: { instructions: ['Set up Prometheus + Grafana', 'Create dashboards', 'Configure alerts'], starterCode: '', task: 'Build monitoring system', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 8,
+        title: 'Final Projects',
+        description: 'Complete DevOps projects',
+        lessons: [
+          { id: 'devproj-1', number: 64, title: 'Project: CI/CD Pipeline', description: 'Complete automation', duration: '120 min', xp: 400, type: 'project', content: { instructions: ['GitHub Actions workflow', 'Docker build and push', 'Deploy to cloud'], starterCode: '', task: 'Build CI/CD pipeline', validation: '', expectedOutput: 'Complete pipeline:\n- Code push triggers build\n- Run tests\n- Build Docker image\n- Push to registry\n- Deploy to staging\n- Deploy to production' } },
+          { id: 'devproj-2', number: 65, title: 'Project: Container Platform', description: 'Docker + K8s', duration: '150 min', xp: 500, type: 'project', content: { instructions: ['Dockerize microservices', 'Deploy to Kubernetes', 'Configure networking'], starterCode: '', task: 'Build container platform', validation: '', expectedOutput: 'Kubernetes cluster:\n- Multiple microservices\n- Service mesh\n- Ingress controller\n- Horizontal scaling\n- Health checks' } },
+          { id: 'devproj-3', number: 66, title: 'Project: AWS Infrastructure', description: 'Full AWS setup', duration: '150 min', xp: 500, type: 'project', content: { instructions: ['Terraform for AWS', 'VPC, EC2, RDS, S3', 'Load balancer'], starterCode: '', task: 'Build AWS infrastructure', validation: '', expectedOutput: 'AWS Stack:\n- Custom VPC\n- Public/private subnets\n- EC2 auto-scaling\n- RDS database\n- S3 for static assets\n- CloudFront CDN' } },
+          { id: 'devproj-4', number: 67, title: 'Project: Monitoring System', description: 'Full observability', duration: '120 min', xp: 400, type: 'project', content: { instructions: ['Prometheus + Grafana', 'Log aggregation', 'Alerting'], starterCode: '', task: 'Build monitoring system', validation: '', expectedOutput: 'Monitoring stack:\n- Metrics collection\n- Custom dashboards\n- Log aggregation\n- Alert rules\n- Slack notifications' } },
+          { id: 'devproj-5', number: 68, title: 'Project: GitOps Workflow', description: 'Git-driven ops', duration: '120 min', xp: 400, type: 'project', content: { instructions: ['ArgoCD for GitOps', 'Declarative deployments', 'Automated sync'], starterCode: '', task: 'Implement GitOps', validation: '', expectedOutput: 'GitOps setup:\n- Git repo = source of truth\n- ArgoCD watches repo\n- Auto-sync deployments\n- Rollback capability' } },
+          { id: 'devproj-6', number: 69, title: 'Project: Serverless App', description: 'AWS Lambda', duration: '120 min', xp: 400, type: 'project', content: { instructions: ['AWS Lambda functions', 'API Gateway', 'DynamoDB'], starterCode: '', task: 'Build serverless app', validation: '', expectedOutput: 'Serverless stack:\n- Lambda functions\n- API Gateway endpoints\n- DynamoDB tables\n- S3 for uploads\n- CloudWatch logs' } },
+          { id: 'devproj-7', number: 70, title: 'Project: High Availability', description: 'Resilient systems', duration: '150 min', xp: 500, type: 'project', content: { instructions: ['Multi-AZ deployment', 'Auto-scaling', 'Disaster recovery'], starterCode: '', task: 'Build HA system', validation: '', expectedOutput: 'HA Architecture:\n- Multi-AZ deployment\n- Load balancing\n- Database replication\n- Auto-scaling policies\n- Backup/restore' } },
+          { id: 'devproj-8', number: 71, title: 'Project: Security Hardening', description: 'Secure infrastructure', duration: '120 min', xp: 400, type: 'project', content: { instructions: ['Security groups', 'IAM policies', 'Secrets management'], starterCode: '', task: 'Secure infrastructure', validation: '', expectedOutput: 'Security measures:\n- VPC network isolation\n- Security groups\n- IAM least privilege\n- Secrets in vault\n- SSL/TLS everywhere' } },
+          { id: 'devproj-9', number: 72, title: 'Capstone: Full Platform', description: 'Complete DevOps', duration: '180 min', xp: 600, type: 'project', content: { instructions: ['Complete platform', 'All DevOps practices', 'Production-ready'], starterCode: '', task: 'Build complete DevOps platform', validation: '', expectedOutput: 'Production platform:\n- Infrastructure as Code\n- Container orchestration\n- CI/CD automation\n- Monitoring & logging\n- Security best practices\n- Documentation' } }
         ]
       }
     ]
@@ -656,61 +519,166 @@ export const courses = {
     id: 'ai',
     title: 'AI & Machine Learning',
     subtitle: 'Python, TensorFlow & LLMs',
-    description: 'Enter the world of artificial intelligence. Learn Python, build ML models, and work with Large Language Models.',
+    description: 'The most comprehensive AI and Machine Learning course. Master Python for data science, build ML models with scikit-learn, create neural networks with TensorFlow, and work with Large Language Models.',
     icon: 'Brain',
     color: '#ec4899',
-    totalLessons: 22,
-    totalDuration: '20 hours',
-    level: 'Advanced',
+    totalLessons: 78,
+    totalDuration: '42 hours',
+    level: 'Intermediate to Advanced',
     chapters: [
       {
         id: 1,
-        title: 'Python for AI',
-        description: 'The language of data science',
+        title: 'Python for Data Science',
+        description: 'Essential Python skills for AI',
         lessons: [
-          { id: 'py-1', number: 1, title: 'Python Basics', description: 'Variables, types, syntax', duration: '20 min', xp: 60, type: 'lesson' },
-          { id: 'py-2', number: 2, title: 'Data Structures', description: 'Lists, dicts, sets', duration: '25 min', xp: 80, type: 'lesson' },
-          { id: 'py-3', number: 3, title: 'Functions & Classes', description: 'Object-oriented Python', duration: '22 min', xp: 75, type: 'lesson' },
-          { id: 'py-4', number: 4, title: 'NumPy Arrays', description: 'Numerical computing', duration: '25 min', xp: 90, type: 'lesson' },
-          { id: 'py-5', number: 5, title: 'Pandas DataFrames', description: 'Data manipulation', duration: '28 min', xp: 100, type: 'lesson' },
-          { id: 'py-6', number: 6, title: 'Chapter Practice', description: 'Data analysis project', duration: '35 min', xp: 140, type: 'practice' }
+          { id: 'ai-py-1', number: 1, title: 'Python Refresher', description: 'Variables and data types', duration: '15 min', xp: 40, type: 'lesson', content: { instructions: ['Review Python basics for AI/ML', 'Variables, strings, numbers, booleans', 'Lists, tuples, and dictionaries'], starterCode: '', task: 'Create variables of different types', validation: 'name =', expectedOutput: 'name = "AI"\nage = 2023\nis_cool = True\nskills = ["ML", "DL", "NLP"]' } },
+          { id: 'ai-py-2', number: 2, title: 'Functions & Lambda', description: 'Reusable code blocks', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Define functions with def', 'Lambda for short functions', 'Arguments and return values'], starterCode: '', task: 'Create a function to calculate square', validation: 'def', expectedOutput: 'def square(x):\n    return x ** 2\n\n# Lambda version\nsquare_lambda = lambda x: x ** 2' } },
+          { id: 'ai-py-3', number: 3, title: 'NumPy Arrays', description: 'Numerical computing foundation', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Import numpy as np', 'Create arrays with np.array()', 'Array operations are vectorized'], starterCode: 'import numpy as np\n', task: 'Create a 2D array and calculate mean', validation: 'np.array', expectedOutput: 'import numpy as np\n\narr = np.array([[1, 2, 3], [4, 5, 6]])\nprint(arr.mean())  # 3.5\nprint(arr.shape)   # (2, 3)' } },
+          { id: 'ai-py-4', number: 4, title: 'NumPy Operations', description: 'Array math and manipulation', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Slicing and indexing arrays', 'Mathematical operations', 'Broadcasting rules'], starterCode: 'import numpy as np\narr = np.array([1, 2, 3, 4, 5])\n', task: 'Perform array operations', validation: 'arr *', expectedOutput: 'import numpy as np\narr = np.array([1, 2, 3, 4, 5])\n\nprint(arr * 2)      # [2, 4, 6, 8, 10]\nprint(arr[1:4])     # [2, 3, 4]\nprint(np.sum(arr))  # 15' } },
+          { id: 'ai-py-5', number: 5, title: 'Pandas DataFrames', description: 'Tabular data manipulation', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['Import pandas as pd', 'Create DataFrames from dicts or CSV', 'Select columns and rows'], starterCode: 'import pandas as pd\n', task: 'Create a DataFrame with student data', validation: 'pd.DataFrame', expectedOutput: 'import pandas as pd\n\ndf = pd.DataFrame({\n    "name": ["Alice", "Bob", "Charlie"],\n    "age": [25, 30, 35],\n    "score": [85, 90, 88]\n})\nprint(df.head())' } },
+          { id: 'ai-py-6', number: 6, title: 'Data Cleaning', description: 'Handle missing and bad data', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Check for nulls with isnull()', 'Fill missing with fillna()', 'Drop rows with dropna()'], starterCode: 'import pandas as pd\n', task: 'Clean a dataset with missing values', validation: 'fillna', expectedOutput: 'df.isnull().sum()  # Count nulls\ndf.fillna(0)       # Fill with 0\ndf.dropna()        # Drop null rows\ndf.drop_duplicates()' } },
+          { id: 'ai-py-7', number: 7, title: 'Data Visualization', description: 'Plot data with Matplotlib', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['Import matplotlib.pyplot as plt', 'Create line, bar, scatter plots', 'Customize with labels and titles'], starterCode: 'import matplotlib.pyplot as plt\nimport numpy as np\n', task: 'Create a line plot', validation: 'plt.plot', expectedOutput: 'import matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.title("Sine Wave")\nplt.xlabel("x")\nplt.ylabel("sin(x)")\nplt.show()' } },
+          { id: 'ai-py-8', number: 8, title: 'Chapter Practice', description: 'Analyze a real dataset', duration: '35 min', xp: 120, type: 'practice', content: { instructions: ['Load a CSV dataset', 'Clean and explore the data', 'Create visualizations'], starterCode: '', task: 'Complete data analysis project', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 2,
-        title: 'Machine Learning Basics',
-        description: 'Teach computers to learn',
+        title: 'Statistics for ML',
+        description: 'Math foundations for machine learning',
         lessons: [
-          { id: 'ml-1', number: 7, title: 'What is ML?', description: 'Core concepts', duration: '15 min', xp: 50, type: 'lesson' },
-          { id: 'ml-2', number: 8, title: 'Supervised Learning', description: 'Classification & regression', duration: '25 min', xp: 90, type: 'lesson' },
-          { id: 'ml-3', number: 9, title: 'Training Models', description: 'Fit and predict', duration: '28 min', xp: 100, type: 'lesson' },
-          { id: 'ml-4', number: 10, title: 'Model Evaluation', description: 'Accuracy and metrics', duration: '20 min', xp: 75, type: 'lesson' },
-          { id: 'ml-5', number: 11, title: 'Chapter Practice', description: 'Build a classifier', duration: '40 min', xp: 160, type: 'practice' }
+          { id: 'ai-stats-1', number: 9, title: 'Descriptive Statistics', description: 'Summarize your data', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Mean, median, mode', 'Standard deviation and variance', 'Percentiles and quartiles'], starterCode: 'import numpy as np\ndata = np.array([23, 45, 67, 32, 89, 54, 23, 67, 45])\n', task: 'Calculate descriptive statistics', validation: 'np.mean', expectedOutput: 'print(np.mean(data))    # Mean\nprint(np.median(data))  # Median\nprint(np.std(data))     # Std dev\nprint(np.percentile(data, 75))  # 75th percentile' } },
+          { id: 'ai-stats-2', number: 10, title: 'Probability Basics', description: 'Understanding chance', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Probability is between 0 and 1', 'Independent vs dependent events', 'Bayes theorem introduction'], starterCode: '', task: 'Calculate simple probabilities', validation: 'probability', expectedOutput: '# Probability of rolling 6 on a die\np_six = 1/6\nprint(f"P(6) = {p_six:.4f}")\n\n# Probability of heads twice\np_two_heads = 0.5 * 0.5\nprint(f"P(HH) = {p_two_heads}")'} },
+          { id: 'ai-stats-3', number: 11, title: 'Distributions', description: 'Normal, uniform, and more', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Normal (Gaussian) distribution', 'Uniform distribution', 'Using scipy.stats'], starterCode: 'import numpy as np\nfrom scipy import stats\n', task: 'Generate samples from distributions', validation: 'stats.norm', expectedOutput: 'from scipy import stats\n\n# Normal distribution\nnormal_samples = stats.norm.rvs(loc=0, scale=1, size=1000)\n\n# Uniform distribution\nuniform_samples = stats.uniform.rvs(size=1000)' } },
+          { id: 'ai-stats-4', number: 12, title: 'Correlation & Covariance', description: 'Relationships between variables', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Correlation measures linear relationship', 'Values from -1 to 1', 'Covariance is unscaled correlation'], starterCode: 'import numpy as np\n', task: 'Calculate correlation between arrays', validation: 'np.corrcoef', expectedOutput: 'x = np.array([1, 2, 3, 4, 5])\ny = np.array([2, 4, 5, 4, 5])\n\ncorr = np.corrcoef(x, y)[0, 1]\nprint(f"Correlation: {corr:.4f}")' } },
+          { id: 'ai-stats-5', number: 13, title: 'Hypothesis Testing', description: 'Make data-driven decisions', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['Null and alternative hypothesis', 'p-value interpretation', 't-tests and chi-square tests'], starterCode: 'from scipy import stats\nimport numpy as np\n', task: 'Perform a t-test', validation: 'stats.ttest', expectedOutput: 'from scipy import stats\n\ngroup1 = [23, 45, 67, 32, 56]\ngroup2 = [34, 56, 78, 43, 67]\n\nt_stat, p_value = stats.ttest_ind(group1, group2)\nprint(f"t-statistic: {t_stat:.4f}")\nprint(f"p-value: {p_value:.4f}")' } },
+          { id: 'ai-stats-6', number: 14, title: 'Chapter Practice', description: 'Statistical analysis project', duration: '35 min', xp: 120, type: 'practice', content: { instructions: ['Apply statistical methods', 'Test hypotheses', 'Draw conclusions from data'], starterCode: '', task: 'Complete statistical analysis', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 3,
-        title: 'Deep Learning',
-        description: 'Neural networks and beyond',
+        title: 'Machine Learning Fundamentals',
+        description: 'Core ML concepts and workflow',
         lessons: [
-          { id: 'dl-1', number: 12, title: 'Neural Networks', description: 'Layers and neurons', duration: '25 min', xp: 90, type: 'lesson' },
-          { id: 'dl-2', number: 13, title: 'TensorFlow Basics', description: 'Build your first model', duration: '30 min', xp: 110, type: 'lesson' },
-          { id: 'dl-3', number: 14, title: 'Training Deep Models', description: 'Epochs and batches', duration: '28 min', xp: 100, type: 'lesson' },
-          { id: 'dl-4', number: 15, title: 'CNNs for Images', description: 'Computer vision', duration: '35 min', xp: 130, type: 'lesson' },
-          { id: 'dl-5', number: 16, title: 'Chapter Practice', description: 'Image classifier', duration: '45 min', xp: 180, type: 'practice' }
+          { id: 'ai-ml-1', number: 15, title: 'What is Machine Learning?', description: 'Types and applications', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['ML learns patterns from data', 'Types: supervised, unsupervised, reinforcement', 'Applications: prediction, classification, clustering'], starterCode: '', task: 'Understand ML categories', validation: 'supervised', expectedOutput: '# Types of Machine Learning:\n# 1. Supervised: labeled data (classification, regression)\n# 2. Unsupervised: no labels (clustering, dimensionality reduction)\n# 3. Reinforcement: learn from rewards' } },
+          { id: 'ai-ml-2', number: 16, title: 'The ML Workflow', description: 'From data to deployment', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['1. Collect and prepare data', '2. Choose and train model', '3. Evaluate and tune', '4. Deploy and monitor'], starterCode: '', task: 'Outline the ML pipeline', validation: 'train_test_split', expectedOutput: '# ML Workflow\n# 1. Data Collection\n# 2. Data Preprocessing\n# 3. Feature Engineering\n# 4. Train/Test Split\n# 5. Model Training\n# 6. Evaluation\n# 7. Hyperparameter Tuning\n# 8. Deployment' } },
+          { id: 'ai-ml-3', number: 17, title: 'Train/Test Split', description: 'Evaluate model performance', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Split data into training and test sets', 'Typical split: 80% train, 20% test', 'Use sklearn train_test_split'], starterCode: 'from sklearn.model_selection import train_test_split\nimport numpy as np\n', task: 'Split a dataset', validation: 'train_test_split', expectedOutput: 'from sklearn.model_selection import train_test_split\n\nX = np.array([[1], [2], [3], [4], [5], [6], [7], [8], [9], [10]])\ny = np.array([2, 4, 6, 8, 10, 12, 14, 16, 18, 20])\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)' } },
+          { id: 'ai-ml-4', number: 18, title: 'Feature Engineering', description: 'Create useful features', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Transform raw data into features', 'Scaling: StandardScaler, MinMaxScaler', 'Encoding: OneHotEncoder, LabelEncoder'], starterCode: 'from sklearn.preprocessing import StandardScaler\n', task: 'Scale features', validation: 'StandardScaler', expectedOutput: 'from sklearn.preprocessing import StandardScaler\n\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)' } },
+          { id: 'ai-ml-5', number: 19, title: 'Cross-Validation', description: 'Robust model evaluation', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['K-fold splits data into k parts', 'Train on k-1, test on 1', 'Average results for robust estimate'], starterCode: 'from sklearn.model_selection import cross_val_score\n', task: 'Perform cross-validation', validation: 'cross_val_score', expectedOutput: 'from sklearn.model_selection import cross_val_score\nfrom sklearn.linear_model import LogisticRegression\n\nmodel = LogisticRegression()\nscores = cross_val_score(model, X, y, cv=5)\nprint(f"Mean accuracy: {scores.mean():.4f}")' } },
+          { id: 'ai-ml-6', number: 20, title: 'Chapter Practice', description: 'Build your first ML pipeline', duration: '40 min', xp: 140, type: 'practice', content: { instructions: ['Load and preprocess data', 'Split into train/test', 'Build a basic model'], starterCode: '', task: 'Create a complete ML pipeline', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 4,
-        title: 'Large Language Models',
-        description: 'Work with AI like ChatGPT',
+        title: 'Supervised Learning',
+        description: 'Classification and regression',
         lessons: [
-          { id: 'llm-1', number: 17, title: 'Understanding LLMs', description: 'How they work', duration: '20 min', xp: 70, type: 'lesson' },
-          { id: 'llm-2', number: 18, title: 'Prompt Engineering', description: 'Effective prompts', duration: '25 min', xp: 95, type: 'lesson' },
-          { id: 'llm-3', number: 19, title: 'OpenAI API', description: 'Build AI apps', duration: '30 min', xp: 115, type: 'lesson' },
-          { id: 'llm-4', number: 20, title: 'RAG Systems', description: 'Retrieval augmented generation', duration: '35 min', xp: 135, type: 'lesson' },
-          { id: 'llm-5', number: 21, title: 'Final Project', description: 'Build an AI application', duration: '60 min', xp: 250, type: 'project' },
-          { id: 'llm-6', number: 22, title: 'Course Complete!', description: 'Claim your certificate', duration: '5 min', xp: 150, type: 'completion' }
+          { id: 'ai-sup-1', number: 21, title: 'Linear Regression', description: 'Predict continuous values', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Find best fit line through data', 'Minimize squared errors', 'Use for continuous predictions'], starterCode: 'from sklearn.linear_model import LinearRegression\n', task: 'Train a linear regression model', validation: 'LinearRegression', expectedOutput: 'from sklearn.linear_model import LinearRegression\n\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\npredictions = model.predict(X_test)\nprint(f"Coefficient: {model.coef_[0]:.4f}")\nprint(f"Intercept: {model.intercept_:.4f}")' } },
+          { id: 'ai-sup-2', number: 22, title: 'Logistic Regression', description: 'Binary classification', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Predicts probability of class', 'Output between 0 and 1', 'Uses sigmoid function'], starterCode: 'from sklearn.linear_model import LogisticRegression\n', task: 'Build a logistic regression classifier', validation: 'LogisticRegression', expectedOutput: 'from sklearn.linear_model import LogisticRegression\n\nmodel = LogisticRegression()\nmodel.fit(X_train, y_train)\n\npredictions = model.predict(X_test)\nprobabilities = model.predict_proba(X_test)' } },
+          { id: 'ai-sup-3', number: 23, title: 'Decision Trees', description: 'Tree-based classification', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Makes decisions based on features', 'Easy to interpret', 'Can overfit on complex data'], starterCode: 'from sklearn.tree import DecisionTreeClassifier\n', task: 'Train a decision tree', validation: 'DecisionTreeClassifier', expectedOutput: 'from sklearn.tree import DecisionTreeClassifier\n\ntree = DecisionTreeClassifier(max_depth=3)\ntree.fit(X_train, y_train)\n\nprint(f"Accuracy: {tree.score(X_test, y_test):.4f}")' } },
+          { id: 'ai-sup-4', number: 24, title: 'Random Forest', description: 'Ensemble of trees', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Combines many decision trees', 'Reduces overfitting', 'More robust than single tree'], starterCode: 'from sklearn.ensemble import RandomForestClassifier\n', task: 'Build a random forest model', validation: 'RandomForestClassifier', expectedOutput: 'from sklearn.ensemble import RandomForestClassifier\n\nrf = RandomForestClassifier(n_estimators=100, random_state=42)\nrf.fit(X_train, y_train)\n\nprint(f"Accuracy: {rf.score(X_test, y_test):.4f}")\nprint(f"Feature importances: {rf.feature_importances_}")' } },
+          { id: 'ai-sup-5', number: 25, title: 'Support Vector Machines', description: 'Maximum margin classifier', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Finds optimal separating hyperplane', 'Works well with high dimensions', 'Kernel trick for non-linear data'], starterCode: 'from sklearn.svm import SVC\n', task: 'Train an SVM classifier', validation: 'SVC', expectedOutput: 'from sklearn.svm import SVC\n\nsvm = SVC(kernel="rbf", C=1.0)\nsvm.fit(X_train, y_train)\n\nprint(f"Accuracy: {svm.score(X_test, y_test):.4f}")' } },
+          { id: 'ai-sup-6', number: 26, title: 'K-Nearest Neighbors', description: 'Instance-based learning', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Classifies by nearest neighbors', 'K is the number of neighbors', 'No training phase'], starterCode: 'from sklearn.neighbors import KNeighborsClassifier\n', task: 'Build a KNN classifier', validation: 'KNeighborsClassifier', expectedOutput: 'from sklearn.neighbors import KNeighborsClassifier\n\nknn = KNeighborsClassifier(n_neighbors=5)\nknn.fit(X_train, y_train)\n\nprint(f"Accuracy: {knn.score(X_test, y_test):.4f}")' } },
+          { id: 'ai-sup-7', number: 27, title: 'Model Evaluation Metrics', description: 'Accuracy, precision, recall', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['Accuracy: correct / total', 'Precision: true positives / predicted positives', 'Recall: true positives / actual positives', 'F1: harmonic mean of precision and recall'], starterCode: 'from sklearn.metrics import classification_report, confusion_matrix\n', task: 'Evaluate a classifier', validation: 'classification_report', expectedOutput: 'from sklearn.metrics import classification_report, confusion_matrix\n\nprint(confusion_matrix(y_test, predictions))\nprint(classification_report(y_test, predictions))' } },
+          { id: 'ai-sup-8', number: 28, title: 'Chapter Practice', description: 'Build a complete classifier', duration: '45 min', xp: 160, type: 'practice', content: { instructions: ['Load a classification dataset', 'Compare multiple algorithms', 'Choose the best model'], starterCode: '', task: 'Complete classification project', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 5,
+        title: 'Unsupervised Learning',
+        description: 'Clustering and dimensionality reduction',
+        lessons: [
+          { id: 'ai-unsup-1', number: 29, title: 'K-Means Clustering', description: 'Group similar data points', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Partitions data into k clusters', 'Minimizes within-cluster variance', 'Choose k with elbow method'], starterCode: 'from sklearn.cluster import KMeans\n', task: 'Cluster data with K-Means', validation: 'KMeans', expectedOutput: 'from sklearn.cluster import KMeans\n\nkmeans = KMeans(n_clusters=3, random_state=42)\nkmeans.fit(X)\n\nlabels = kmeans.labels_\ncenters = kmeans.cluster_centers_' } },
+          { id: 'ai-unsup-2', number: 30, title: 'Hierarchical Clustering', description: 'Build cluster tree', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Creates hierarchy of clusters', 'Visualize with dendrogram', 'Agglomerative: bottom-up approach'], starterCode: 'from sklearn.cluster import AgglomerativeClustering\n', task: 'Perform hierarchical clustering', validation: 'AgglomerativeClustering', expectedOutput: 'from sklearn.cluster import AgglomerativeClustering\n\nhc = AgglomerativeClustering(n_clusters=3)\nlabels = hc.fit_predict(X)' } },
+          { id: 'ai-unsup-3', number: 31, title: 'DBSCAN', description: 'Density-based clustering', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Groups points in dense regions', 'Identifies outliers as noise', 'No need to specify k'], starterCode: 'from sklearn.cluster import DBSCAN\n', task: 'Use DBSCAN for clustering', validation: 'DBSCAN', expectedOutput: 'from sklearn.cluster import DBSCAN\n\ndbscan = DBSCAN(eps=0.5, min_samples=5)\nlabels = dbscan.fit_predict(X)\n\nn_clusters = len(set(labels)) - (1 if -1 in labels else 0)\nn_noise = list(labels).count(-1)' } },
+          { id: 'ai-unsup-4', number: 32, title: 'PCA', description: 'Principal Component Analysis', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['Reduces dimensions while preserving variance', 'Find principal components', 'Useful for visualization and speed'], starterCode: 'from sklearn.decomposition import PCA\n', task: 'Apply PCA to reduce dimensions', validation: 'PCA', expectedOutput: 'from sklearn.decomposition import PCA\n\npca = PCA(n_components=2)\nX_reduced = pca.fit_transform(X)\n\nprint(f"Explained variance: {pca.explained_variance_ratio_}")' } },
+          { id: 'ai-unsup-5', number: 33, title: 't-SNE Visualization', description: 'Visualize high-dimensional data', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Non-linear dimensionality reduction', 'Great for visualization', 'Preserves local structure'], starterCode: 'from sklearn.manifold import TSNE\n', task: 'Visualize data with t-SNE', validation: 'TSNE', expectedOutput: 'from sklearn.manifold import TSNE\n\ntsne = TSNE(n_components=2, random_state=42)\nX_embedded = tsne.fit_transform(X)\n\nplt.scatter(X_embedded[:, 0], X_embedded[:, 1])\nplt.show()' } },
+          { id: 'ai-unsup-6', number: 34, title: 'Chapter Practice', description: 'Customer segmentation project', duration: '45 min', xp: 160, type: 'practice', content: { instructions: ['Load customer data', 'Apply clustering algorithms', 'Visualize and interpret segments'], starterCode: '', task: 'Complete clustering project', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 6,
+        title: 'Deep Learning Basics',
+        description: 'Neural networks fundamentals',
+        lessons: [
+          { id: 'ai-dl-1', number: 35, title: 'What are Neural Networks?', description: 'Biological inspiration', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Inspired by brain neurons', 'Layers of interconnected nodes', 'Learn complex patterns'], starterCode: '', task: 'Understand neural network structure', validation: 'neuron', expectedOutput: '# Neural Network Components:\n# - Input layer: receives data\n# - Hidden layers: learn patterns\n# - Output layer: makes predictions\n# - Weights: connection strengths\n# - Bias: threshold for activation' } },
+          { id: 'ai-dl-2', number: 36, title: 'Activation Functions', description: 'Add non-linearity', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['ReLU: max(0, x) - most common', 'Sigmoid: squashes to 0-1', 'Softmax: for multi-class output'], starterCode: 'import numpy as np\n', task: 'Implement activation functions', validation: 'def relu', expectedOutput: 'import numpy as np\n\ndef relu(x):\n    return np.maximum(0, x)\n\ndef sigmoid(x):\n    return 1 / (1 + np.exp(-x))\n\ndef softmax(x):\n    exp_x = np.exp(x - np.max(x))\n    return exp_x / exp_x.sum()' } },
+          { id: 'ai-dl-3', number: 37, title: 'Forward Propagation', description: 'How predictions are made', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Data flows through layers', 'Weights multiply inputs', 'Activations add non-linearity'], starterCode: '', task: 'Trace forward propagation', validation: 'forward', expectedOutput: '# Forward Propagation Steps:\n# 1. Input: X\n# 2. Hidden: H = activation(X @ W1 + b1)\n# 3. Output: Y = activation(H @ W2 + b2)' } },
+          { id: 'ai-dl-4', number: 38, title: 'Backpropagation', description: 'How networks learn', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['Calculate loss/error', 'Compute gradients with chain rule', 'Update weights to reduce error'], starterCode: '', task: 'Understand backpropagation', validation: 'gradient', expectedOutput: '# Backpropagation Steps:\n# 1. Calculate loss: L = loss_fn(y_pred, y_true)\n# 2. Compute gradients: dL/dW\n# 3. Update weights: W = W - learning_rate * gradient' } },
+          { id: 'ai-dl-5', number: 39, title: 'Loss Functions', description: 'Measure prediction error', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['MSE for regression', 'Cross-entropy for classification', 'Lower loss = better model'], starterCode: 'import numpy as np\n', task: 'Implement loss functions', validation: 'def mse', expectedOutput: 'import numpy as np\n\ndef mse(y_true, y_pred):\n    return np.mean((y_true - y_pred) ** 2)\n\ndef binary_cross_entropy(y_true, y_pred):\n    return -np.mean(y_true * np.log(y_pred) + (1-y_true) * np.log(1-y_pred))' } },
+          { id: 'ai-dl-6', number: 40, title: 'Optimizers', description: 'Training algorithms', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['SGD: basic gradient descent', 'Adam: adaptive learning rate', 'Learning rate is crucial'], starterCode: '', task: 'Compare optimizers', validation: 'Adam', expectedOutput: '# Common Optimizers:\n# SGD: Simple, needs tuning\n# Momentum: Faster convergence\n# RMSprop: Adaptive learning rate\n# Adam: Best of RMSprop + Momentum\n\n# Usage in TensorFlow:\noptimizer = tf.keras.optimizers.Adam(learning_rate=0.001)' } },
+          { id: 'ai-dl-7', number: 41, title: 'Chapter Practice', description: 'Build a neural network from scratch', duration: '45 min', xp: 160, type: 'practice', content: { instructions: ['Implement forward pass', 'Implement backward pass', 'Train on simple dataset'], starterCode: '', task: 'Build neural network from scratch', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 7,
+        title: 'TensorFlow & Keras',
+        description: 'Build deep learning models',
+        lessons: [
+          { id: 'ai-tf-1', number: 42, title: 'TensorFlow Setup', description: 'Install and import', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['pip install tensorflow', 'Import tensorflow as tf', 'Check GPU availability'], starterCode: '', task: 'Set up TensorFlow', validation: 'import tensorflow', expectedOutput: 'import tensorflow as tf\n\nprint(f"TensorFlow version: {tf.__version__}")\nprint(f"GPU available: {tf.config.list_physical_devices(\'GPU\')}")' } },
+          { id: 'ai-tf-2', number: 43, title: 'Sequential Model', description: 'Build layer by layer', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Sequential stacks layers', 'Dense layers are fully connected', 'Specify input_shape on first layer'], starterCode: 'import tensorflow as tf\nfrom tensorflow import keras\n', task: 'Build a Sequential model', validation: 'Sequential', expectedOutput: 'from tensorflow.keras import Sequential\nfrom tensorflow.keras.layers import Dense\n\nmodel = Sequential([\n    Dense(128, activation="relu", input_shape=(784,)),\n    Dense(64, activation="relu"),\n    Dense(10, activation="softmax")\n])' } },
+          { id: 'ai-tf-3', number: 44, title: 'Compiling Models', description: 'Configure for training', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Choose optimizer', 'Choose loss function', 'Add metrics to track'], starterCode: '', task: 'Compile a model', validation: 'model.compile', expectedOutput: 'model.compile(\n    optimizer="adam",\n    loss="sparse_categorical_crossentropy",\n    metrics=["accuracy"]\n)' } },
+          { id: 'ai-tf-4', number: 45, title: 'Training Models', description: 'Fit model to data', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Use model.fit()', 'Epochs: passes through data', 'Batch size: samples per update'], starterCode: '', task: 'Train a model', validation: 'model.fit', expectedOutput: 'history = model.fit(\n    X_train, y_train,\n    epochs=10,\n    batch_size=32,\n    validation_split=0.2\n)' } },
+          { id: 'ai-tf-5', number: 46, title: 'Evaluating & Predicting', description: 'Test model performance', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['model.evaluate() for metrics', 'model.predict() for new data', 'Save model with model.save()'], starterCode: '', task: 'Evaluate and use model', validation: 'model.evaluate', expectedOutput: 'test_loss, test_acc = model.evaluate(X_test, y_test)\nprint(f"Test accuracy: {test_acc:.4f}")\n\npredictions = model.predict(X_new)\nmodel.save("my_model.h5")' } },
+          { id: 'ai-tf-6', number: 47, title: 'Callbacks', description: 'Control training', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['EarlyStopping prevents overfitting', 'ModelCheckpoint saves best model', 'TensorBoard for visualization'], starterCode: 'from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint\n', task: 'Add callbacks to training', validation: 'EarlyStopping', expectedOutput: 'from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint\n\ncallbacks = [\n    EarlyStopping(patience=5, restore_best_weights=True),\n    ModelCheckpoint("best_model.h5", save_best_only=True)\n]\n\nmodel.fit(X_train, y_train, epochs=100, callbacks=callbacks)' } },
+          { id: 'ai-tf-7', number: 48, title: 'Regularization', description: 'Prevent overfitting', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Dropout randomly disables neurons', 'L1/L2 regularization penalizes weights', 'BatchNormalization stabilizes training'], starterCode: 'from tensorflow.keras.layers import Dropout, BatchNormalization\n', task: 'Add regularization to model', validation: 'Dropout', expectedOutput: 'from tensorflow.keras.layers import Dense, Dropout, BatchNormalization\n\nmodel = Sequential([\n    Dense(128, activation="relu"),\n    BatchNormalization(),\n    Dropout(0.3),\n    Dense(64, activation="relu"),\n    Dropout(0.2),\n    Dense(10, activation="softmax")\n])' } },
+          { id: 'ai-tf-8', number: 49, title: 'Chapter Practice', description: 'MNIST digit classifier', duration: '45 min', xp: 160, type: 'practice', content: { instructions: ['Load MNIST dataset', 'Build and train model', 'Achieve >95% accuracy'], starterCode: '', task: 'Build digit classifier', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 8,
+        title: 'Computer Vision',
+        description: 'CNNs for image recognition',
+        lessons: [
+          { id: 'ai-cv-1', number: 50, title: 'Introduction to CNNs', description: 'Why convolutions for images', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Images are 2D arrays of pixels', 'Convolutions detect features', 'CNNs preserve spatial structure'], starterCode: '', task: 'Understand CNN motivation', validation: 'convolution', expectedOutput: '# Why CNNs for images?\n# 1. Local patterns: edges, textures\n# 2. Translation invariance\n# 3. Spatial hierarchy\n# 4. Parameter sharing' } },
+          { id: 'ai-cv-2', number: 51, title: 'Convolutional Layers', description: 'Feature detection', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Conv2D applies filters', 'Filters learn features', 'Kernel size affects receptive field'], starterCode: 'from tensorflow.keras.layers import Conv2D\n', task: 'Add convolutional layer', validation: 'Conv2D', expectedOutput: 'from tensorflow.keras.layers import Conv2D\n\n# Convolutional layer with 32 filters\nconv_layer = Conv2D(\n    filters=32,\n    kernel_size=(3, 3),\n    activation="relu",\n    input_shape=(28, 28, 1)\n)' } },
+          { id: 'ai-cv-3', number: 52, title: 'Pooling Layers', description: 'Reduce dimensions', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['MaxPooling takes max value', 'Reduces computation', 'Provides translation invariance'], starterCode: 'from tensorflow.keras.layers import MaxPooling2D\n', task: 'Add pooling layer', validation: 'MaxPooling2D', expectedOutput: 'from tensorflow.keras.layers import MaxPooling2D\n\n# Reduces spatial dimensions by half\npool_layer = MaxPooling2D(pool_size=(2, 2))' } },
+          { id: 'ai-cv-4', number: 53, title: 'Building a CNN', description: 'Complete architecture', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['Stack Conv + Pool layers', 'Flatten before Dense layers', 'End with softmax for classification'], starterCode: 'from tensorflow.keras import Sequential\nfrom tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense\n', task: 'Build a complete CNN', validation: 'Flatten', expectedOutput: 'model = Sequential([\n    Conv2D(32, (3,3), activation="relu", input_shape=(28,28,1)),\n    MaxPooling2D((2,2)),\n    Conv2D(64, (3,3), activation="relu"),\n    MaxPooling2D((2,2)),\n    Flatten(),\n    Dense(64, activation="relu"),\n    Dense(10, activation="softmax")\n])' } },
+          { id: 'ai-cv-5', number: 54, title: 'Image Augmentation', description: 'Expand training data', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Flip, rotate, zoom images', 'Creates more training data', 'Reduces overfitting'], starterCode: 'from tensorflow.keras.preprocessing.image import ImageDataGenerator\n', task: 'Apply image augmentation', validation: 'ImageDataGenerator', expectedOutput: 'from tensorflow.keras.preprocessing.image import ImageDataGenerator\n\ndatagen = ImageDataGenerator(\n    rotation_range=20,\n    width_shift_range=0.2,\n    height_shift_range=0.2,\n    horizontal_flip=True,\n    zoom_range=0.2\n)' } },
+          { id: 'ai-cv-6', number: 55, title: 'Transfer Learning', description: 'Use pretrained models', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['Use models trained on ImageNet', 'Freeze base layers', 'Fine-tune top layers'], starterCode: 'from tensorflow.keras.applications import VGG16\n', task: 'Apply transfer learning', validation: 'VGG16', expectedOutput: 'from tensorflow.keras.applications import VGG16\n\nbase_model = VGG16(weights="imagenet", include_top=False, input_shape=(224,224,3))\nbase_model.trainable = False\n\nmodel = Sequential([\n    base_model,\n    Flatten(),\n    Dense(256, activation="relu"),\n    Dense(10, activation="softmax")\n])' } },
+          { id: 'ai-cv-7', number: 56, title: 'Chapter Practice', description: 'Image classification project', duration: '50 min', xp: 180, type: 'practice', content: { instructions: ['Load image dataset', 'Build CNN with augmentation', 'Use transfer learning'], starterCode: '', task: 'Complete image classification project', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 9,
+        title: 'Natural Language Processing',
+        description: 'Process and understand text',
+        lessons: [
+          { id: 'ai-nlp-1', number: 57, title: 'Text Preprocessing', description: 'Clean and tokenize text', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Lowercase and remove punctuation', 'Tokenize into words', 'Remove stopwords'], starterCode: '', task: 'Preprocess text data', validation: 'tokenize', expectedOutput: 'import re\n\ndef preprocess(text):\n    text = text.lower()\n    text = re.sub(r"[^a-z\\s]", "", text)\n    tokens = text.split()\n    return tokens' } },
+          { id: 'ai-nlp-2', number: 58, title: 'Bag of Words', description: 'Simple text representation', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Count word occurrences', 'Creates sparse vectors', 'Simple but effective'], starterCode: 'from sklearn.feature_extraction.text import CountVectorizer\n', task: 'Create bag of words', validation: 'CountVectorizer', expectedOutput: 'from sklearn.feature_extraction.text import CountVectorizer\n\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(documents)\n\nprint(vectorizer.get_feature_names_out())' } },
+          { id: 'ai-nlp-3', number: 59, title: 'TF-IDF', description: 'Weight by importance', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Term Frequency x Inverse Document Frequency', 'Rare words get higher weight', 'Better than raw counts'], starterCode: 'from sklearn.feature_extraction.text import TfidfVectorizer\n', task: 'Apply TF-IDF', validation: 'TfidfVectorizer', expectedOutput: 'from sklearn.feature_extraction.text import TfidfVectorizer\n\ntfidf = TfidfVectorizer(max_features=1000)\nX = tfidf.fit_transform(documents)' } },
+          { id: 'ai-nlp-4', number: 60, title: 'Word Embeddings', description: 'Dense word representations', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Words as dense vectors', 'Similar words have similar vectors', 'Word2Vec, GloVe, FastText'], starterCode: '', task: 'Use word embeddings', validation: 'Embedding', expectedOutput: 'from tensorflow.keras.layers import Embedding\n\n# Embedding layer in Keras\nembedding = Embedding(\n    input_dim=vocab_size,\n    output_dim=100,  # embedding dimension\n    input_length=max_length\n)' } },
+          { id: 'ai-nlp-5', number: 61, title: 'Recurrent Neural Networks', description: 'Sequential data processing', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['RNNs process sequences', 'LSTM handles long-term dependencies', 'Bidirectional for context'], starterCode: 'from tensorflow.keras.layers import LSTM, Bidirectional\n', task: 'Build an LSTM model', validation: 'LSTM', expectedOutput: 'from tensorflow.keras.layers import Embedding, LSTM, Dense\n\nmodel = Sequential([\n    Embedding(vocab_size, 100, input_length=max_length),\n    LSTM(64, return_sequences=True),\n    LSTM(32),\n    Dense(1, activation="sigmoid")\n])' } },
+          { id: 'ai-nlp-6', number: 62, title: 'Sentiment Analysis', description: 'Classify text sentiment', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['Positive, negative, neutral', 'Binary or multi-class', 'Use LSTM or transformers'], starterCode: '', task: 'Build sentiment classifier', validation: 'sentiment', expectedOutput: '# Complete sentiment analysis pipeline\nmodel.compile(optimizer="adam", loss="binary_crossentropy", metrics=["accuracy"])\nmodel.fit(X_train, y_train, epochs=5, validation_split=0.2)' } },
+          { id: 'ai-nlp-7', number: 63, title: 'Chapter Practice', description: 'Text classification project', duration: '50 min', xp: 180, type: 'practice', content: { instructions: ['Load text dataset', 'Preprocess and vectorize', 'Build and train classifier'], starterCode: '', task: 'Complete NLP project', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 10,
+        title: 'Large Language Models',
+        description: 'Work with modern AI',
+        lessons: [
+          { id: 'ai-llm-1', number: 64, title: 'Understanding LLMs', description: 'How transformers work', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Attention mechanism explained', 'Pre-training on massive text', 'Fine-tuning for tasks'], starterCode: '', task: 'Understand transformer architecture', validation: 'attention', expectedOutput: '# Transformer Key Components:\n# 1. Self-attention: relates tokens\n# 2. Multi-head attention: parallel attention\n# 3. Feed-forward layers\n# 4. Positional encoding' } },
+          { id: 'ai-llm-2', number: 65, title: 'OpenAI API Setup', description: 'Get started with GPT', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Get API key from OpenAI', 'Install openai package', 'Set up client'], starterCode: '', task: 'Set up OpenAI API', validation: 'openai', expectedOutput: 'from openai import OpenAI\n\nclient = OpenAI(api_key="your-api-key")\n\nresponse = client.chat.completions.create(\n    model="gpt-4",\n    messages=[{"role": "user", "content": "Hello!"}]\n)' } },
+          { id: 'ai-llm-3', number: 66, title: 'Prompt Engineering', description: 'Write effective prompts', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['Be specific and clear', 'Provide examples (few-shot)', 'Use system messages'], starterCode: '', task: 'Write effective prompts', validation: 'system', expectedOutput: 'messages = [\n    {"role": "system", "content": "You are a helpful coding assistant."},\n    {"role": "user", "content": "Write a Python function to reverse a string"}\n]\n\nresponse = client.chat.completions.create(\n    model="gpt-4",\n    messages=messages\n)' } },
+          { id: 'ai-llm-4', number: 67, title: 'Chat Completions', description: 'Build conversational AI', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Maintain conversation history', 'Handle multi-turn dialogue', 'Stream responses'], starterCode: '', task: 'Build a chatbot', validation: 'messages.append', expectedOutput: 'messages = []\n\ndef chat(user_input):\n    messages.append({"role": "user", "content": user_input})\n    response = client.chat.completions.create(\n        model="gpt-4",\n        messages=messages\n    )\n    assistant_message = response.choices[0].message.content\n    messages.append({"role": "assistant", "content": assistant_message})\n    return assistant_message' } },
+          { id: 'ai-llm-5', number: 68, title: 'Function Calling', description: 'Let LLMs use tools', duration: '25 min', xp: 80, type: 'lesson', content: { instructions: ['Define functions as tools', 'LLM decides when to call', 'Parse and execute calls'], starterCode: '', task: 'Implement function calling', validation: 'tools', expectedOutput: 'tools = [{\n    "type": "function",\n    "function": {\n        "name": "get_weather",\n        "parameters": {\n            "type": "object",\n            "properties": {\n                "location": {"type": "string"}\n            }\n        }\n    }\n}]\n\nresponse = client.chat.completions.create(\n    model="gpt-4",\n    messages=messages,\n    tools=tools\n)' } },
+          { id: 'ai-llm-6', number: 69, title: 'Embeddings', description: 'Semantic text search', duration: '22 min', xp: 70, type: 'lesson', content: { instructions: ['Convert text to vectors', 'Similar texts are close', 'Use for search and clustering'], starterCode: '', task: 'Use embeddings for search', validation: 'embeddings', expectedOutput: 'response = client.embeddings.create(\n    model="text-embedding-3-small",\n    input="Hello world"\n)\n\nembedding = response.data[0].embedding\n\n# Cosine similarity for search\nimport numpy as np\ndef cosine_similarity(a, b):\n    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))' } },
+          { id: 'ai-llm-7', number: 70, title: 'RAG Systems', description: 'Retrieval Augmented Generation', duration: '30 min', xp: 100, type: 'lesson', content: { instructions: ['Store documents with embeddings', 'Retrieve relevant context', 'Generate with context'], starterCode: '', task: 'Build a RAG system', validation: 'retrieve', expectedOutput: '# RAG Pipeline\n# 1. Embed documents\n# 2. Store in vector database\n# 3. Query: embed question, find similar docs\n# 4. Augment: add docs to prompt\n# 5. Generate: LLM answers with context\n\ndef rag_query(question, documents):\n    # Find relevant docs\n    relevant = retrieve_similar(question, documents)\n    # Add to prompt\n    context = "\\n".join(relevant)\n    prompt = f"Context:\\n{context}\\n\\nQuestion: {question}"\n    # Generate answer\n    return generate_response(prompt)' } },
+          { id: 'ai-llm-8', number: 71, title: 'Chapter Practice', description: 'Build an AI assistant', duration: '50 min', xp: 180, type: 'practice', content: { instructions: ['Use OpenAI API', 'Implement RAG', 'Add function calling'], starterCode: '', task: 'Build complete AI assistant', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 11,
+        title: 'Final Projects',
+        description: 'Apply everything you learned',
+        lessons: [
+          { id: 'ai-proj-1', number: 72, title: 'Project: Stock Price Predictor', description: 'Time series prediction with LSTM', duration: '60 min', xp: 220, type: 'project', content: { instructions: ['Load stock price data', 'Preprocess for LSTM', 'Build and train model', 'Visualize predictions'], starterCode: '', task: 'Build stock price predictor', validation: '', expectedOutput: '' } },
+          { id: 'ai-proj-2', number: 73, title: 'Project: Image Classifier App', description: 'CNN with web interface', duration: '60 min', xp: 220, type: 'project', content: { instructions: ['Train CNN on custom dataset', 'Save model', 'Build Flask/FastAPI endpoint', 'Create simple UI'], starterCode: '', task: 'Build image classifier app', validation: '', expectedOutput: '' } },
+          { id: 'ai-proj-3', number: 74, title: 'Project: Chatbot with Memory', description: 'Conversational AI with RAG', duration: '60 min', xp: 220, type: 'project', content: { instructions: ['Set up vector database', 'Implement document storage', 'Build conversation handler', 'Add memory and context'], starterCode: '', task: 'Build intelligent chatbot', validation: '', expectedOutput: '' } },
+          { id: 'ai-proj-4', number: 75, title: 'Project: Recommendation System', description: 'Collaborative filtering', duration: '60 min', xp: 220, type: 'project', content: { instructions: ['Load user-item data', 'Build recommendation model', 'Implement similarity search', 'Generate recommendations'], starterCode: '', task: 'Build recommendation system', validation: '', expectedOutput: '' } },
+          { id: 'ai-proj-5', number: 76, title: 'Project: Sentiment Dashboard', description: 'Real-time sentiment analysis', duration: '60 min', xp: 220, type: 'project', content: { instructions: ['Build sentiment classifier', 'Create data pipeline', 'Build visualization dashboard', 'Deploy to cloud'], starterCode: '', task: 'Build sentiment dashboard', validation: '', expectedOutput: '' } },
+          { id: 'ai-proj-6', number: 77, title: 'Project: AI Code Assistant', description: 'Code generation and review', duration: '60 min', xp: 250, type: 'project', content: { instructions: ['Use OpenAI API', 'Implement code generation', 'Add code review feature', 'Build CLI interface'], starterCode: '', task: 'Build AI code assistant', validation: '', expectedOutput: '' } },
+          { id: 'ai-proj-7', number: 78, title: 'Course Complete!', description: 'Claim your AI/ML certificate', duration: '5 min', xp: 300, type: 'completion', content: { instructions: ['Congratulations on completing the AI & Machine Learning course!', 'You have learned Python for data science, machine learning algorithms, deep learning with TensorFlow, computer vision, NLP, and LLMs.', 'You are now ready to build intelligent applications!'], starterCode: '', task: 'Claim your certificate', validation: '', expectedOutput: '' } }
         ]
       }
     ]
@@ -720,55 +688,132 @@ export const courses = {
     id: 'basics',
     title: 'Computer Essentials',
     subtitle: 'Digital Skills for Everyone',
-    description: 'Master essential computer skills. From typing to Microsoft Office, get comfortable with technology.',
+    description: 'The complete digital literacy course. Master essential computer skills from hardware basics to Microsoft Office, internet safety, and cloud collaboration. Perfect for beginners starting their digital journey.',
     icon: 'Laptop',
     color: '#eab308',
-    totalLessons: 16,
-    totalDuration: '8 hours',
+    totalLessons: 58,
+    totalDuration: '28 hours',
     level: 'Beginner',
     chapters: [
       {
         id: 1,
-        title: 'Getting Started',
-        description: 'Computer fundamentals',
+        title: 'Computer Fundamentals',
+        description: 'Understanding your computer',
         lessons: [
-          { id: 'basic-1', number: 1, title: 'Computer Basics', description: 'Hardware and software', duration: '12 min', xp: 30, type: 'lesson' },
-          { id: 'basic-2', number: 2, title: 'Operating System', description: 'Windows/Mac basics', duration: '15 min', xp: 40, type: 'lesson' },
-          { id: 'basic-3', number: 3, title: 'Files & Folders', description: 'Organize your files', duration: '12 min', xp: 35, type: 'lesson' },
-          { id: 'basic-4', number: 4, title: 'Chapter Practice', description: 'File management', duration: '20 min', xp: 60, type: 'practice' }
+          { id: 'basic-1', number: 1, title: 'What is a Computer?', description: 'Introduction to computing', duration: '10 min', xp: 25, type: 'lesson', content: { instructions: ['A computer processes information', 'Computers follow instructions called programs', 'They help us work, learn, and communicate'], starterCode: '', task: 'Identify the main parts of a computer', validation: '', expectedOutput: 'CPU, RAM, Storage, Monitor, Keyboard, Mouse' } },
+          { id: 'basic-2', number: 2, title: 'Hardware Components', description: 'Physical parts of a computer', duration: '15 min', xp: 40, type: 'lesson', content: { instructions: ['CPU is the brain of the computer', 'RAM is temporary memory', 'Hard drive/SSD stores files permanently', 'Monitor displays information'], starterCode: '', task: 'Match hardware components to their functions', validation: '', expectedOutput: '' } },
+          { id: 'basic-3', number: 3, title: 'Software Basics', description: 'Programs and applications', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Software is programs that run on computers', 'Operating system manages the computer', 'Applications help you do specific tasks'], starterCode: '', task: 'Identify different types of software', validation: '', expectedOutput: '' } },
+          { id: 'basic-4', number: 4, title: 'Starting Your Computer', description: 'Power on and login', duration: '10 min', xp: 30, type: 'lesson', content: { instructions: ['Press the power button to turn on', 'Wait for the operating system to load', 'Enter your password to login'], starterCode: '', task: 'Practice starting up a computer', validation: '', expectedOutput: '' } },
+          { id: 'basic-5', number: 5, title: 'The Desktop', description: 'Your computer home screen', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['The desktop is your starting point', 'Icons represent programs and files', 'The taskbar shows running programs'], starterCode: '', task: 'Navigate the desktop interface', validation: '', expectedOutput: '' } },
+          { id: 'basic-6', number: 6, title: 'Chapter Practice', description: 'Computer basics quiz', duration: '20 min', xp: 70, type: 'practice', content: { instructions: ['Answer questions about computer basics', 'Identify hardware and software', 'Navigate the desktop'], starterCode: '', task: 'Complete the computer basics quiz', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 2,
-        title: 'Typing Skills',
-        description: 'Type faster and accurately',
+        title: 'Keyboard & Mouse Skills',
+        description: 'Input device mastery',
         lessons: [
-          { id: 'type-1', number: 5, title: 'Home Row Keys', description: 'Proper finger placement', duration: '15 min', xp: 40, type: 'lesson' },
-          { id: 'type-2', number: 6, title: 'Top & Bottom Rows', description: 'Full keyboard coverage', duration: '18 min', xp: 50, type: 'lesson' },
-          { id: 'type-3', number: 7, title: 'Speed Practice', description: 'Build typing speed', duration: '20 min', xp: 60, type: 'practice' },
-          { id: 'type-4', number: 8, title: 'Typing Test', description: 'Measure your progress', duration: '15 min', xp: 80, type: 'practice' }
+          { id: 'input-1', number: 7, title: 'Mouse Basics', description: 'Point, click, and drag', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Move the mouse to move the cursor', 'Left-click to select', 'Right-click for options menu', 'Double-click to open'], starterCode: '', task: 'Practice mouse movements and clicks', validation: '', expectedOutput: '' } },
+          { id: 'input-2', number: 8, title: 'Keyboard Layout', description: 'Know your keyboard', duration: '15 min', xp: 40, type: 'lesson', content: { instructions: ['QWERTY is the standard layout', 'Home row: ASDF JKL;', 'Function keys are at the top', 'Number pad on the right'], starterCode: '', task: 'Identify all keyboard sections', validation: '', expectedOutput: '' } },
+          { id: 'input-3', number: 9, title: 'Home Row Keys', description: 'Proper finger placement', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Left hand: A S D F', 'Right hand: J K L ;', 'Index fingers on F and J (bumps)', 'Thumbs on spacebar'], starterCode: '', task: 'Type home row exercises', validation: 'asdf jkl;', expectedOutput: '' } },
+          { id: 'input-4', number: 10, title: 'Top Row Keys', description: 'QWERTY and numbers', duration: '18 min', xp: 50, type: 'lesson', content: { instructions: ['Reach up from home row', 'Q W E R T Y U I O P', 'Numbers 1-0 above letters'], starterCode: '', task: 'Practice top row typing', validation: '', expectedOutput: '' } },
+          { id: 'input-5', number: 11, title: 'Bottom Row Keys', description: 'Complete keyboard coverage', duration: '18 min', xp: 50, type: 'lesson', content: { instructions: ['Z X C V B N M , . /', 'Shift for capitals', 'Enter to submit'], starterCode: '', task: 'Practice bottom row typing', validation: '', expectedOutput: '' } },
+          { id: 'input-6', number: 12, title: 'Special Keys', description: 'Shortcuts and modifiers', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Ctrl + C to copy', 'Ctrl + V to paste', 'Ctrl + Z to undo', 'Alt + Tab to switch windows'], starterCode: '', task: 'Practice keyboard shortcuts', validation: '', expectedOutput: '' } },
+          { id: 'input-7', number: 13, title: 'Typing Speed Practice', description: 'Build your speed', duration: '25 min', xp: 80, type: 'practice', content: { instructions: ['Focus on accuracy first', 'Speed comes with practice', 'Keep eyes on screen, not keyboard'], starterCode: '', task: 'Complete typing exercises', validation: '', expectedOutput: '' } },
+          { id: 'input-8', number: 14, title: 'Chapter Practice', description: 'Typing test', duration: '20 min', xp: 90, type: 'practice', content: { instructions: ['Take a timed typing test', 'Measure words per minute', 'Track your accuracy'], starterCode: '', task: 'Complete the typing test', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 3,
-        title: 'Microsoft Office',
-        description: 'Essential productivity tools',
+        title: 'File Management',
+        description: 'Organize your digital life',
         lessons: [
-          { id: 'office-1', number: 9, title: 'Word Basics', description: 'Create documents', duration: '20 min', xp: 55, type: 'lesson' },
-          { id: 'office-2', number: 10, title: 'Excel Basics', description: 'Spreadsheets & formulas', duration: '25 min', xp: 70, type: 'lesson' },
-          { id: 'office-3', number: 11, title: 'PowerPoint Basics', description: 'Create presentations', duration: '18 min', xp: 50, type: 'lesson' },
-          { id: 'office-4', number: 12, title: 'Chapter Practice', description: 'Office project', duration: '30 min', xp: 100, type: 'practice' }
+          { id: 'file-1', number: 15, title: 'What are Files?', description: 'Understanding digital files', duration: '10 min', xp: 30, type: 'lesson', content: { instructions: ['Files store information', 'Documents, photos, videos are files', 'Each file has a name and extension'], starterCode: '', task: 'Identify different file types', validation: '', expectedOutput: '' } },
+          { id: 'file-2', number: 16, title: 'Folders & Organization', description: 'Create structure', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Folders contain files', 'Create folders to organize', 'Use descriptive names'], starterCode: '', task: 'Create a folder structure', validation: '', expectedOutput: '' } },
+          { id: 'file-3', number: 17, title: 'File Explorer', description: 'Navigate your files', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['File Explorer shows all files', 'Navigation pane on the left', 'Quick Access for favorites'], starterCode: '', task: 'Navigate using File Explorer', validation: '', expectedOutput: '' } },
+          { id: 'file-4', number: 18, title: 'Copy, Move & Delete', description: 'File operations', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Copy creates a duplicate', 'Move relocates the file', 'Delete sends to Recycle Bin'], starterCode: '', task: 'Practice file operations', validation: '', expectedOutput: '' } },
+          { id: 'file-5', number: 19, title: 'Searching for Files', description: 'Find what you need', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Use the search bar', 'Search by name or content', 'Filter by type or date'], starterCode: '', task: 'Search for specific files', validation: '', expectedOutput: '' } },
+          { id: 'file-6', number: 20, title: 'File Compression', description: 'Zip and unzip files', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Zip files are compressed', 'Smaller for sharing', 'Right-click to compress/extract'], starterCode: '', task: 'Create and extract zip files', validation: '', expectedOutput: '' } },
+          { id: 'file-7', number: 21, title: 'Chapter Practice', description: 'File management project', duration: '25 min', xp: 100, type: 'practice', content: { instructions: ['Create organized folder structure', 'Practice all file operations', 'Search and compress files'], starterCode: '', task: 'Complete file management project', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 4,
-        title: 'Internet & Email',
-        description: 'Navigate the digital world',
+        title: 'Internet & Web Browsing',
+        description: 'Navigate the World Wide Web',
         lessons: [
-          { id: 'web-1', number: 13, title: 'Web Browsing', description: 'Use browsers effectively', duration: '12 min', xp: 35, type: 'lesson' },
-          { id: 'web-2', number: 14, title: 'Email Essentials', description: 'Professional communication', duration: '15 min', xp: 45, type: 'lesson' },
-          { id: 'web-3', number: 15, title: 'Online Safety', description: 'Stay secure online', duration: '18 min', xp: 55, type: 'lesson' },
-          { id: 'web-4', number: 16, title: 'Course Complete!', description: 'Claim your certificate', duration: '5 min', xp: 100, type: 'completion' }
+          { id: 'web-1', number: 22, title: 'What is the Internet?', description: 'Global network basics', duration: '10 min', xp: 30, type: 'lesson', content: { instructions: ['The Internet connects computers worldwide', 'Web pages are documents on the Internet', 'URLs are web addresses'], starterCode: '', task: 'Understand Internet basics', validation: '', expectedOutput: '' } },
+          { id: 'web-2', number: 23, title: 'Web Browsers', description: 'Your gateway to the web', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Chrome, Firefox, Edge, Safari', 'Address bar for URLs', 'Tabs for multiple pages'], starterCode: '', task: 'Open and navigate a browser', validation: '', expectedOutput: '' } },
+          { id: 'web-3', number: 24, title: 'Navigating Websites', description: 'Click, scroll, and explore', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Click links to navigate', 'Back/Forward buttons', 'Scroll to see more content'], starterCode: '', task: 'Navigate through websites', validation: '', expectedOutput: '' } },
+          { id: 'web-4', number: 25, title: 'Search Engines', description: 'Find information online', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Google, Bing, DuckDuckGo', 'Type keywords to search', 'Evaluate search results'], starterCode: '', task: 'Search for information effectively', validation: '', expectedOutput: '' } },
+          { id: 'web-5', number: 26, title: 'Bookmarks & History', description: 'Save and find pages', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Bookmark favorite pages', 'History shows visited pages', 'Organize bookmarks in folders'], starterCode: '', task: 'Use bookmarks and history', validation: '', expectedOutput: '' } },
+          { id: 'web-6', number: 27, title: 'Downloading Files', description: 'Save files from the web', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Right-click to save images', 'Downloads go to Downloads folder', 'Be careful what you download'], starterCode: '', task: 'Download files safely', validation: '', expectedOutput: '' } },
+          { id: 'web-7', number: 28, title: 'Chapter Practice', description: 'Web browsing challenge', duration: '25 min', xp: 100, type: 'practice', content: { instructions: ['Navigate various websites', 'Search and find information', 'Download and bookmark pages'], starterCode: '', task: 'Complete the web browsing challenge', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 5,
+        title: 'Email & Communication',
+        description: 'Professional digital communication',
+        lessons: [
+          { id: 'email-1', number: 29, title: 'Email Basics', description: 'Understanding email', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Email is electronic mail', 'Need email address to send/receive', 'Gmail, Outlook, Yahoo are providers'], starterCode: '', task: 'Understand email concepts', validation: '', expectedOutput: '' } },
+          { id: 'email-2', number: 30, title: 'Creating an Account', description: 'Set up your email', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Choose email provider', 'Pick a professional username', 'Create strong password'], starterCode: '', task: 'Create an email account', validation: '', expectedOutput: '' } },
+          { id: 'email-3', number: 31, title: 'Composing Emails', description: 'Write effective messages', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['To: recipient address', 'Subject: brief description', 'Body: your message', 'Signature: your name'], starterCode: '', task: 'Compose a professional email', validation: '', expectedOutput: '' } },
+          { id: 'email-4', number: 32, title: 'Replying & Forwarding', description: 'Respond to emails', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Reply to respond', 'Reply All for groups', 'Forward to share with others'], starterCode: '', task: 'Practice reply and forward', validation: '', expectedOutput: '' } },
+          { id: 'email-5', number: 33, title: 'Attachments', description: 'Send files via email', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Attach files to emails', 'Size limits apply', 'Download received attachments'], starterCode: '', task: 'Send and receive attachments', validation: '', expectedOutput: '' } },
+          { id: 'email-6', number: 34, title: 'Organizing Inbox', description: 'Manage your emails', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Create folders/labels', 'Archive old emails', 'Use filters for automation'], starterCode: '', task: 'Organize your inbox', validation: '', expectedOutput: '' } },
+          { id: 'email-7', number: 35, title: 'Email Etiquette', description: 'Professional communication', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Use appropriate greetings', 'Be clear and concise', 'Proofread before sending', 'Respond promptly'], starterCode: '', task: 'Write professional emails', validation: '', expectedOutput: '' } },
+          { id: 'email-8', number: 36, title: 'Chapter Practice', description: 'Email communication project', duration: '25 min', xp: 100, type: 'practice', content: { instructions: ['Compose various emails', 'Manage inbox organization', 'Practice email etiquette'], starterCode: '', task: 'Complete email project', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 6,
+        title: 'Microsoft Word',
+        description: 'Create professional documents',
+        lessons: [
+          { id: 'word-1', number: 37, title: 'Word Interface', description: 'Navigate the application', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Ribbon contains tools', 'Quick Access Toolbar', 'Document area for typing'], starterCode: '', task: 'Explore Word interface', validation: '', expectedOutput: '' } },
+          { id: 'word-2', number: 38, title: 'Creating Documents', description: 'Start writing', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['New document: Ctrl+N', 'Save document: Ctrl+S', 'Choose save location'], starterCode: '', task: 'Create and save a document', validation: '', expectedOutput: '' } },
+          { id: 'word-3', number: 39, title: 'Text Formatting', description: 'Style your text', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Bold: Ctrl+B', 'Italic: Ctrl+I', 'Underline: Ctrl+U', 'Change font and size'], starterCode: '', task: 'Format text in document', validation: '', expectedOutput: '' } },
+          { id: 'word-4', number: 40, title: 'Paragraph Formatting', description: 'Align and space text', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Align left, center, right', 'Line spacing options', 'Bullets and numbering'], starterCode: '', task: 'Format paragraphs', validation: '', expectedOutput: '' } },
+          { id: 'word-5', number: 41, title: 'Tables', description: 'Organize data in tables', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Insert table from ribbon', 'Add rows and columns', 'Format table style'], starterCode: '', task: 'Create and format a table', validation: '', expectedOutput: '' } },
+          { id: 'word-6', number: 42, title: 'Images & Shapes', description: 'Add visual elements', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Insert pictures', 'Add shapes and icons', 'Position and resize'], starterCode: '', task: 'Add images to document', validation: '', expectedOutput: '' } },
+          { id: 'word-7', number: 43, title: 'Chapter Practice', description: 'Create a professional document', duration: '30 min', xp: 120, type: 'practice', content: { instructions: ['Create formatted document', 'Include tables and images', 'Apply consistent styling'], starterCode: '', task: 'Complete Word document project', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 7,
+        title: 'Microsoft Excel',
+        description: 'Master spreadsheets',
+        lessons: [
+          { id: 'excel-1', number: 44, title: 'Excel Interface', description: 'Cells, rows, and columns', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Cells are the building blocks', 'Rows are horizontal (1, 2, 3...)', 'Columns are vertical (A, B, C...)'], starterCode: '', task: 'Navigate Excel interface', validation: '', expectedOutput: '' } },
+          { id: 'excel-2', number: 45, title: 'Entering Data', description: 'Input numbers and text', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Click cell to select', 'Type to enter data', 'Enter to confirm'], starterCode: '', task: 'Enter data in cells', validation: '', expectedOutput: '' } },
+          { id: 'excel-3', number: 46, title: 'Basic Formulas', description: 'Calculate automatically', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Start with = sign', 'SUM adds numbers', 'AVERAGE calculates mean'], starterCode: '', task: 'Create basic formulas', validation: '=SUM', expectedOutput: '=SUM(A1:A10)' } },
+          { id: 'excel-4', number: 47, title: 'Cell References', description: 'Link cells in formulas', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Relative: A1', 'Absolute: $A$1', 'Mixed: $A1 or A$1'], starterCode: '', task: 'Use cell references', validation: '', expectedOutput: '' } },
+          { id: 'excel-5', number: 48, title: 'Formatting Cells', description: 'Style your spreadsheet', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Number formats', 'Cell colors and borders', 'Merge cells'], starterCode: '', task: 'Format spreadsheet cells', validation: '', expectedOutput: '' } },
+          { id: 'excel-6', number: 49, title: 'Basic Charts', description: 'Visualize your data', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Select data range', 'Insert chart from ribbon', 'Bar, line, pie charts'], starterCode: '', task: 'Create a chart', validation: '', expectedOutput: '' } },
+          { id: 'excel-7', number: 50, title: 'Chapter Practice', description: 'Budget spreadsheet project', duration: '35 min', xp: 140, type: 'practice', content: { instructions: ['Create a budget tracker', 'Use formulas for totals', 'Add charts for visualization'], starterCode: '', task: 'Complete Excel project', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 8,
+        title: 'Microsoft PowerPoint',
+        description: 'Create compelling presentations',
+        lessons: [
+          { id: 'ppt-1', number: 51, title: 'PowerPoint Interface', description: 'Navigate the application', duration: '10 min', xp: 30, type: 'lesson', content: { instructions: ['Slide pane on left', 'Main editing area', 'Notes section below'], starterCode: '', task: 'Explore PowerPoint interface', validation: '', expectedOutput: '' } },
+          { id: 'ppt-2', number: 52, title: 'Creating Slides', description: 'Add and organize slides', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['New slide: Ctrl+M', 'Choose slide layouts', 'Reorder by dragging'], starterCode: '', task: 'Create and arrange slides', validation: '', expectedOutput: '' } },
+          { id: 'ppt-3', number: 53, title: 'Adding Content', description: 'Text, images, and media', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Click text boxes to type', 'Insert images and videos', 'Add icons and shapes'], starterCode: '', task: 'Add content to slides', validation: '', expectedOutput: '' } },
+          { id: 'ppt-4', number: 54, title: 'Slide Design', description: 'Professional appearance', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['Apply design themes', 'Customize colors', 'Consistent formatting'], starterCode: '', task: 'Design a presentation', validation: '', expectedOutput: '' } },
+          { id: 'ppt-5', number: 55, title: 'Animations & Transitions', description: 'Add movement', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Transitions between slides', 'Animations for objects', 'Use sparingly'], starterCode: '', task: 'Add animations and transitions', validation: '', expectedOutput: '' } },
+          { id: 'ppt-6', number: 56, title: 'Presenting', description: 'Deliver your presentation', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['F5 to start slideshow', 'Arrow keys to navigate', 'Esc to exit'], starterCode: '', task: 'Practice presenting', validation: '', expectedOutput: '' } },
+          { id: 'ppt-7', number: 57, title: 'Chapter Practice', description: 'Create a full presentation', duration: '35 min', xp: 140, type: 'practice', content: { instructions: ['Create 10-slide presentation', 'Include various content types', 'Add animations and design'], starterCode: '', task: 'Complete presentation project', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 9,
+        title: 'Final Projects',
+        description: 'Apply all your skills',
+        lessons: [
+          { id: 'final-1', number: 58, title: 'Course Complete!', description: 'Claim your certificate', duration: '5 min', xp: 200, type: 'completion', content: { instructions: ['Congratulations on completing Computer Essentials!', 'You now have fundamental digital literacy skills.', 'You can use computers, browse the web, communicate via email, and create documents.'], starterCode: '', task: 'Claim your certificate', validation: '', expectedOutput: '' } }
         ]
       }
     ]
@@ -778,71 +823,187 @@ export const courses = {
     id: 'fullstack',
     title: 'Full Stack Development',
     subtitle: 'Complete Web Applications',
-    description: 'Combine frontend and backend skills to build complete web applications from start to finish.',
+    description: 'The ultimate full stack development course. Master React, Node.js, Express, MongoDB, authentication, testing, and deployment. Build production-ready web applications from scratch.',
     icon: 'Code2',
     color: '#10b981',
-    totalLessons: 26,
-    totalDuration: '24 hours',
-    level: 'Intermediate',
+    totalLessons: 92,
+    totalDuration: '48 hours',
+    level: 'Intermediate to Advanced',
     chapters: [
       {
         id: 1,
         title: 'Full Stack Overview',
         description: 'Understanding the complete picture',
         lessons: [
-          { id: 'fs-1', number: 1, title: 'What is Full Stack?', description: 'Frontend + Backend', duration: '10 min', xp: 30, type: 'lesson' },
-          { id: 'fs-2', number: 2, title: 'Project Architecture', description: 'How apps are structured', duration: '15 min', xp: 50, type: 'lesson' },
-          { id: 'fs-3', number: 3, title: 'Development Tools', description: 'VS Code, Git, npm', duration: '18 min', xp: 60, type: 'lesson' }
+          { id: 'fs-1', number: 1, title: 'What is Full Stack?', description: 'Frontend + Backend', duration: '12 min', xp: 35, type: 'lesson', content: { instructions: ['Full stack = frontend + backend + database', 'Frontend is what users see', 'Backend handles logic and data'], starterCode: '', task: 'Understand the full stack architecture', validation: '', expectedOutput: '' } },
+          { id: 'fs-2', number: 2, title: 'The MERN Stack', description: 'MongoDB, Express, React, Node', duration: '15 min', xp: 45, type: 'lesson', content: { instructions: ['MongoDB: NoSQL database', 'Express: Node.js web framework', 'React: Frontend library', 'Node.js: JavaScript runtime'], starterCode: '', task: 'Understand MERN stack components', validation: '', expectedOutput: '' } },
+          { id: 'fs-3', number: 3, title: 'Project Structure', description: 'Organizing your code', duration: '18 min', xp: 55, type: 'lesson', content: { instructions: ['Separate client and server folders', 'Package.json for dependencies', 'Environment variables for config'], starterCode: '', task: 'Set up project structure', validation: '', expectedOutput: '' } },
+          { id: 'fs-4', number: 4, title: 'Development Environment', description: 'VS Code, Git, npm', duration: '20 min', xp: 65, type: 'lesson', content: { instructions: ['Install Node.js and npm', 'Set up VS Code with extensions', 'Initialize Git repository'], starterCode: '', task: 'Configure development environment', validation: '', expectedOutput: '' } },
+          { id: 'fs-5', number: 5, title: 'Chapter Practice', description: 'Set up a full stack project', duration: '30 min', xp: 100, type: 'practice', content: { instructions: ['Create project folder structure', 'Initialize npm packages', 'Set up Git repository'], starterCode: '', task: 'Complete project setup', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 2,
-        title: 'React Frontend',
-        description: 'Modern UI development',
+        title: 'React Fundamentals',
+        description: 'Build modern user interfaces',
         lessons: [
-          { id: 'react-1', number: 4, title: 'React Setup', description: 'Create React App', duration: '12 min', xp: 40, type: 'lesson' },
-          { id: 'react-2', number: 5, title: 'Components', description: 'Building blocks of React', duration: '20 min', xp: 70, type: 'lesson' },
-          { id: 'react-3', number: 6, title: 'State & Props', description: 'Data flow in React', duration: '25 min', xp: 90, type: 'lesson' },
-          { id: 'react-4', number: 7, title: 'React Hooks', description: 'useState, useEffect', duration: '28 min', xp: 100, type: 'lesson' },
-          { id: 'react-5', number: 8, title: 'React Router', description: 'Page navigation', duration: '18 min', xp: 65, type: 'lesson' },
-          { id: 'react-6', number: 9, title: 'Chapter Practice', description: 'Build a React app', duration: '40 min', xp: 150, type: 'practice' }
+          { id: 'react-1', number: 6, title: 'Create React App', description: 'Start a new React project', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['npx create-react-app my-app', 'Understand the folder structure', 'npm start to run development server'], starterCode: '', task: 'Create a new React application', validation: 'create-react-app', expectedOutput: '' } },
+          { id: 'react-2', number: 7, title: 'JSX Syntax', description: 'HTML in JavaScript', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['JSX lets you write HTML in JS', 'Use className instead of class', 'Expressions in curly braces {}'], starterCode: '', task: 'Write JSX elements', validation: 'return (', expectedOutput: 'return (\n  <div className="container">\n    <h1>Hello, {name}!</h1>\n  </div>\n);' } },
+          { id: 'react-3', number: 8, title: 'Components', description: 'Building blocks of React', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['Components are reusable UI pieces', 'Function components are preferred', 'Export to use in other files'], starterCode: '', task: 'Create a functional component', validation: 'function', expectedOutput: 'function Welcome({ name }) {\n  return <h1>Hello, {name}!</h1>;\n}\n\nexport default Welcome;' } },
+          { id: 'react-4', number: 9, title: 'Props', description: 'Pass data to components', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['Props are read-only inputs', 'Passed as attributes in JSX', 'Destructure for cleaner code'], starterCode: '', task: 'Use props in components', validation: 'props', expectedOutput: 'function Card({ title, description }) {\n  return (\n    <div>\n      <h2>{title}</h2>\n      <p>{description}</p>\n    </div>\n  );\n}' } },
+          { id: 'react-5', number: 10, title: 'useState Hook', description: 'Manage component state', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['useState returns [value, setter]', 'State changes trigger re-render', 'Initial value passed to useState'], starterCode: 'import { useState } from "react";\n', task: 'Create stateful component', validation: 'useState', expectedOutput: 'const [count, setCount] = useState(0);\n\nreturn (\n  <button onClick={() => setCount(count + 1)}>\n    Count: {count}\n  </button>\n);' } },
+          { id: 'react-6', number: 11, title: 'useEffect Hook', description: 'Handle side effects', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['useEffect runs after render', 'Dependency array controls when', 'Cleanup function for unmount'], starterCode: 'import { useEffect } from "react";\n', task: 'Use useEffect for data fetching', validation: 'useEffect', expectedOutput: 'useEffect(() => {\n  fetchData();\n}, []);\n\nuseEffect(() => {\n  document.title = `Count: ${count}`;\n}, [count]);' } },
+          { id: 'react-7', number: 12, title: 'Event Handling', description: 'Respond to user actions', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['onClick, onChange, onSubmit', 'Event handlers receive event object', 'Prevent default for forms'], starterCode: '', task: 'Handle form submission', validation: 'onSubmit', expectedOutput: 'function handleSubmit(e) {\n  e.preventDefault();\n  console.log(formData);\n}\n\nreturn <form onSubmit={handleSubmit}>...</form>;' } },
+          { id: 'react-8', number: 13, title: 'Conditional Rendering', description: 'Show content conditionally', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Use ternary operator in JSX', 'Short-circuit && for show/hide', 'Return null to render nothing'], starterCode: '', task: 'Render based on conditions', validation: '?', expectedOutput: 'return (\n  <div>\n    {isLoggedIn ? <Dashboard /> : <Login />}\n    {error && <ErrorMessage msg={error} />}\n  </div>\n);' } },
+          { id: 'react-9', number: 14, title: 'Lists & Keys', description: 'Render arrays of data', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['Use map() to render lists', 'Each item needs unique key', 'Key helps React track changes'], starterCode: '', task: 'Render a list of items', validation: '.map', expectedOutput: 'return (\n  <ul>\n    {items.map(item => (\n      <li key={item.id}>{item.name}</li>\n    ))}\n  </ul>\n);' } },
+          { id: 'react-10', number: 15, title: 'Chapter Practice', description: 'Build a Todo app', duration: '45 min', xp: 160, type: 'practice', content: { instructions: ['Create todo list component', 'Add, toggle, delete todos', 'Use state to manage todos'], starterCode: '', task: 'Complete Todo app', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 3,
-        title: 'Node.js Backend',
-        description: 'Server-side development',
+        title: 'React Advanced',
+        description: 'Master advanced React patterns',
         lessons: [
-          { id: 'be-1', number: 10, title: 'Express Setup', description: 'Create API server', duration: '15 min', xp: 50, type: 'lesson' },
-          { id: 'be-2', number: 11, title: 'REST API Design', description: 'Endpoints and methods', duration: '22 min', xp: 80, type: 'lesson' },
-          { id: 'be-3', number: 12, title: 'MongoDB Integration', description: 'Database connection', duration: '25 min', xp: 90, type: 'lesson' },
-          { id: 'be-4', number: 13, title: 'User Authentication', description: 'JWT and sessions', duration: '30 min', xp: 110, type: 'lesson' },
-          { id: 'be-5', number: 14, title: 'Chapter Practice', description: 'Build an API', duration: '40 min', xp: 150, type: 'practice' }
+          { id: 'adv-1', number: 16, title: 'React Router', description: 'Client-side navigation', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['npm install react-router-dom', 'BrowserRouter, Routes, Route', 'Link and useNavigate'], starterCode: '', task: 'Set up routing', validation: 'Route', expectedOutput: '<Routes>\n  <Route path="/" element={<Home />} />\n  <Route path="/about" element={<About />} />\n  <Route path="/users/:id" element={<UserProfile />} />\n</Routes>' } },
+          { id: 'adv-2', number: 17, title: 'Route Parameters', description: 'Dynamic routes', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['Use :param in path', 'useParams hook to access', 'Nested routes for layouts'], starterCode: '', task: 'Create dynamic routes', validation: 'useParams', expectedOutput: 'const { id } = useParams();\n\nuseEffect(() => {\n  fetchUser(id);\n}, [id]);' } },
+          { id: 'adv-3', number: 18, title: 'Context API', description: 'Global state management', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['createContext for shared data', 'Provider wraps app', 'useContext to consume'], starterCode: '', task: 'Create an auth context', validation: 'createContext', expectedOutput: 'const AuthContext = createContext();\n\nexport function AuthProvider({ children }) {\n  const [user, setUser] = useState(null);\n  return (\n    <AuthContext.Provider value={{ user, setUser }}>\n      {children}\n    </AuthContext.Provider>\n  );\n}' } },
+          { id: 'adv-4', number: 19, title: 'Custom Hooks', description: 'Reusable logic', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Hooks start with "use"', 'Extract common logic', 'Return values like useState'], starterCode: '', task: 'Create a custom hook', validation: 'function use', expectedOutput: 'function useFetch(url) {\n  const [data, setData] = useState(null);\n  const [loading, setLoading] = useState(true);\n  \n  useEffect(() => {\n    fetch(url)\n      .then(res => res.json())\n      .then(data => {\n        setData(data);\n        setLoading(false);\n      });\n  }, [url]);\n  \n  return { data, loading };\n}' } },
+          { id: 'adv-5', number: 20, title: 'Form Handling', description: 'Controlled components', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Controlled inputs use state', 'onChange updates state', 'onSubmit handles submission'], starterCode: '', task: 'Build a registration form', validation: 'onChange', expectedOutput: 'const [formData, setFormData] = useState({ email: "", password: "" });\n\nconst handleChange = (e) => {\n  setFormData({ ...formData, [e.target.name]: e.target.value });\n};' } },
+          { id: 'adv-6', number: 21, title: 'useReducer', description: 'Complex state logic', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Alternative to useState', 'Good for complex state', 'Reducer function handles actions'], starterCode: '', task: 'Use reducer for state', validation: 'useReducer', expectedOutput: 'function reducer(state, action) {\n  switch (action.type) {\n    case "ADD":\n      return [...state, action.payload];\n    case "REMOVE":\n      return state.filter(item => item.id !== action.payload);\n    default:\n      return state;\n  }\n}\n\nconst [items, dispatch] = useReducer(reducer, []);' } },
+          { id: 'adv-7', number: 22, title: 'Performance Optimization', description: 'useMemo and useCallback', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['useMemo caches computed values', 'useCallback caches functions', 'React.memo for component memoization'], starterCode: '', task: 'Optimize component performance', validation: 'useMemo', expectedOutput: 'const expensiveValue = useMemo(() => {\n  return computeExpensiveValue(data);\n}, [data]);\n\nconst handleClick = useCallback(() => {\n  doSomething(id);\n}, [id]);' } },
+          { id: 'adv-8', number: 23, title: 'Chapter Practice', description: 'Build a dashboard with routing', duration: '50 min', xp: 180, type: 'practice', content: { instructions: ['Set up multi-page routing', 'Create shared layout', 'Implement authentication context'], starterCode: '', task: 'Complete dashboard project', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 4,
-        title: 'Connecting Frontend & Backend',
-        description: 'Full stack integration',
+        title: 'Node.js Fundamentals',
+        description: 'Server-side JavaScript',
         lessons: [
-          { id: 'int-1', number: 15, title: 'API Calls from React', description: 'Fetch and Axios', duration: '20 min', xp: 70, type: 'lesson' },
-          { id: 'int-2', number: 16, title: 'State Management', description: 'Managing app state', duration: '25 min', xp: 90, type: 'lesson' },
-          { id: 'int-3', number: 17, title: 'Authentication Flow', description: 'Login/logout in React', duration: '28 min', xp: 100, type: 'lesson' },
-          { id: 'int-4', number: 18, title: 'Error Handling', description: 'Graceful error states', duration: '18 min', xp: 65, type: 'lesson' },
-          { id: 'int-5', number: 19, title: 'Chapter Practice', description: 'Connect your app', duration: '45 min', xp: 170, type: 'practice' }
+          { id: 'node-1', number: 24, title: 'Introduction to Node.js', description: 'JavaScript on the server', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Node.js runs JS outside browser', 'npm manages packages', 'package.json lists dependencies'], starterCode: '', task: 'Understand Node.js basics', validation: '', expectedOutput: '' } },
+          { id: 'node-2', number: 25, title: 'Node.js Modules', description: 'Organize your code', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['module.exports to export', 'require() to import', 'ES modules with import/export'], starterCode: '', task: 'Create and use modules', validation: 'module.exports', expectedOutput: '// math.js\nmodule.exports = {\n  add: (a, b) => a + b,\n  subtract: (a, b) => a - b\n};\n\n// app.js\nconst math = require("./math");\nconsole.log(math.add(5, 3));' } },
+          { id: 'node-3', number: 26, title: 'File System', description: 'Read and write files', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['fs module for file operations', 'readFile, writeFile, appendFile', 'Use async versions with await'], starterCode: 'const fs = require("fs").promises;\n', task: 'Read and write files', validation: 'readFile', expectedOutput: 'const data = await fs.readFile("file.txt", "utf8");\nawait fs.writeFile("output.txt", data);' } },
+          { id: 'node-4', number: 27, title: 'Path Module', description: 'Work with file paths', duration: '12 min', xp: 40, type: 'lesson', content: { instructions: ['path.join() for safe paths', '__dirname is current folder', 'path.resolve() for absolute'], starterCode: 'const path = require("path");\n', task: 'Use path module', validation: 'path.join', expectedOutput: 'const filePath = path.join(__dirname, "data", "users.json");\nconst ext = path.extname("file.txt");' } },
+          { id: 'node-5', number: 28, title: 'Environment Variables', description: 'Configuration management', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['process.env accesses variables', 'dotenv loads .env file', 'Never commit .env to Git'], starterCode: '', task: 'Use environment variables', validation: 'process.env', expectedOutput: 'require("dotenv").config();\n\nconst port = process.env.PORT || 3000;\nconst mongoUri = process.env.MONGODB_URI;' } },
+          { id: 'node-6', number: 29, title: 'Chapter Practice', description: 'Build a file processor', duration: '35 min', xp: 120, type: 'practice', content: { instructions: ['Read JSON file', 'Process the data', 'Write results to new file'], starterCode: '', task: 'Complete file processor', validation: '', expectedOutput: '' } }
         ]
       },
       {
         id: 5,
-        title: 'Deployment & Production',
+        title: 'Express.js',
+        description: 'Build web servers',
+        lessons: [
+          { id: 'exp-1', number: 30, title: 'Express Setup', description: 'Create an Express server', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['npm install express', 'Create app with express()', 'app.listen() starts server'], starterCode: '', task: 'Set up Express server', validation: 'express()', expectedOutput: 'const express = require("express");\nconst app = express();\n\napp.listen(3000, () => {\n  console.log("Server running on port 3000");\n});' } },
+          { id: 'exp-2', number: 31, title: 'Routes & Endpoints', description: 'Handle HTTP requests', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['app.get(), app.post(), etc.', 'Route path as first argument', 'Handler function with req, res'], starterCode: '', task: 'Create basic routes', validation: 'app.get', expectedOutput: 'app.get("/", (req, res) => {\n  res.send("Hello World!");\n});\n\napp.get("/users", (req, res) => {\n  res.json(users);\n});' } },
+          { id: 'exp-3', number: 32, title: 'Request & Response', description: 'Handle data flow', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['req.body for POST data', 'req.params for URL params', 'res.json() sends JSON response'], starterCode: '', task: 'Process requests and responses', validation: 'req.body', expectedOutput: 'app.post("/users", (req, res) => {\n  const { name, email } = req.body;\n  const user = createUser(name, email);\n  res.status(201).json(user);\n});' } },
+          { id: 'exp-4', number: 33, title: 'Middleware', description: 'Process requests', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Middleware runs before routes', 'app.use() applies middleware', 'next() passes to next handler'], starterCode: '', task: 'Create and use middleware', validation: 'app.use', expectedOutput: 'app.use(express.json());\n\nconst logger = (req, res, next) => {\n  console.log(`${req.method} ${req.url}`);\n  next();\n};\n\napp.use(logger);' } },
+          { id: 'exp-5', number: 34, title: 'Router', description: 'Organize routes', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['express.Router() creates router', 'Modular route organization', 'Mount routers with app.use()'], starterCode: '', task: 'Create modular routes', validation: 'Router()', expectedOutput: '// routes/users.js\nconst router = express.Router();\n\nrouter.get("/", getUsers);\nrouter.post("/", createUser);\n\nmodule.exports = router;\n\n// app.js\napp.use("/api/users", userRoutes);' } },
+          { id: 'exp-6', number: 35, title: 'Error Handling', description: 'Handle errors gracefully', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['try-catch for async errors', 'Error middleware has 4 params', 'Send appropriate status codes'], starterCode: '', task: 'Implement error handling', validation: 'catch', expectedOutput: 'app.get("/users/:id", async (req, res, next) => {\n  try {\n    const user = await User.findById(req.params.id);\n    if (!user) throw new Error("User not found");\n    res.json(user);\n  } catch (error) {\n    next(error);\n  }\n});' } },
+          { id: 'exp-7', number: 36, title: 'CORS', description: 'Handle cross-origin requests', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['CORS allows cross-origin requests', 'npm install cors', 'Configure allowed origins'], starterCode: '', task: 'Enable CORS', validation: 'cors', expectedOutput: 'const cors = require("cors");\n\napp.use(cors({\n  origin: "http://localhost:3000",\n  credentials: true\n}));' } },
+          { id: 'exp-8', number: 37, title: 'Chapter Practice', description: 'Build a REST API', duration: '45 min', xp: 160, type: 'practice', content: { instructions: ['Create CRUD endpoints', 'Use routers for organization', 'Add error handling'], starterCode: '', task: 'Complete REST API', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 6,
+        title: 'MongoDB & Mongoose',
+        description: 'Database integration',
+        lessons: [
+          { id: 'mongo-1', number: 38, title: 'MongoDB Basics', description: 'NoSQL database concepts', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['MongoDB stores documents', 'Documents are like JSON', 'Collections group documents'], starterCode: '', task: 'Understand MongoDB concepts', validation: '', expectedOutput: '' } },
+          { id: 'mongo-2', number: 39, title: 'Mongoose Setup', description: 'Connect to MongoDB', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['npm install mongoose', 'mongoose.connect() to connect', 'Use async/await for connection'], starterCode: '', task: 'Connect to MongoDB', validation: 'mongoose.connect', expectedOutput: 'const mongoose = require("mongoose");\n\nawait mongoose.connect(process.env.MONGODB_URI);\nconsole.log("MongoDB connected");' } },
+          { id: 'mongo-3', number: 40, title: 'Schemas & Models', description: 'Define data structure', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Schema defines document structure', 'Model provides database interface', 'Types: String, Number, Date, Boolean'], starterCode: '', task: 'Create a User model', validation: 'Schema', expectedOutput: 'const userSchema = new mongoose.Schema({\n  name: { type: String, required: true },\n  email: { type: String, required: true, unique: true },\n  password: { type: String, required: true },\n  createdAt: { type: Date, default: Date.now }\n});\n\nconst User = mongoose.model("User", userSchema);' } },
+          { id: 'mongo-4', number: 41, title: 'CRUD Operations', description: 'Create, Read, Update, Delete', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['create(), find(), findById()', 'findByIdAndUpdate()', 'findByIdAndDelete()'], starterCode: '', task: 'Implement CRUD operations', validation: 'find', expectedOutput: '// Create\nconst user = await User.create({ name, email, password });\n\n// Read\nconst users = await User.find();\nconst user = await User.findById(id);\n\n// Update\nawait User.findByIdAndUpdate(id, { name });\n\n// Delete\nawait User.findByIdAndDelete(id);' } },
+          { id: 'mongo-5', number: 42, title: 'Queries & Filters', description: 'Find specific documents', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Query objects filter results', 'Comparison: $gt, $lt, $in', 'Logical: $and, $or'], starterCode: '', task: 'Write complex queries', validation: 'find({', expectedOutput: '// Find users older than 18\nconst adults = await User.find({ age: { $gt: 18 } });\n\n// Find active admins\nconst admins = await User.find({\n  role: "admin",\n  isActive: true\n}).sort({ createdAt: -1 });' } },
+          { id: 'mongo-6', number: 43, title: 'Schema Validation', description: 'Validate data', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['required: true for mandatory', 'min/max for numbers', 'match for regex patterns'], starterCode: '', task: 'Add schema validation', validation: 'validate', expectedOutput: 'const userSchema = new mongoose.Schema({\n  email: {\n    type: String,\n    required: true,\n    match: /^[\\w-]+@[\\w-]+\\.[\\w-]+$/\n  },\n  age: { type: Number, min: 0, max: 120 }\n});' } },
+          { id: 'mongo-7', number: 44, title: 'Schema Methods', description: 'Add custom methods', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['Instance methods on schema', 'Static methods on model', 'Virtual properties'], starterCode: '', task: 'Create schema methods', validation: 'methods', expectedOutput: 'userSchema.methods.comparePassword = async function(password) {\n  return bcrypt.compare(password, this.password);\n};\n\nuserSchema.statics.findByEmail = function(email) {\n  return this.findOne({ email });\n};' } },
+          { id: 'mongo-8', number: 45, title: 'Chapter Practice', description: 'Build a data layer', duration: '45 min', xp: 160, type: 'practice', content: { instructions: ['Create multiple models', 'Implement relationships', 'Add validation and methods'], starterCode: '', task: 'Complete data layer', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 7,
+        title: 'Authentication',
+        description: 'Secure your application',
+        lessons: [
+          { id: 'auth-1', number: 46, title: 'Password Hashing', description: 'Secure password storage', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['Never store plain passwords', 'bcrypt hashes passwords', 'Salt adds randomness'], starterCode: '', task: 'Hash passwords with bcrypt', validation: 'bcrypt', expectedOutput: 'const bcrypt = require("bcrypt");\n\nconst salt = await bcrypt.genSalt(10);\nconst hashedPassword = await bcrypt.hash(password, salt);\n\n// Compare\nconst isMatch = await bcrypt.compare(password, hashedPassword);' } },
+          { id: 'auth-2', number: 47, title: 'JWT Basics', description: 'JSON Web Tokens', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['JWT has header, payload, signature', 'Contains user info', 'Expires after set time'], starterCode: '', task: 'Create and verify JWTs', validation: 'jwt.sign', expectedOutput: 'const jwt = require("jsonwebtoken");\n\n// Create token\nconst token = jwt.sign(\n  { userId: user._id },\n  process.env.JWT_SECRET,\n  { expiresIn: "7d" }\n);\n\n// Verify token\nconst decoded = jwt.verify(token, process.env.JWT_SECRET);' } },
+          { id: 'auth-3', number: 48, title: 'User Registration', description: 'Create new accounts', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Validate input data', 'Check for existing user', 'Hash password before saving'], starterCode: '', task: 'Implement registration', validation: 'register', expectedOutput: 'async function register(req, res) {\n  const { name, email, password } = req.body;\n  \n  const existingUser = await User.findOne({ email });\n  if (existingUser) throw new Error("Email already exists");\n  \n  const hashedPassword = await bcrypt.hash(password, 10);\n  const user = await User.create({ name, email, password: hashedPassword });\n  \n  const token = jwt.sign({ userId: user._id }, JWT_SECRET);\n  res.status(201).json({ user, token });\n}' } },
+          { id: 'auth-4', number: 49, title: 'User Login', description: 'Authenticate users', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Find user by email', 'Compare password', 'Return token on success'], starterCode: '', task: 'Implement login', validation: 'login', expectedOutput: 'async function login(req, res) {\n  const { email, password } = req.body;\n  \n  const user = await User.findOne({ email });\n  if (!user) throw new Error("Invalid credentials");\n  \n  const isMatch = await bcrypt.compare(password, user.password);\n  if (!isMatch) throw new Error("Invalid credentials");\n  \n  const token = jwt.sign({ userId: user._id }, JWT_SECRET);\n  res.json({ user, token });\n}' } },
+          { id: 'auth-5', number: 50, title: 'Auth Middleware', description: 'Protect routes', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Extract token from header', 'Verify token', 'Attach user to request'], starterCode: '', task: 'Create auth middleware', validation: 'auth', expectedOutput: 'const auth = async (req, res, next) => {\n  try {\n    const token = req.header("Authorization")?.replace("Bearer ", "");\n    if (!token) throw new Error("No token provided");\n    \n    const decoded = jwt.verify(token, JWT_SECRET);\n    const user = await User.findById(decoded.userId);\n    \n    req.user = user;\n    next();\n  } catch (error) {\n    res.status(401).json({ error: "Please authenticate" });\n  }\n};' } },
+          { id: 'auth-6', number: 51, title: 'Protected Routes', description: 'Require authentication', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['Apply auth middleware', 'Access req.user in handlers', 'Return 401 for unauthorized'], starterCode: '', task: 'Protect API routes', validation: 'auth,', expectedOutput: 'router.get("/profile", auth, async (req, res) => {\n  res.json(req.user);\n});\n\nrouter.put("/profile", auth, async (req, res) => {\n  Object.assign(req.user, req.body);\n  await req.user.save();\n  res.json(req.user);\n});' } },
+          { id: 'auth-7', number: 52, title: 'Chapter Practice', description: 'Build auth system', duration: '50 min', xp: 180, type: 'practice', content: { instructions: ['Implement registration/login', 'Create auth middleware', 'Protect user routes'], starterCode: '', task: 'Complete auth system', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 8,
+        title: 'Frontend-Backend Integration',
+        description: 'Connect React to API',
+        lessons: [
+          { id: 'int-1', number: 53, title: 'Fetch API', description: 'Make HTTP requests', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['fetch() for HTTP requests', 'await response.json()', 'Handle errors with try-catch'], starterCode: '', task: 'Use fetch API', validation: 'fetch', expectedOutput: 'async function fetchUsers() {\n  try {\n    const response = await fetch("/api/users");\n    if (!response.ok) throw new Error("Failed to fetch");\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.error(error);\n  }\n}' } },
+          { id: 'int-2', number: 54, title: 'Axios', description: 'HTTP client library', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['npm install axios', 'Cleaner syntax than fetch', 'Automatic JSON parsing'], starterCode: '', task: 'Use Axios for requests', validation: 'axios', expectedOutput: 'import axios from "axios";\n\nconst api = axios.create({\n  baseURL: "/api",\n  headers: { "Content-Type": "application/json" }\n});\n\nconst response = await api.get("/users");\nconst users = response.data;' } },
+          { id: 'int-3', number: 55, title: 'Auth in React', description: 'Handle authentication state', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Store token in localStorage', 'Add token to request headers', 'Create auth context'], starterCode: '', task: 'Implement React auth', validation: 'Authorization', expectedOutput: 'api.interceptors.request.use((config) => {\n  const token = localStorage.getItem("token");\n  if (token) {\n    config.headers.Authorization = `Bearer ${token}`;\n  }\n  return config;\n});' } },
+          { id: 'int-4', number: 56, title: 'Login Flow', description: 'Complete login implementation', duration: '28 min', xp: 95, type: 'lesson', content: { instructions: ['Form collects credentials', 'Send to login endpoint', 'Store token and redirect'], starterCode: '', task: 'Build login flow', validation: 'login', expectedOutput: 'async function handleLogin(e) {\n  e.preventDefault();\n  try {\n    const { data } = await api.post("/auth/login", formData);\n    localStorage.setItem("token", data.token);\n    setUser(data.user);\n    navigate("/dashboard");\n  } catch (error) {\n    setError(error.response?.data?.message);\n  }\n}' } },
+          { id: 'int-5', number: 57, title: 'Protected Routes', description: 'Restrict access in React', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Check auth state', 'Redirect if not authenticated', 'Show loading state'], starterCode: '', task: 'Create protected routes', validation: 'ProtectedRoute', expectedOutput: 'function ProtectedRoute({ children }) {\n  const { user, loading } = useAuth();\n  \n  if (loading) return <Spinner />;\n  if (!user) return <Navigate to="/login" />;\n  \n  return children;\n}' } },
+          { id: 'int-6', number: 58, title: 'Data Fetching Patterns', description: 'Load data efficiently', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Fetch in useEffect', 'Loading and error states', 'Refresh on dependencies'], starterCode: '', task: 'Implement data fetching', validation: 'useEffect', expectedOutput: 'function UserList() {\n  const [users, setUsers] = useState([]);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n  \n  useEffect(() => {\n    api.get("/users")\n      .then(res => setUsers(res.data))\n      .catch(err => setError(err.message))\n      .finally(() => setLoading(false));\n  }, []);\n}' } },
+          { id: 'int-7', number: 59, title: 'Form Submission', description: 'Send data to API', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Prevent default form action', 'Post data to endpoint', 'Handle response'], starterCode: '', task: 'Submit forms to API', validation: 'onSubmit', expectedOutput: 'async function handleSubmit(e) {\n  e.preventDefault();\n  setSubmitting(true);\n  \n  try {\n    await api.post("/posts", formData);\n    toast.success("Post created!");\n    navigate("/posts");\n  } catch (error) {\n    toast.error(error.response?.data?.message);\n  } finally {\n    setSubmitting(false);\n  }\n}' } },
+          { id: 'int-8', number: 60, title: 'Chapter Practice', description: 'Integrate frontend with API', duration: '50 min', xp: 180, type: 'practice', content: { instructions: ['Connect React to Express API', 'Implement full auth flow', 'CRUD operations from UI'], starterCode: '', task: 'Complete integration', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 9,
+        title: 'State Management',
+        description: 'Manage complex application state',
+        lessons: [
+          { id: 'state-1', number: 61, title: 'Why State Management?', description: 'Beyond useState', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Complex apps need global state', 'Prop drilling becomes messy', 'State libraries solve this'], starterCode: '', task: 'Understand state management need', validation: '', expectedOutput: '' } },
+          { id: 'state-2', number: 62, title: 'Zustand Setup', description: 'Simple state management', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['npm install zustand', 'create() makes a store', 'Use hooks to access state'], starterCode: '', task: 'Set up Zustand store', validation: 'create', expectedOutput: 'import { create } from "zustand";\n\nconst useStore = create((set) => ({\n  count: 0,\n  increment: () => set((state) => ({ count: state.count + 1 })),\n  decrement: () => set((state) => ({ count: state.count - 1 }))\n}));' } },
+          { id: 'state-3', number: 63, title: 'Store Design', description: 'Organize your state', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Group related state', 'Actions modify state', 'Selectors for derived data'], starterCode: '', task: 'Design store structure', validation: 'useStore', expectedOutput: 'const useAuthStore = create((set) => ({\n  user: null,\n  token: null,\n  isAuthenticated: false,\n  login: (user, token) => set({ user, token, isAuthenticated: true }),\n  logout: () => set({ user: null, token: null, isAuthenticated: false })\n}));' } },
+          { id: 'state-4', number: 64, title: 'Async Actions', description: 'Handle async operations', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Actions can be async', 'Set loading states', 'Handle errors in actions'], starterCode: '', task: 'Create async actions', validation: 'async', expectedOutput: 'const useUserStore = create((set) => ({\n  users: [],\n  loading: false,\n  error: null,\n  fetchUsers: async () => {\n    set({ loading: true });\n    try {\n      const response = await api.get("/users");\n      set({ users: response.data, loading: false });\n    } catch (error) {\n      set({ error: error.message, loading: false });\n    }\n  }\n}));' } },
+          { id: 'state-5', number: 65, title: 'Persisted State', description: 'Save state to storage', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['persist middleware', 'Saves to localStorage', 'Rehydrates on load'], starterCode: '', task: 'Persist auth state', validation: 'persist', expectedOutput: 'import { persist } from "zustand/middleware";\n\nconst useAuthStore = create(\n  persist(\n    (set) => ({\n      token: null,\n      setToken: (token) => set({ token })\n    }),\n    { name: "auth-storage" }\n  )\n);' } },
+          { id: 'state-6', number: 66, title: 'Chapter Practice', description: 'Build app with Zustand', duration: '45 min', xp: 160, type: 'practice', content: { instructions: ['Create multiple stores', 'Implement async actions', 'Persist important state'], starterCode: '', task: 'Complete state management', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 10,
+        title: 'Testing',
+        description: 'Test your application',
+        lessons: [
+          { id: 'test-1', number: 67, title: 'Testing Basics', description: 'Why and how to test', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['Tests verify code works', 'Unit, integration, e2e tests', 'Jest is popular test runner'], starterCode: '', task: 'Understand testing concepts', validation: '', expectedOutput: '' } },
+          { id: 'test-2', number: 68, title: 'Jest Setup', description: 'Configure Jest', duration: '15 min', xp: 50, type: 'lesson', content: { instructions: ['npm install --save-dev jest', 'Add test script to package.json', 'Jest finds *.test.js files'], starterCode: '', task: 'Set up Jest', validation: '', expectedOutput: '' } },
+          { id: 'test-3', number: 69, title: 'Writing Unit Tests', description: 'Test individual functions', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['describe groups tests', 'test/it defines a test', 'expect() for assertions'], starterCode: '', task: 'Write unit tests', validation: 'expect', expectedOutput: 'describe("math functions", () => {\n  test("adds 1 + 2 to equal 3", () => {\n    expect(add(1, 2)).toBe(3);\n  });\n  \n  test("handles negative numbers", () => {\n    expect(add(-1, -2)).toBe(-3);\n  });\n});' } },
+          { id: 'test-4', number: 70, title: 'Testing API Endpoints', description: 'Test Express routes', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['supertest for HTTP testing', 'Test all CRUD operations', 'Check status and response'], starterCode: '', task: 'Test API endpoints', validation: 'supertest', expectedOutput: 'const request = require("supertest");\nconst app = require("../app");\n\ndescribe("GET /api/users", () => {\n  it("returns list of users", async () => {\n    const res = await request(app).get("/api/users");\n    expect(res.status).toBe(200);\n    expect(Array.isArray(res.body)).toBe(true);\n  });\n});' } },
+          { id: 'test-5', number: 71, title: 'Testing React Components', description: 'Test UI components', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['React Testing Library', 'render() mounts component', 'screen queries find elements'], starterCode: '', task: 'Test React components', validation: 'render', expectedOutput: 'import { render, screen, fireEvent } from "@testing-library/react";\n\ntest("increments counter on click", () => {\n  render(<Counter />);\n  \n  const button = screen.getByRole("button");\n  fireEvent.click(button);\n  \n  expect(screen.getByText("Count: 1")).toBeInTheDocument();\n});' } },
+          { id: 'test-6', number: 72, title: 'Chapter Practice', description: 'Write test suite', duration: '45 min', xp: 160, type: 'practice', content: { instructions: ['Test API endpoints', 'Test React components', 'Achieve good coverage'], starterCode: '', task: 'Complete test suite', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 11,
+        title: 'Deployment',
         description: 'Ship your application',
         lessons: [
-          { id: 'dep-1', number: 20, title: 'Environment Variables', description: 'Config management', duration: '12 min', xp: 40, type: 'lesson' },
-          { id: 'dep-2', number: 21, title: 'Building for Production', description: 'Optimize your app', duration: '18 min', xp: 65, type: 'lesson' },
-          { id: 'dep-3', number: 22, title: 'Deploy Backend', description: 'Host your API', duration: '25 min', xp: 95, type: 'lesson' },
-          { id: 'dep-4', number: 23, title: 'Deploy Frontend', description: 'Host your React app', duration: '20 min', xp: 75, type: 'lesson' },
-          { id: 'dep-5', number: 24, title: 'Final Project', description: 'Complete full stack app', duration: '90 min', xp: 350, type: 'project' },
-          { id: 'dep-6', number: 25, title: 'Course Complete!', description: 'Claim your certificate', duration: '5 min', xp: 200, type: 'completion' }
+          { id: 'dep-1', number: 73, title: 'Production Build', description: 'Optimize for deployment', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['npm run build creates production', 'Minified and optimized', 'Static files in build folder'], starterCode: '', task: 'Create production build', validation: '', expectedOutput: '' } },
+          { id: 'dep-2', number: 74, title: 'Environment Variables', description: 'Configure for environments', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['Different values per environment', 'Never commit secrets', 'Set in deployment platform'], starterCode: '', task: 'Set up environment variables', validation: '', expectedOutput: '' } },
+          { id: 'dep-3', number: 75, title: 'Deploy Backend to Render', description: 'Host Node.js API', duration: '25 min', xp: 85, type: 'lesson', content: { instructions: ['Create Render account', 'Connect GitHub repo', 'Set environment variables'], starterCode: '', task: 'Deploy backend to Render', validation: '', expectedOutput: '' } },
+          { id: 'dep-4', number: 76, title: 'Deploy Frontend to Vercel', description: 'Host React app', duration: '22 min', xp: 75, type: 'lesson', content: { instructions: ['Create Vercel account', 'Import from GitHub', 'Auto-deploys on push'], starterCode: '', task: 'Deploy frontend to Vercel', validation: '', expectedOutput: '' } },
+          { id: 'dep-5', number: 77, title: 'MongoDB Atlas', description: 'Cloud database', duration: '20 min', xp: 70, type: 'lesson', content: { instructions: ['Create Atlas cluster', 'Get connection string', 'Whitelist IPs'], starterCode: '', task: 'Set up MongoDB Atlas', validation: '', expectedOutput: '' } },
+          { id: 'dep-6', number: 78, title: 'Domain & SSL', description: 'Custom domain setup', duration: '18 min', xp: 60, type: 'lesson', content: { instructions: ['Purchase domain name', 'Configure DNS records', 'SSL auto-provisioned'], starterCode: '', task: 'Configure custom domain', validation: '', expectedOutput: '' } },
+          { id: 'dep-7', number: 79, title: 'Chapter Practice', description: 'Deploy full stack app', duration: '50 min', xp: 180, type: 'practice', content: { instructions: ['Deploy backend to cloud', 'Deploy frontend to CDN', 'Configure database'], starterCode: '', task: 'Complete deployment', validation: '', expectedOutput: '' } }
+        ]
+      },
+      {
+        id: 12,
+        title: 'Final Projects',
+        description: 'Build complete applications',
+        lessons: [
+          { id: 'proj-1', number: 80, title: 'Project: Task Manager', description: 'Full stack todo app', duration: '90 min', xp: 300, type: 'project', content: { instructions: ['User authentication', 'CRUD tasks with categories', 'Due dates and priorities', 'Filter and search'], starterCode: '', task: 'Build Task Manager', validation: '', expectedOutput: '' } },
+          { id: 'proj-2', number: 81, title: 'Project: E-commerce Store', description: 'Online shopping platform', duration: '120 min', xp: 400, type: 'project', content: { instructions: ['Product catalog', 'Shopping cart', 'Checkout process', 'Order management'], starterCode: '', task: 'Build E-commerce Store', validation: '', expectedOutput: '' } },
+          { id: 'proj-3', number: 82, title: 'Project: Social Media App', description: 'Twitter-like platform', duration: '120 min', xp: 400, type: 'project', content: { instructions: ['User profiles', 'Posts with likes/comments', 'Follow system', 'Feed algorithm'], starterCode: '', task: 'Build Social Media App', validation: '', expectedOutput: '' } },
+          { id: 'proj-4', number: 83, title: 'Project: Blog Platform', description: 'Content management system', duration: '90 min', xp: 300, type: 'project', content: { instructions: ['Rich text editor', 'Categories and tags', 'Comments system', 'Admin dashboard'], starterCode: '', task: 'Build Blog Platform', validation: '', expectedOutput: '' } },
+          { id: 'proj-5', number: 84, title: 'Project: Real-time Chat', description: 'Messaging application', duration: '100 min', xp: 350, type: 'project', content: { instructions: ['WebSocket integration', 'Direct messages', 'Group chats', 'Online status'], starterCode: '', task: 'Build Chat Application', validation: '', expectedOutput: '' } },
+          { id: 'proj-6', number: 85, title: 'Project: Project Management', description: 'Trello-like board', duration: '110 min', xp: 380, type: 'project', content: { instructions: ['Drag and drop boards', 'Team collaboration', 'Task assignments', 'Activity log'], starterCode: '', task: 'Build Project Management App', validation: '', expectedOutput: '' } },
+          { id: 'proj-7', number: 86, title: 'Project: Booking System', description: 'Appointment scheduling', duration: '100 min', xp: 350, type: 'project', content: { instructions: ['Calendar interface', 'Available slots', 'Email notifications', 'Admin management'], starterCode: '', task: 'Build Booking System', validation: '', expectedOutput: '' } },
+          { id: 'proj-8', number: 87, title: 'Project: Learning Platform', description: 'Online course system', duration: '120 min', xp: 400, type: 'project', content: { instructions: ['Course catalog', 'Video lessons', 'Progress tracking', 'Quizzes and certificates'], starterCode: '', task: 'Build Learning Platform', validation: '', expectedOutput: '' } },
+          { id: 'proj-9', number: 88, title: 'Project: Dashboard Analytics', description: 'Data visualization app', duration: '90 min', xp: 300, type: 'project', content: { instructions: ['Charts and graphs', 'Data aggregation', 'Export reports', 'Real-time updates'], starterCode: '', task: 'Build Analytics Dashboard', validation: '', expectedOutput: '' } },
+          { id: 'proj-10', number: 89, title: 'Project: API Marketplace', description: 'API documentation site', duration: '100 min', xp: 350, type: 'project', content: { instructions: ['API key management', 'Rate limiting', 'Documentation generator', 'Usage analytics'], starterCode: '', task: 'Build API Marketplace', validation: '', expectedOutput: '' } },
+          { id: 'proj-11', number: 90, title: 'Portfolio Project', description: 'Your capstone project', duration: '180 min', xp: 500, type: 'project', content: { instructions: ['Choose your own idea', 'Apply all skills learned', 'Deploy to production', 'Share with the world'], starterCode: '', task: 'Build Your Portfolio Project', validation: '', expectedOutput: '' } },
+          { id: 'proj-12', number: 91, title: 'Course Review', description: 'Review all concepts', duration: '30 min', xp: 100, type: 'lesson', content: { instructions: ['Review full stack architecture', 'Recap best practices', 'Discuss next steps'], starterCode: '', task: 'Complete course review', validation: '', expectedOutput: '' } },
+          { id: 'proj-13', number: 92, title: 'Course Complete!', description: 'Claim your Full Stack certificate', duration: '5 min', xp: 500, type: 'completion', content: { instructions: ['Congratulations on completing Full Stack Development!', 'You can now build complete web applications from scratch.', 'You are ready to work as a Full Stack Developer!'], starterCode: '', task: 'Claim your certificate', validation: '', expectedOutput: '' } }
         ]
       }
     ]
