@@ -17,6 +17,7 @@ import CourseDetail from './pages/CourseDetail'
 import Learn from './pages/Learn'
 import IDE from './pages/IDE'
 import Pricing from './pages/Pricing'
+import Projects from './pages/Projects'
 import Profile from './pages/Profile'
 import Leaderboard from './pages/Leaderboard'
 import Certificates from './pages/Certificates'
@@ -80,6 +81,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/projects" element={<Projects />} />
         </Route>
 
         {/* IDE Routes - Full screen, no layout wrapper */}

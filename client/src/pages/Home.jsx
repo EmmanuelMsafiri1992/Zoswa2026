@@ -12,14 +12,38 @@ import {
   ArrowUpRight,
   Play,
   MousePointer2,
+  Smartphone,
+  Brain,
+  BarChart3,
+  Link as LinkIcon,
+  Shield,
+  Cloud,
+  Heart,
+  DollarSign,
+  GraduationCap,
+  FileCode,
+  FileText,
+  Clock,
 } from 'lucide-react'
 import Button from '../components/ui/Button'
+import { studentProjects, studentProjectCategories } from '../data/studentProjects'
 
 export default function Home() {
   const navigate = useNavigate()
   const [activeTrack, setActiveTrack] = useState(0)
   const [typedText, setTypedText] = useState('')
+  const [activeProjectCategory, setActiveProjectCategory] = useState('all')
   const heroRef = useRef(null)
+
+  // Icon mapping for project categories
+  const categoryIcons = {
+    Globe, Smartphone, Brain, BarChart3, Cpu, LinkIcon, Shield, Cloud, Heart, DollarSign
+  }
+
+  // Get featured projects (first 6 from selected category or all)
+  const featuredProjects = activeProjectCategory === 'all'
+    ? studentProjects.slice(0, 9)
+    : studentProjects.filter(p => p.category === activeProjectCategory).slice(0, 6)
 
   const { scrollYProgress } = useScroll()
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
@@ -490,6 +514,175 @@ export default function Home() {
               </p>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Section 4: Student Projects */}
+      <section className="py-32 relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          {/* Section header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+              <span className="text-neon-green text-sm font-mono mb-4 block">004</span>
+              <h2 className="text-4xl lg:text-5xl font-black text-white mb-4">
+                Final Year Projects.
+              </h2>
+              <p className="text-gray-400 max-w-lg">
+                Complete project packages with source code, documentation, proposals & more.
+                Ready to submit, ready to defend.
+              </p>
+            </div>
+            <Link
+              to="/projects"
+              className="hidden md:flex items-center gap-2 text-gray-400 hover:text-white transition-colors mt-4 md:mt-0"
+            >
+              View all 200+ projects
+              <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Category filters */}
+          <div className="flex flex-wrap gap-2 mb-10">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setActiveProjectCategory('all')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                activeProjectCategory === 'all'
+                  ? 'bg-white text-dark-900'
+                  : 'bg-dark-700/50 text-gray-400 hover:text-white border border-white/10'
+              }`}
+            >
+              All Projects
+            </motion.button>
+            {studentProjectCategories.slice(0, 6).map((cat) => {
+              const IconComponent = categoryIcons[cat.icon] || Globe
+              return (
+                <motion.button
+                  key={cat.id}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveProjectCategory(cat.id)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
+                    activeProjectCategory === cat.id
+                      ? 'text-dark-900'
+                      : 'bg-dark-700/50 text-gray-400 hover:text-white border border-white/10'
+                  }`}
+                  style={{
+                    backgroundColor: activeProjectCategory === cat.id ? cat.color : undefined,
+                  }}
+                >
+                  <IconComponent className="w-4 h-4" />
+                  {cat.name}
+                </motion.button>
+              )
+            })}
+          </div>
+
+          {/* Projects grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <AnimatePresence mode="wait">
+              {featuredProjects.map((project, index) => {
+                const category = studentProjectCategories.find(c => c.id === project.category)
+                return (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ delay: index * 0.05 }}
+                    whileHover={{ y: -5 }}
+                    className="group relative bg-dark-800/50 rounded-2xl border border-white/5 hover:border-white/10 overflow-hidden cursor-pointer"
+                    onClick={() => navigate('/projects')}
+                  >
+                    {/* Category badge */}
+                    <div
+                      className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium"
+                      style={{
+                        backgroundColor: `${category?.color}20`,
+                        color: category?.color,
+                      }}
+                    >
+                      {category?.name}
+                    </div>
+
+                    <div className="p-6">
+                      {/* Title */}
+                      <h3 className="text-lg font-bold text-white mb-3 pr-20 group-hover:text-neon-cyan transition-colors">
+                        {project.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-sm text-gray-400 mb-4 line-clamp-2">
+                        {project.description}
+                      </p>
+
+                      {/* Tech stack */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.slice(0, 4).map((tech, i) => (
+                          <span
+                            key={i}
+                            className="px-2 py-1 bg-dark-700 rounded text-xs text-gray-500"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.technologies.length > 4 && (
+                          <span className="px-2 py-1 bg-dark-700 rounded text-xs text-gray-500">
+                            +{project.technologies.length - 4}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Footer */}
+                      <div className="flex items-center justify-between pt-4 border-t border-white/5">
+                        <div className="flex items-center gap-4 text-xs text-gray-500">
+                          <span className="flex items-center gap-1">
+                            <Clock className="w-3 h-3" />
+                            {project.duration}
+                          </span>
+                          <span className={`px-2 py-0.5 rounded ${
+                            project.difficulty === 'Advanced'
+                              ? 'bg-red-500/10 text-red-400'
+                              : project.difficulty === 'Intermediate'
+                              ? 'bg-yellow-500/10 text-yellow-400'
+                              : 'bg-green-500/10 text-green-400'
+                          }`}>
+                            {project.difficulty}
+                          </span>
+                        </div>
+                        <span className="text-xl font-bold text-white">
+                          ${project.price}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Hover arrow */}
+                    <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ArrowUpRight className="w-5 h-5 text-neon-cyan" />
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </AnimatePresence>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-12 text-center">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => navigate('/projects')}
+              className="px-8 py-4 bg-gradient-to-r from-neon-green/10 to-neon-cyan/10 border border-neon-green/30 text-white font-semibold rounded-full inline-flex items-center gap-3 hover:border-neon-green/50 transition-colors"
+            >
+              <GraduationCap className="w-5 h-5 text-neon-green" />
+              Browse All Student Projects
+              <ChevronRight className="w-4 h-4" />
+            </motion.button>
+            <p className="text-sm text-gray-500 mt-4">
+              200+ projects across 10 categories • Complete documentation included
+            </p>
+          </div>
         </div>
       </section>
 

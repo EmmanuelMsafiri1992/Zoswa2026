@@ -68,6 +68,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-1">
             {[
               { name: 'Courses', href: '/courses' },
+              { name: 'Projects', href: '/projects' },
               { name: 'Pricing', href: '/pricing' },
             ].map((link) => (
               <Link
@@ -143,6 +144,13 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Courses
+                </Link>
+                <Link
+                  to="/projects"
+                  className="block px-4 py-3 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Projects
                 </Link>
                 <Link
                   to="/pricing"
