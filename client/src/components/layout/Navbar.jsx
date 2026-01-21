@@ -1,14 +1,17 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ArrowUpRight } from 'lucide-react'
+import { Menu, X, ArrowUpRight, ShoppingCart } from 'lucide-react'
 import { useAuthStore } from '../../store/authStore'
+import { useCartStore } from '../../store/cartStore'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { isAuthenticated, logout } = useAuthStore()
+  const { getCartCount, openCart } = useCartStore()
   const navigate = useNavigate()
+  const cartCount = getCartCount()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,6 +83,19 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
+
+          {/* Cart Button */}
+          <button
+            onClick={openCart}
+            className="relative p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+          >
+            <ShoppingCart className="w-5 h-5" />
+            {cartCount > 0 && (
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-neon-green text-dark-900 text-xs font-bold rounded-full flex items-center justify-center">
+                {cartCount > 9 ? '9+' : cartCount}
+              </span>
+            )}
+          </button>
 
           {/* Auth Section */}
           <div className="hidden md:flex items-center gap-3">

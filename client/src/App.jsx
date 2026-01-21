@@ -18,6 +18,8 @@ import Learn from './pages/Learn'
 import IDE from './pages/IDE'
 import Pricing from './pages/Pricing'
 import Projects from './pages/Projects'
+import Checkout from './pages/Checkout'
+import Purchases from './pages/Purchases'
 import Profile from './pages/Profile'
 import Leaderboard from './pages/Leaderboard'
 import Certificates from './pages/Certificates'
@@ -28,6 +30,7 @@ import { AdminDashboard, AdminUsers, AdminPayments, AdminCourses, AdminSettings 
 // Components
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import AdminRoute from './components/auth/AdminRoute'
+import CartDrawer from './components/cart/CartDrawer'
 
 // Store
 import { useAuthStore } from './store/authStore'
@@ -49,6 +52,7 @@ function App() {
 
   return (
     <PayPalScriptProvider options={paypalOptions}>
+      <CartDrawer />
       <Toaster
         position="top-right"
         toastOptions={{
@@ -98,6 +102,8 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/certificates" element={<Certificates />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/purchases" element={<Purchases />} />
         </Route>
 
         {/* Admin Routes */}

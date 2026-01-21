@@ -25,6 +25,7 @@ import subscriptionRoutes from './routes/subscription.js'
 import adminRoutes from './routes/admin.js'
 import executeRoutes from './routes/execute.js'
 import projectRoutes from './routes/projects.js'
+import purchaseRoutes from './routes/purchases.js'
 
 // Load env vars FIRST
 dotenv.config()
@@ -128,6 +129,7 @@ app.use('/api/subscription', subscriptionRoutes)
 app.use('/api/admin', adminRoutes)
 app.use('/api/execute', executeRoutes)
 app.use('/api/projects', projectRoutes)
+app.use('/api/purchases', purchaseRoutes)
 
 // ==========================================
 // DEMO MODE (Development Only)

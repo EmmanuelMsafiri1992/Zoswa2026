@@ -10,6 +10,7 @@ import {
   Zap,
   Flame,
   Shield,
+  ShoppingBag,
 } from 'lucide-react'
 import { useProgressStore } from '../../store/progressStore'
 import { useAuthStore } from '../../store/authStore'
@@ -25,6 +26,7 @@ export default function Sidebar() {
   const navItems = [
     { icon: LayoutDashboard, label: 'Dashboard', href: '/dashboard' },
     { icon: BookOpen, label: 'Courses', href: '/courses' },
+    { icon: ShoppingBag, label: 'My Purchases', href: '/purchases' },
     { icon: Trophy, label: 'Leaderboard', href: '/leaderboard' },
     { icon: Award, label: 'Certificates', href: '/certificates' },
     { icon: User, label: 'Profile', href: '/profile' },

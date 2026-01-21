@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Search,
@@ -26,10 +27,17 @@ import {
   Grid,
   List,
   Package,
+  ShoppingCart,
+  Check,
 } from 'lucide-react'
 import { studentProjects, studentProjectCategories } from '../data/studentProjects'
+import { useCartStore } from '../store/cartStore'
+import { useAuthStore } from '../store/authStore'
 
 export default function Projects() {
+  const navigate = useNavigate()
+  const { addItem, isInCart, openCart } = useCartStore()
+  const { isAuthenticated } = useAuthStore()
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedDifficulty, setSelectedDifficulty] = useState('all')
@@ -94,6 +102,16 @@ export default function Projects() {
   }, [searchQuery, selectedCategory, selectedDifficulty, priceRange, sortBy])
 
   const difficulties = ['Beginner', 'Intermediate', 'Advanced']
+
+  // Handle add to cart
+  const handleAddToCart = (project, e) => {
+    e?.stopPropagation()
+    if (isInCart(project.id)) {
+      openCart()
+      return
+    }
+    addItem(project)
+  }
 
   return (
     <div className="min-h-screen bg-dark-900 pt-24 pb-16">
@@ -487,10 +505,30 @@ export default function Projects() {
                           </div>
                           <div className="text-right flex-shrink-0">
                             <p className="text-2xl font-bold text-white">${project.price}</p>
-                            <p className="text-xs text-gray-500 mt-1 flex items-center gap-1">
+                            <p className="text-xs text-gray-500 mt-1 flex items-center gap-1 justify-end">
                               <Clock className="w-3 h-3" />
                               {project.duration}
                             </p>
+                            <button
+                              onClick={(e) => handleAddToCart(project, e)}
+                              className={`mt-3 px-4 py-2 text-sm font-semibold rounded-lg flex items-center gap-2 transition-all ${
+                                isInCart(project.id)
+                                  ? 'bg-neon-green/20 text-neon-green border border-neon-green/30'
+                                  : 'bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 hover:opacity-90'
+                              }`}
+                            >
+                              {isInCart(project.id) ? (
+                                <>
+                                  <Check className="w-4 h-4" />
+                                  In Cart
+                                </>
+                              ) : (
+                                <>
+                                  <ShoppingCart className="w-4 h-4" />
+                                  Add
+                                </>
+                              )}
+                            </button>
                           </div>
                         </div>
                       </motion.div>
@@ -565,9 +603,27 @@ export default function Projects() {
                           <span className="text-xl font-bold text-white">${project.price}</span>
                         </div>
 
-                        <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <ArrowUpRight className="w-5 h-5 text-neon-cyan" />
-                        </div>
+                        {/* Add to Cart button */}
+                        <button
+                          onClick={(e) => handleAddToCart(project, e)}
+                          className={`mt-4 w-full py-2.5 text-sm font-semibold rounded-lg flex items-center justify-center gap-2 transition-all ${
+                            isInCart(project.id)
+                              ? 'bg-neon-green/20 text-neon-green border border-neon-green/30'
+                              : 'bg-dark-700 text-white hover:bg-dark-600 border border-white/10'
+                          }`}
+                        >
+                          {isInCart(project.id) ? (
+                            <>
+                              <Check className="w-4 h-4" />
+                              In Cart
+                            </>
+                          ) : (
+                            <>
+                              <ShoppingCart className="w-4 h-4" />
+                              Add to Cart
+                            </>
+                          )}
+                        </button>
                       </div>
                     </motion.div>
                   )
@@ -742,9 +798,25 @@ export default function Projects() {
                     >
                       Close
                     </button>
-                    <button className="px-8 py-3 bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 font-bold rounded-xl hover:opacity-90 transition-opacity flex items-center gap-2">
-                      Get This Project
-                      <ChevronRight className="w-4 h-4" />
+                    <button
+                      onClick={() => handleAddToCart(selectedProject)}
+                      className={`px-8 py-3 font-bold rounded-xl flex items-center gap-2 transition-all ${
+                        isInCart(selectedProject.id)
+                          ? 'bg-neon-green/20 text-neon-green border border-neon-green/30'
+                          : 'bg-gradient-to-r from-neon-cyan to-neon-green text-dark-900 hover:opacity-90'
+                      }`}
+                    >
+                      {isInCart(selectedProject.id) ? (
+                        <>
+                          <Check className="w-4 h-4" />
+                          In Cart
+                        </>
+                      ) : (
+                        <>
+                          <ShoppingCart className="w-4 h-4" />
+                          Add to Cart
+                        </>
+                      )}
                     </button>
                   </div>
                 </div>
