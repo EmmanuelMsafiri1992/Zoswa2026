@@ -17,11 +17,13 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.SERVER_PORT }}
           command_timeout: 30m
+          envs: GITHUB_TOKEN
           script: |
             set -e
 
             REPOPATH=/home/indegnnk/zoswarepo
             DEPLOYPATH=/home/indegnnk/zoswa.com
+            GITHUB_TOKEN="${{ secrets.GH_PAT }}"
 
             echo "=========================================="
             echo "Starting deployment: $(date)"
@@ -34,12 +36,13 @@ jobs:
             if [ ! -d "$REPOPATH/.git" ]; then
               echo ">>> Cloning repository..."
               rm -rf $REPOPATH
-              git clone https://github.com/EmmanuelMsafiri1992/Zoswa2026.git $REPOPATH
+              git clone https://${GITHUB_TOKEN}@github.com/EmmanuelMsafiri1992/Zoswa2026.git $REPOPATH
             fi
 
             # Pull latest changes
             echo ">>> Pulling latest changes..."
             cd $REPOPATH
+            git remote set-url origin https://${GITHUB_TOKEN}@github.com/EmmanuelMsafiri1992/Zoswa2026.git
             git fetch origin
             git reset --hard origin/main
 
