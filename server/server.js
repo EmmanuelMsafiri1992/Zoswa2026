@@ -23,6 +23,8 @@ import userRoutes from './routes/users.js'
 import progressRoutes from './routes/progress.js'
 import subscriptionRoutes from './routes/subscription.js'
 import adminRoutes from './routes/admin.js'
+import executeRoutes from './routes/execute.js'
+import projectRoutes from './routes/projects.js'
 
 // Load env vars FIRST
 dotenv.config()
@@ -60,15 +62,17 @@ app.use(helmet({
       defaultSrc: ["'self'"],
       styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
       fontSrc: ["'self'", 'https://fonts.gstatic.com'],
-      imgSrc: ["'self'", 'data:', 'https:'],
-      scriptSrc: ["'self'"],
-      connectSrc: ["'self'", 'https://api.paypal.com'],
-      frameSrc: ["'self'", 'https://www.paypal.com'],
+      imgSrc: ["'self'", 'data:', 'https:', 'blob:'],
+      scriptSrc: ["'self'", "'unsafe-eval'", 'https://cdn.jsdelivr.net', 'https://cdnjs.cloudflare.com', 'blob:'],
+      connectSrc: ["'self'", 'https://api.paypal.com', 'https://cdn.jsdelivr.net', 'https://cdnjs.cloudflare.com', 'https://emkc.org'],
+      frameSrc: ["'self'", 'https://www.paypal.com', 'blob:'],
+      workerSrc: ["'self'", 'blob:'],
       objectSrc: ["'none'"],
       upgradeInsecureRequests: isProduction ? [] : null
     }
   },
-  crossOriginEmbedderPolicy: false, // Required for PayPal iframe
+  crossOriginEmbedderPolicy: false, // Required for PayPal iframe and WebAssembly
+  crossOriginOpenerPolicy: false, // Required for SharedArrayBuffer
   hsts: {
     maxAge: 31536000, // 1 year
     includeSubDomains: true,
@@ -84,8 +88,8 @@ app.use(cors(corsOptions))
 app.use(cookieParser())
 
 // Body parser with size limits
-app.use(express.json({ limit: '10kb' })) // Limit body size
-app.use(express.urlencoded({ extended: true, limit: '10kb' }))
+app.use(express.json({ limit: '200kb' })) // Increased limit for code execution
+app.use(express.urlencoded({ extended: true, limit: '200kb' }))
 
 // Security logging
 app.use(securityLogger)
@@ -122,6 +126,8 @@ app.use('/api/users', userRoutes)
 app.use('/api/progress', progressRoutes)
 app.use('/api/subscription', subscriptionRoutes)
 app.use('/api/admin', adminRoutes)
+app.use('/api/execute', executeRoutes)
+app.use('/api/projects', projectRoutes)
 
 // ==========================================
 // DEMO MODE (Development Only)

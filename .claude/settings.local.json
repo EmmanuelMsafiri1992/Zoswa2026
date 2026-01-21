@@ -11,7 +11,8 @@
       "Bash(git push:*)",
       "WebFetch(domain:zoswa.com)",
       "Bash(ssh -p 21098 indegnnk@198.54.132.157 \"cd /home/indegnnk/zoswa.com/server && cat .env | grep MONGODB\")",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "WebSearch"
     ]
   }
 }

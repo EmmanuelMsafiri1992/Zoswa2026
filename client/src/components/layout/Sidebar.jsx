@@ -10,6 +10,7 @@ import {
   Zap,
   Flame,
   Shield,
+  Code2,
 } from 'lucide-react'
 import { useProgressStore } from '../../store/progressStore'
 import { useAuthStore } from '../../store/authStore'
@@ -25,6 +26,7 @@ export default function Sidebar() {
   const navItems = [
     { icon: LayoutDashboard, label: 'Dashboard', href: '/dashboard' },
     { icon: BookOpen, label: 'Courses', href: '/courses' },
+    { icon: Code2, label: 'Code IDE', href: '/ide', isNew: true },
     { icon: Trophy, label: 'Leaderboard', href: '/leaderboard' },
     { icon: Award, label: 'Certificates', href: '/certificates' },
     { icon: User, label: 'Profile', href: '/profile' },
@@ -125,7 +127,12 @@ export default function Sidebar() {
                 >
                   <Icon className={`w-5 h-5 ${active ? 'text-neon-cyan' : ''}`} />
                   <span className="font-medium">{item.label}</span>
-                  {active && (
+                  {item.isNew && (
+                    <span className="ml-auto px-1.5 py-0.5 text-[10px] font-bold bg-neon-green/20 text-neon-green rounded">
+                      NEW
+                    </span>
+                  )}
+                  {active && !item.isNew && (
                     <motion.div
                       layoutId="activeIndicator"
                       className="ml-auto w-1.5 h-1.5 rounded-full bg-neon-cyan"

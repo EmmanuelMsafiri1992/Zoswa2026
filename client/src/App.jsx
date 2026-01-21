@@ -15,6 +15,7 @@ import Dashboard from './pages/Dashboard'
 import Courses from './pages/Courses'
 import CourseDetail from './pages/CourseDetail'
 import Learn from './pages/Learn'
+import IDE from './pages/IDE'
 import Pricing from './pages/Pricing'
 import Profile from './pages/Profile'
 import Leaderboard from './pages/Leaderboard'
@@ -80,6 +81,11 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/pricing" element={<Pricing />} />
         </Route>
+
+        {/* IDE Routes - Full screen, no layout wrapper */}
+        <Route path="/ide" element={<IDE />} />
+        <Route path="/ide/new" element={<IDE />} />
+        <Route path="/ide/:projectId" element={<IDE />} />
 
         {/* Protected Routes */}
         <Route element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
