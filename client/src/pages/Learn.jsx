@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Editor from '@monaco-editor/react'
@@ -14,11 +14,16 @@ import {
   X,
   Trophy,
   ArrowRight,
+  Terminal,
+  Eye,
+  Loader2,
 } from 'lucide-react'
 import Button from '../components/ui/Button'
 import Badge from '../components/ui/Badge'
 import { useProgressStore } from '../store/progressStore'
 import { courses, getAllLessons, getNextLesson } from '../data/courses'
+import { executeCode } from '../engines/executionRouter'
+import { languageConfig } from '../store/ideStore'
 import toast from 'react-hot-toast'
 
 // Lesson content database - maps lesson IDs to interactive content
@@ -203,14 +208,30 @@ export default function Learn() {
   const [currentStep, setCurrentStep] = useState(0)
   const [code, setCode] = useState(lessonData.starterCode)
   const [output, setOutput] = useState('')
+  const [consoleOutput, setConsoleOutput] = useState('')
   const [showHint, setShowHint] = useState(false)
   const [stepCompleted, setStepCompleted] = useState([])
   const [showSuccess, setShowSuccess] = useState(false)
   const [isRunning, setIsRunning] = useState(false)
+  const [outputMode, setOutputMode] = useState('preview') // 'preview' | 'console'
 
   const currentStepData = lessonData.steps[currentStep]
   const isLastStep = currentStep === lessonData.steps.length - 1
   const allStepsCompleted = stepCompleted.length === lessonData.steps.length
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Ctrl/Cmd + Enter = Run code
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        e.preventDefault()
+        runCode()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [code, lessonData.language, isRunning])
 
   // Validate current step
   const validateStep = useCallback(() => {
@@ -234,48 +255,213 @@ export default function Learn() {
     return isValid
   }, [code, currentStepData])
 
-  // Run code in sandboxed environment
-  const runCode = () => {
-    setIsRunning(true)
-    setTimeout(() => {
-      if (lessonData.language === 'html') {
-        // HTML is rendered safely in sandboxed iframe
-        setOutput(code)
-      } else if (lessonData.language === 'css') {
-        // CSS is applied in sandboxed iframe
-        setOutput(`<style>${code}</style><div class="preview"><h1>Styled Content</h1><p>This is styled with your CSS.</p></div>`)
-      } else if (lessonData.language === 'javascript') {
-        // JavaScript runs in sandboxed iframe for security
-        // The iframe sandbox prevents access to parent window
-        const jsOutput = `
+  // Get language mapping for execution
+  const getExecutionLanguage = (lang) => {
+    const langMap = {
+      'html': 'html',
+      'css': 'css',
+      'javascript': 'javascript',
+      'python': 'python',
+      'java': 'java',
+      'csharp': 'csharp',
+      'php': 'php',
+      'cpp': 'cpp',
+      'c': 'c',
+      'go': 'go',
+      'rust': 'rust',
+      'ruby': 'ruby',
+      'sql': 'sql'
+    }
+    return langMap[lang] || lang
+  }
+
+  // Build preview content for HTML/CSS/JS
+  const buildPreviewContent = useCallback(() => {
+    const lang = lessonData.language
+
+    if (lang === 'html') {
+      // Check if it's a complete HTML document
+      const hasDoctype = code.toLowerCase().includes('<!doctype') || code.toLowerCase().includes('<html')
+      if (hasDoctype) {
+        // Inject console capture for complete documents
+        const consoleCapture = `
           <script>
-            // Sandboxed console capture
-            const logs = [];
-            const originalConsole = console.log;
-            console.log = (...args) => {
-              logs.push(args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' '));
-              document.getElementById('output').innerHTML = logs.map(l => '<div>> ' + l + '</div>').join('');
-            };
-            console.error = console.log;
-
-            // Execute user code in try-catch
-            try {
-              ${code}
-            } catch(e) {
-              document.getElementById('output').innerHTML = '<div class="error">Error: ' + e.message + '</div>';
-            }
-
-            // Show empty state if no output
-            if (logs.length === 0 && !document.getElementById('output').innerHTML) {
-              document.getElementById('output').innerHTML = '<div class="empty">Code executed (no console output)</div>';
-            }
+            (function() {
+              const logs = [];
+              const methods = ['log', 'error', 'warn', 'info'];
+              methods.forEach(method => {
+                const original = console[method];
+                console[method] = function() {
+                  logs.push({type: method, args: Array.from(arguments).map(a => typeof a === 'object' ? JSON.stringify(a, null, 2) : String(a))});
+                  parent.postMessage({type: 'console', logs: logs}, '*');
+                  original.apply(console, arguments);
+                };
+              });
+              window.onerror = function(msg, url, line) {
+                logs.push({type: 'error', args: [msg + ' (line ' + line + ')']});
+                parent.postMessage({type: 'console', logs: logs}, '*');
+              };
+            })();
           </script>
-          <div id="output" class="console-output"></div>
         `
-        setOutput(jsOutput)
+        return code.replace(/<head>/i, '<head>' + consoleCapture)
       }
+      return `<!DOCTYPE html>
+<html><head>
+<style>
+  body { font-family: system-ui, sans-serif; padding: 20px; margin: 0; background: #fff; color: #1a1a2e; }
+  * { box-sizing: border-box; }
+</style>
+<script>
+  (function() {
+    const logs = [];
+    const methods = ['log', 'error', 'warn', 'info'];
+    methods.forEach(method => {
+      const original = console[method];
+      console[method] = function() {
+        logs.push({type: method, args: Array.from(arguments).map(a => typeof a === 'object' ? JSON.stringify(a, null, 2) : String(a))});
+        parent.postMessage({type: 'console', logs: logs}, '*');
+        original.apply(console, arguments);
+      };
+    });
+    window.onerror = function(msg, url, line) {
+      logs.push({type: 'error', args: [msg + ' (line ' + line + ')']});
+      parent.postMessage({type: 'console', logs: logs}, '*');
+    };
+  })();
+</script>
+</head><body>${code}</body></html>`
+    }
+
+    if (lang === 'css') {
+      return `<!DOCTYPE html>
+<html><head>
+<style>
+  body { font-family: system-ui, sans-serif; padding: 20px; margin: 0; min-height: 100vh; }
+  * { box-sizing: border-box; }
+  ${code}
+</style>
+</head><body>
+  <div class="preview-container">
+    <header><h1>Sample Header</h1><nav><a href="#">Home</a> <a href="#">About</a> <a href="#">Contact</a></nav></header>
+    <main>
+      <article>
+        <h2>Article Title</h2>
+        <p>This is a sample paragraph to demonstrate your CSS styles. It contains some text that you can use to test typography styles.</p>
+        <button class="btn">Sample Button</button>
+        <div class="card">
+          <h3>Card Component</h3>
+          <p>This is a card that you can style with CSS.</p>
+        </div>
+      </article>
+      <aside>
+        <h3>Sidebar</h3>
+        <ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>
+      </aside>
+    </main>
+    <footer><p>&copy; 2024 Zoswa Learning</p></footer>
+  </div>
+</body></html>`
+    }
+
+    if (lang === 'javascript') {
+      return `<!DOCTYPE html>
+<html><head>
+<style>
+  body { font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace; background: #1a1a25; color: #00ff88; padding: 20px; margin: 0; min-height: 100vh; }
+  .console-line { margin: 4px 0; padding: 4px 8px; border-radius: 4px; }
+  .console-line.log { color: #00ff88; }
+  .console-line.error { color: #ff4444; background: rgba(255,68,68,0.1); }
+  .console-line.warn { color: #ffaa00; background: rgba(255,170,0,0.1); }
+  .console-line.info { color: #00aaff; }
+  .console-line::before { content: '> '; opacity: 0.5; }
+  .empty { color: #666; font-style: italic; }
+</style>
+</head><body>
+<div id="console-output"></div>
+<script>
+  (function() {
+    const output = document.getElementById('console-output');
+    const logs = [];
+    const methods = ['log', 'error', 'warn', 'info'];
+
+    methods.forEach(method => {
+      const original = console[method];
+      console[method] = function() {
+        const args = Array.from(arguments).map(a => typeof a === 'object' ? JSON.stringify(a, null, 2) : String(a));
+        logs.push({type: method, args: args});
+        const div = document.createElement('div');
+        div.className = 'console-line ' + method;
+        div.textContent = args.join(' ');
+        output.appendChild(div);
+        parent.postMessage({type: 'console', logs: logs}, '*');
+        original.apply(console, arguments);
+      };
+    });
+
+    window.onerror = function(msg, url, line) {
+      console.error(msg + ' (line ' + line + ')');
+      return true;
+    };
+  })();
+
+  try {
+    ${code}
+  } catch(e) {
+    console.error(e.message);
+  }
+
+  if (document.getElementById('console-output').children.length === 0) {
+    document.getElementById('console-output').innerHTML = '<div class="empty">Code executed successfully (no console output)</div>';
+  }
+</script>
+</body></html>`
+    }
+
+    return ''
+  }, [code, lessonData.language])
+
+  // Run code using execution engines
+  const runCode = async () => {
+    if (isRunning) return
+
+    setIsRunning(true)
+    setConsoleOutput('')
+
+    const lang = getExecutionLanguage(lessonData.language)
+    const config = languageConfig[lang]
+
+    try {
+      // For HTML, CSS, JavaScript - use iframe preview
+      if (['html', 'css', 'javascript'].includes(lang)) {
+        setOutput(buildPreviewContent())
+        setOutputMode('preview')
+        setIsRunning(false)
+        return
+      }
+
+      // For Python, use Pyodide (browser-based)
+      // For other languages, use Piston API (server-based)
+      const result = await executeCode(lang, code, [{ path: `main.${lang}`, content: code }])
+
+      if (result.type === 'preview') {
+        setOutput(buildPreviewContent())
+        setOutputMode('preview')
+      } else {
+        setConsoleOutput(result.output || 'No output')
+        setOutputMode('console')
+      }
+
+      if (result.error) {
+        toast.error('Code has errors - check the output')
+      }
+    } catch (error) {
+      setConsoleOutput(`Error: ${error.message}`)
+      setOutputMode('console')
+      toast.error('Execution failed')
+    } finally {
       setIsRunning(false)
-    }, 500)
+    }
   }
 
   // Check answer
@@ -305,9 +491,11 @@ export default function Learn() {
   const resetCode = () => {
     setCode(lessonData.starterCode)
     setOutput('')
+    setConsoleOutput('')
     setStepCompleted([])
     setCurrentStep(0)
     setShowHint(false)
+    setOutputMode('preview')
   }
 
   // Navigate to next lesson
@@ -318,8 +506,10 @@ export default function Learn() {
       setShowSuccess(false)
       setCode('')
       setOutput('')
+      setConsoleOutput('')
       setStepCompleted([])
       setCurrentStep(0)
+      setOutputMode('preview')
     } else {
       navigate(`/courses/${courseId}`)
     }
@@ -528,24 +718,90 @@ export default function Learn() {
               />
             </div>
 
-            <div className="w-1/2 flex flex-col bg-white">
-              <div className="h-10 bg-gray-100 border-b flex items-center px-4">
-                <span className="text-sm text-gray-600 font-medium">Preview</span>
+            <div className="w-1/2 flex flex-col bg-dark-900">
+              {/* Output Header with Mode Toggle */}
+              <div className="h-10 bg-dark-800 border-b border-dark-700 flex items-center justify-between px-4">
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setOutputMode('preview')}
+                    className={`flex items-center gap-1.5 px-2 py-1 rounded text-sm transition-colors ${
+                      outputMode === 'preview'
+                        ? 'bg-neon-cyan/20 text-neon-cyan'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    <Eye className="w-3.5 h-3.5" />
+                    Preview
+                  </button>
+                  <button
+                    onClick={() => setOutputMode('console')}
+                    className={`flex items-center gap-1.5 px-2 py-1 rounded text-sm transition-colors ${
+                      outputMode === 'console'
+                        ? 'bg-neon-cyan/20 text-neon-cyan'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    <Terminal className="w-3.5 h-3.5" />
+                    Console
+                  </button>
+                </div>
+                {isRunning && (
+                  <div className="flex items-center gap-2 text-neon-cyan text-sm">
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Running...
+                  </div>
+                )}
               </div>
+
+              {/* Output Content */}
               <div className="flex-1 overflow-auto">
-                {output ? (
-                  <iframe
-                    title="preview"
-                    srcDoc={`<!DOCTYPE html><html><head><style>body{font-family:system-ui,sans-serif;padding:20px;margin:0;}.console-output{font-family:monospace;background:#1a1a25;color:#00ff88;padding:20px;min-height:100%;}.console-output>div{margin-bottom:8px;}.error{color:#ff4444;font-family:monospace;padding:20px;}.empty{color:#888;font-style:italic;}</style></head><body>${output}</body></html>`}
-                    className="w-full h-full border-0"
-                    sandbox="allow-scripts"
-                  />
-                ) : (
-                  <div className="flex items-center justify-center h-full text-gray-400">
-                    <div className="text-center">
-                      <Play className="w-12 h-12 mx-auto mb-3 opacity-50" />
-                      <p>Click "Run" to see your code</p>
+                {outputMode === 'preview' ? (
+                  // Preview Mode - Iframe for HTML/CSS/JS
+                  output ? (
+                    <iframe
+                      title="preview"
+                      srcDoc={output}
+                      className="w-full h-full border-0 bg-white"
+                      sandbox="allow-scripts allow-modals allow-forms"
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-full text-gray-400 bg-dark-800">
+                      <div className="text-center">
+                        <Play className="w-12 h-12 mx-auto mb-3 opacity-50" />
+                        <p>Click "Run" to see your code</p>
+                        <p className="text-sm text-gray-500 mt-1">Ctrl+Enter to run</p>
+                      </div>
                     </div>
+                  )
+                ) : (
+                  // Console Mode - Text output for server-side languages
+                  <div className="h-full bg-dark-800 p-4 font-mono text-sm">
+                    {consoleOutput ? (
+                      <pre className="whitespace-pre-wrap text-gray-300">
+                        {consoleOutput.split('\n').map((line, i) => (
+                          <div
+                            key={i}
+                            className={`py-0.5 ${
+                              line.includes('[error]') || line.includes('Error')
+                                ? 'text-red-400'
+                                : line.includes('[warn]')
+                                  ? 'text-yellow-400'
+                                  : 'text-neon-green'
+                            }`}
+                          >
+                            {line || ' '}
+                          </div>
+                        ))}
+                      </pre>
+                    ) : (
+                      <div className="flex items-center justify-center h-full text-gray-500">
+                        <div className="text-center">
+                          <Terminal className="w-12 h-12 mx-auto mb-3 opacity-50" />
+                          <p>Console output will appear here</p>
+                          <p className="text-sm mt-1">Run your code to see results</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
