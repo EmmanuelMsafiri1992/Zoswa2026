@@ -12,6 +12,10 @@ import {
 import { useCartStore } from '../../store/cartStore'
 import { useAuthStore } from '../../store/authStore'
 import { studentProjectCategories } from '../../data/studentProjects'
+import { businessProjectCategories } from '../../data/businessProjects'
+
+// Combined categories for cart display
+const allCategories = [...studentProjectCategories, ...businessProjectCategories]
 
 export default function CartDrawer() {
   const navigate = useNavigate()
@@ -91,7 +95,7 @@ export default function CartDrawer() {
               ) : (
                 <div className="space-y-4">
                   {items.map((item) => {
-                    const category = studentProjectCategories.find(
+                    const category = allCategories.find(
                       (c) => c.id === item.category
                     )
                     return (

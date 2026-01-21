@@ -20,7 +20,11 @@ import {
 } from 'lucide-react'
 import { useAuthStore } from '../store/authStore'
 import { studentProjectCategories } from '../data/studentProjects'
+import { businessProjectCategories } from '../data/businessProjects'
 import api from '../services/api'
+
+// Combined categories for purchases display
+const allCategories = [...studentProjectCategories, ...businessProjectCategories]
 
 export default function Purchases() {
   const navigate = useNavigate()
@@ -196,7 +200,7 @@ export default function Purchases() {
               >
                 <option value="all">All Categories</option>
                 {purchasedCategories.map((catId) => {
-                  const cat = studentProjectCategories.find((c) => c.id === catId)
+                  const cat = allCategories.find((c) => c.id === catId)
                   return (
                     <option key={catId} value={catId}>
                       {cat?.name || catId}
@@ -209,7 +213,7 @@ export default function Purchases() {
             {/* Purchases Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredPurchases.map((purchase, index) => {
-                const category = studentProjectCategories.find(
+                const category = allCategories.find(
                   (c) => c.id === purchase.category
                 )
                 return (
@@ -333,7 +337,7 @@ export default function Purchases() {
               {/* Header */}
               <div className="p-8 border-b border-white/5">
                 {(() => {
-                  const category = studentProjectCategories.find(
+                  const category = allCategories.find(
                     (c) => c.id === selectedPurchase.category
                   )
                   return (

@@ -31,30 +31,50 @@ import {
   Check,
 } from 'lucide-react'
 import { studentProjects, studentProjectCategories } from '../data/studentProjects'
+import { businessProjects, businessProjectCategories } from '../data/businessProjects'
 import { useCartStore } from '../store/cartStore'
 import { useAuthStore } from '../store/authStore'
+
+// Additional icons for business categories
+import {
+  Users,
+  Building,
+  UserCog,
+  CreditCard,
+  Calendar,
+  Home,
+  Truck,
+  UtensilsCrossed,
+} from 'lucide-react'
 
 export default function Projects() {
   const navigate = useNavigate()
   const { addItem, isInCart, openCart } = useCartStore()
   const { isAuthenticated } = useAuthStore()
+  const [projectType, setProjectType] = useState('student') // 'student' | 'business'
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedDifficulty, setSelectedDifficulty] = useState('all')
-  const [priceRange, setPriceRange] = useState([0, 500])
+  const [priceRange, setPriceRange] = useState([0, 1500])
   const [sortBy, setSortBy] = useState('popular')
   const [viewMode, setViewMode] = useState('grid')
   const [showFilters, setShowFilters] = useState(false)
   const [selectedProject, setSelectedProject] = useState(null)
 
-  // Icon mapping for project categories
+  // Icon mapping for project categories (combined)
   const categoryIcons = {
-    Globe, Smartphone, Brain, BarChart3, Cpu, LinkIcon, Shield, Cloud, Heart, DollarSign
+    Globe, Smartphone, Brain, BarChart3, Cpu, LinkIcon, Shield, Cloud, Heart, DollarSign,
+    Users, Building, UserCog, CreditCard, Calendar, Home, Truck, UtensilsCrossed, Package,
+    ShoppingCart
   }
+
+  // Get current projects and categories based on type
+  const currentProjects = projectType === 'student' ? studentProjects : businessProjects
+  const currentCategories = projectType === 'student' ? studentProjectCategories : businessProjectCategories
 
   // Filter and sort projects
   const filteredProjects = useMemo(() => {
-    let result = [...studentProjects]
+    let result = [...currentProjects]
 
     // Search filter
     if (searchQuery) {
@@ -99,7 +119,7 @@ export default function Projects() {
     }
 
     return result
-  }, [searchQuery, selectedCategory, selectedDifficulty, priceRange, sortBy])
+  }, [searchQuery, selectedCategory, selectedDifficulty, priceRange, sortBy, currentProjects])
 
   const difficulties = ['Beginner', 'Intermediate', 'Advanced']
 
@@ -120,24 +140,80 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <div className="inline-flex items-center gap-2 mb-4">
-            <GraduationCap className="w-6 h-6 text-neon-green" />
-            <span className="text-neon-green font-mono text-sm">FINAL YEAR PROJECTS</span>
-          </div>
           <h1 className="text-4xl lg:text-6xl font-black text-white mb-4">
             World-Class Projects.
             <br />
             <span className="bg-gradient-to-r from-neon-cyan via-purple-400 to-neon-pink bg-clip-text text-transparent">
-              Ready to Submit.
+              Ready to Deploy.
             </span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            200+ complete project packages with source code, documentation, proposals,
-            and everything you need to ace your final year.
+            400+ complete project packages with source code, documentation, and everything you need.
           </p>
         </motion.div>
+
+        {/* Project Type Tabs */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex bg-dark-800 rounded-2xl p-1.5 border border-white/10">
+            <button
+              onClick={() => {
+                setProjectType('student')
+                setSelectedCategory('all')
+                setPriceRange([0, 500])
+              }}
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
+                projectType === 'student'
+                  ? 'bg-gradient-to-r from-neon-green to-neon-cyan text-dark-900'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              <GraduationCap className="w-5 h-5" />
+              Student Projects
+              <span className={`px-2 py-0.5 rounded-full text-xs ${
+                projectType === 'student' ? 'bg-dark-900/20' : 'bg-dark-700'
+              }`}>
+                200
+              </span>
+            </button>
+            <button
+              onClick={() => {
+                setProjectType('business')
+                setSelectedCategory('all')
+                setPriceRange([0, 1500])
+              }}
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
+                projectType === 'business'
+                  ? 'bg-gradient-to-r from-purple-500 to-neon-pink text-white'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              <Building className="w-5 h-5" />
+              Business Solutions
+              <span className={`px-2 py-0.5 rounded-full text-xs ${
+                projectType === 'business' ? 'bg-white/20' : 'bg-dark-700'
+              }`}>
+                100
+              </span>
+            </button>
+          </div>
+        </div>
+
+        {/* Type Description */}
+        <div className="text-center mb-8">
+          {projectType === 'student' ? (
+            <p className="text-gray-500">
+              <GraduationCap className="w-4 h-4 inline mr-2 text-neon-green" />
+              Final year projects with proposals, documentation & source code for students
+            </p>
+          ) : (
+            <p className="text-gray-500">
+              <Building className="w-4 h-4 inline mr-2 text-purple-400" />
+              Ready-made solutions for businesses & companies - deploy immediately
+            </p>
+          )}
+        </div>
 
         {/* Search Bar */}
         <div className="max-w-2xl mx-auto">
@@ -145,7 +221,7 @@ export default function Projects() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
             <input
               type="text"
-              placeholder="Search projects by name, technology, or keyword..."
+              placeholder={`Search ${projectType === 'student' ? 'student' : 'business'} projects...`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-4 bg-dark-800 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-neon-cyan/50 transition-colors"
@@ -183,11 +259,11 @@ export default function Projects() {
                         : 'text-gray-400 hover:text-white hover:bg-dark-700'
                     }`}
                   >
-                    All Categories ({studentProjects.length})
+                    All Categories ({currentProjects.length})
                   </button>
-                  {studentProjectCategories.map((cat) => {
+                  {currentCategories.map((cat) => {
                     const IconComponent = categoryIcons[cat.icon] || Globe
-                    const count = studentProjects.filter((p) => p.category === cat.id).length
+                    const count = currentProjects.filter((p) => p.category === cat.id).length
                     return (
                       <button
                         key={cat.id}
@@ -381,7 +457,7 @@ export default function Projects() {
                         >
                           All
                         </button>
-                        {studentProjectCategories.map((cat) => (
+                        {currentCategories.map((cat) => (
                           <button
                             key={cat.id}
                             onClick={() => setSelectedCategory(cat.id)}
@@ -448,7 +524,7 @@ export default function Projects() {
             >
               <AnimatePresence mode="wait">
                 {filteredProjects.map((project, index) => {
-                  const category = studentProjectCategories.find((c) => c.id === project.category)
+                  const category = currentCategories.find((c) => c.id === project.category)
 
                   if (viewMode === 'list') {
                     return (
@@ -646,7 +722,7 @@ export default function Projects() {
                     setSearchQuery('')
                     setSelectedCategory('all')
                     setSelectedDifficulty('all')
-                    setPriceRange([0, 500])
+                    setPriceRange([0, projectType === 'student' ? 500 : 1500])
                   }}
                   className="px-6 py-3 bg-neon-cyan/10 border border-neon-cyan/30 text-neon-cyan rounded-lg hover:bg-neon-cyan/20 transition-colors"
                 >
@@ -686,7 +762,7 @@ export default function Projects() {
               {/* Header */}
               <div className="p-8 border-b border-white/5">
                 {(() => {
-                  const category = studentProjectCategories.find(
+                  const category = currentCategories.find(
                     (c) => c.id === selectedProject.category
                   )
                   return (

@@ -24,26 +24,50 @@ import {
   FileCode,
   FileText,
   Clock,
+  Building,
+  ShoppingCart,
+  Users,
+  UserCog,
+  CreditCard,
+  Calendar,
+  Package,
+  UtensilsCrossed,
+  Home as HomeIcon,
+  Truck,
 } from 'lucide-react'
 import Button from '../components/ui/Button'
 import { studentProjects, studentProjectCategories } from '../data/studentProjects'
+import { businessProjects, businessProjectCategories } from '../data/businessProjects'
 
 export default function Home() {
   const navigate = useNavigate()
   const [activeTrack, setActiveTrack] = useState(0)
   const [typedText, setTypedText] = useState('')
+  const [projectType, setProjectType] = useState('student') // 'student' | 'business'
   const [activeProjectCategory, setActiveProjectCategory] = useState('all')
   const heroRef = useRef(null)
 
-  // Icon mapping for project categories
+  // Icon mapping for project categories (student + business)
   const categoryIcons = {
-    Globe, Smartphone, Brain, BarChart3, Cpu, LinkIcon, Shield, Cloud, Heart, DollarSign
+    // Student project icons
+    Globe, Smartphone, Brain, BarChart3, Cpu, LinkIcon, Shield, Cloud, Heart, DollarSign,
+    // Business project icons
+    ShoppingCart, Users, Building, UserCog, CreditCard, Calendar, Package, UtensilsCrossed, Home: HomeIcon, Truck
   }
+
+  // Get current projects and categories based on type
+  const currentProjects = projectType === 'student' ? studentProjects : businessProjects
+  const currentCategories = projectType === 'student' ? studentProjectCategories : businessProjectCategories
+
+  // Reset category when type changes
+  useEffect(() => {
+    setActiveProjectCategory('all')
+  }, [projectType])
 
   // Get featured projects (first 6 from selected category or all)
   const featuredProjects = activeProjectCategory === 'all'
-    ? studentProjects.slice(0, 9)
-    : studentProjects.filter(p => p.category === activeProjectCategory).slice(0, 6)
+    ? currentProjects.slice(0, 9)
+    : currentProjects.filter(p => p.category === activeProjectCategory).slice(0, 6)
 
   const { scrollYProgress } = useScroll()
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
@@ -517,19 +541,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 4: Student Projects */}
+      {/* Section 4: Projects (Student + Business) */}
       <section className="py-32 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Section header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          {/* Section header with type tabs */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
             <div>
               <span className="text-neon-green text-sm font-mono mb-4 block">004</span>
               <h2 className="text-4xl lg:text-5xl font-black text-white mb-4">
-                Final Year Projects.
+                {projectType === 'student' ? 'Final Year Projects.' : 'Business Solutions.'}
               </h2>
               <p className="text-gray-400 max-w-lg">
-                Complete project packages with source code, documentation, proposals & more.
-                Ready to submit, ready to defend.
+                {projectType === 'student'
+                  ? 'Complete project packages with source code, documentation, proposals & more. Ready to submit, ready to defend.'
+                  : 'Enterprise-grade solutions ready to deploy. Full source code, documentation, and support included.'
+                }
               </p>
             </div>
             <Link
@@ -539,6 +565,36 @@ export default function Home() {
               View all 200+ projects
               <ChevronRight className="w-4 h-4" />
             </Link>
+          </div>
+
+          {/* Project Type Tabs */}
+          <div className="flex gap-2 mb-8">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setProjectType('student')}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+                projectType === 'student'
+                  ? 'bg-gradient-to-r from-neon-green/20 to-neon-cyan/20 text-white border-2 border-neon-green/50'
+                  : 'bg-dark-700/50 text-gray-400 hover:text-white border border-white/10'
+              }`}
+            >
+              <GraduationCap className="w-5 h-5" />
+              Student Projects
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setProjectType('business')}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
+                projectType === 'business'
+                  ? 'bg-gradient-to-r from-purple-500/20 to-neon-pink/20 text-white border-2 border-purple-500/50'
+                  : 'bg-dark-700/50 text-gray-400 hover:text-white border border-white/10'
+              }`}
+            >
+              <Building className="w-5 h-5" />
+              Business Solutions
+            </motion.button>
           </div>
 
           {/* Category filters */}
@@ -555,7 +611,7 @@ export default function Home() {
             >
               All Projects
             </motion.button>
-            {studentProjectCategories.slice(0, 6).map((cat) => {
+            {currentCategories.slice(0, 6).map((cat) => {
               const IconComponent = categoryIcons[cat.icon] || Globe
               return (
                 <motion.button
@@ -583,7 +639,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="wait">
               {featuredProjects.map((project, index) => {
-                const category = studentProjectCategories.find(c => c.id === project.category)
+                const category = currentCategories.find(c => c.id === project.category)
                 return (
                   <motion.div
                     key={project.id}
@@ -673,14 +729,25 @@ export default function Home() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => navigate('/projects')}
-              className="px-8 py-4 bg-gradient-to-r from-neon-green/10 to-neon-cyan/10 border border-neon-green/30 text-white font-semibold rounded-full inline-flex items-center gap-3 hover:border-neon-green/50 transition-colors"
+              className={`px-8 py-4 border text-white font-semibold rounded-full inline-flex items-center gap-3 transition-colors ${
+                projectType === 'student'
+                  ? 'bg-gradient-to-r from-neon-green/10 to-neon-cyan/10 border-neon-green/30 hover:border-neon-green/50'
+                  : 'bg-gradient-to-r from-purple-500/10 to-neon-pink/10 border-purple-500/30 hover:border-purple-500/50'
+              }`}
             >
-              <GraduationCap className="w-5 h-5 text-neon-green" />
-              Browse All Student Projects
+              {projectType === 'student' ? (
+                <GraduationCap className="w-5 h-5 text-neon-green" />
+              ) : (
+                <Building className="w-5 h-5 text-purple-400" />
+              )}
+              Browse All {projectType === 'student' ? 'Student Projects' : 'Business Solutions'}
               <ChevronRight className="w-4 h-4" />
             </motion.button>
             <p className="text-sm text-gray-500 mt-4">
-              200+ projects across 10 categories • Complete documentation included
+              {projectType === 'student'
+                ? '200+ projects across 10 categories • Complete documentation included'
+                : '200+ enterprise solutions across 10 categories • Ready to deploy'
+              }
             </p>
           </div>
         </div>

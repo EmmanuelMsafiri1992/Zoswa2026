@@ -17,7 +17,11 @@ import {
 import { useCartStore } from '../store/cartStore'
 import { useAuthStore } from '../store/authStore'
 import { studentProjectCategories } from '../data/studentProjects'
+import { businessProjectCategories } from '../data/businessProjects'
 import toast from 'react-hot-toast'
+
+// Combined categories for checkout display
+const allCategories = [...studentProjectCategories, ...businessProjectCategories]
 
 export default function Checkout() {
   const navigate = useNavigate()
@@ -120,7 +124,7 @@ export default function Checkout() {
               <h3 className="text-white font-semibold mb-4">Your Purchases</h3>
               <div className="space-y-3">
                 {purchasedItems.map((item) => {
-                  const category = studentProjectCategories.find((c) => c.id === item.category)
+                  const category = allCategories.find((c) => c.id === item.category)
                   return (
                     <div
                       key={item.id}
@@ -196,7 +200,7 @@ export default function Checkout() {
 
               <div className="p-6 space-y-4">
                 {items.map((item) => {
-                  const category = studentProjectCategories.find((c) => c.id === item.category)
+                  const category = allCategories.find((c) => c.id === item.category)
                   return (
                     <div
                       key={item.id}
